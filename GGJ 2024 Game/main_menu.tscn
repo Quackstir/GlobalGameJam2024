@@ -1,0 +1,92 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds1u6gy6s14vi"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_m027k"]
+[ext_resource type="Texture2D" uid="uid://bc04646tc2haf" path="res://flower bread.png" id="2_1y01q"]
+
+[sub_resource type="GDScript" id="GDScript_dypuu"]
+script/source = "extends Button
+
+
+"
+
+[node name="Main Menu" type="Node2D"]
+script = ExtResource("1_m027k")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Main Menu Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Play Button" type="Button" parent="CanvasLayer/Main Menu Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0347222
+anchor_top = 0.296296
+anchor_right = 0.251736
+anchor_bottom = 0.450617
+theme_override_font_sizes/font_size = 65
+text = "PLAY"
+script = SubResource("GDScript_dypuu")
+metadata/_edit_use_anchors_ = true
+
+[node name="Settings Button" type="Button" parent="CanvasLayer/Main Menu Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0347222
+anchor_top = 0.475308
+anchor_right = 0.230035
+anchor_bottom = 0.614198
+theme_override_font_sizes/font_size = 40
+text = "SETTINGS"
+script = SubResource("GDScript_dypuu")
+metadata/_edit_use_anchors_ = true
+
+[node name="Credits Button" type="Button" parent="CanvasLayer/Main Menu Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0347222
+anchor_top = 0.638889
+anchor_right = 0.230035
+anchor_bottom = 0.777778
+theme_override_font_sizes/font_size = 40
+text = "CREDITS"
+script = SubResource("GDScript_dypuu")
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit Button" type="Button" parent="CanvasLayer/Main Menu Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0347222
+anchor_top = 0.802469
+anchor_right = 0.230035
+anchor_bottom = 0.941358
+theme_override_font_sizes/font_size = 40
+text = "QUIT"
+script = SubResource("GDScript_dypuu")
+metadata/_edit_use_anchors_ = true
+
+[node name="FlowerBread" type="Sprite2D" parent="CanvasLayer/Main Menu Panel"]
+position = Vector2(713.5, 406.5)
+scale = Vector2(2.01882, 0.804924)
+texture = ExtResource("2_1y01q")
+
+[node name="Title text" type="RichTextLabel" parent="CanvasLayer/Main Menu Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0347222
+anchor_top = 0.0246914
+anchor_right = 0.94184
+anchor_bottom = 0.271605
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 110
+text = "Bready, Set, Dough!"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="CanvasLayer/Main Menu Panel/Play Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Main Menu Panel/Settings Button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Main Menu Panel/Credits Button" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Main Menu Panel/Quit Button" to="." method="_on_quit_button_pressed"]
