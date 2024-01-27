@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvphef6wp11th"]
+
+[ext_resource type="Script" path="res://Resource Generator.gd" id="1_r1blx"]
+[ext_resource type="PackedScene" uid="uid://dg3uwahkagg3o" path="res://Objects/ResourceLabel.tscn" id="2_a6ryy"]
+
+[node name="Resource Generator" type="VBoxContainer"]
+offset_right = 156.83
+offset_bottom = 62.0
+theme_override_constants/separation = 0
+script = ExtResource("1_r1blx")
+resourceGeneratedLabel = ExtResource("2_a6ryy")
+
+[node name="Time to Add" type="Timer" parent="."]
+process_callback = 0
+wait_time = 5.0
+
+[node name="Generator Button" type="Button" parent="."]
+layout_mode = 2
+tooltip_text = "gamers"
+text = "Bread Flower"
+
+[node name="Generator Progress Bar" type="ProgressBar" parent="."]
+layout_mode = 2
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.0
+show_percentage = false
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[connection signal="timeout" from="Time to Add" to="." method="_on_time_to_add_timeout"]
+[connection signal="button_down" from="Generator Button" to="." method="_on_generator_button_button_down"]
