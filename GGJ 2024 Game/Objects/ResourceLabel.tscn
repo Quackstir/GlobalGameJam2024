@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dg3uwahkagg3o"]
+
+[node name="Label" type="Label"]
+text = "Resources"
+horizontal_alignment = 3

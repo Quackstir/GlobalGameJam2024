@@ -1,0 +1,117 @@
+[gd_scene load_steps=3 format=3 uid="uid://df38chwp1fbss"]
+
+[ext_resource type="PackedScene" uid="uid://dg3uwahkagg3o" path="res://Objects/ResourceLabel.tscn" id="1_jp3d8"]
+[ext_resource type="Script" path="res://GameManager.gd" id="1_m5lb2"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_m5lb2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 289.0
+offset_top = 53.0
+offset_right = 445.83
+offset_bottom = 115.0
+theme_override_constants/separation = 0
+
+[node name="Bread Flower Timer" type="Timer" parent="CanvasLayer/Control/VBoxContainer2"]
+process_callback = 0
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="Bread Flower Button" type="Button" parent="CanvasLayer/Control/VBoxContainer2"]
+layout_mode = 2
+text = "Bread Flower"
+
+[node name="Bread Flower Progress" type="ProgressBar" parent="CanvasLayer/Control/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.0
+show_percentage = false
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 55.0
+offset_right = 687.83
+offset_bottom = 117.0
+theme_override_constants/separation = 0
+
+[node name="Bread Flour Timer" type="Timer" parent="CanvasLayer/Control/VBoxContainer3"]
+process_callback = 0
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="Bread Flour Button" type="Button" parent="CanvasLayer/Control/VBoxContainer3"]
+layout_mode = 2
+text = "Bread Flour"
+
+[node name="Bread Flour Progress" type="ProgressBar" parent="CanvasLayer/Control/VBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.0
+show_percentage = false
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 797.0
+offset_top = 58.0
+offset_right = 953.83
+offset_bottom = 120.0
+theme_override_constants/separation = 0
+
+[node name="Flower Bread Button" type="Button" parent="CanvasLayer/Control/VBoxContainer4"]
+layout_mode = 2
+text = "Flour Bread"
+
+[node name="Flower Bread Progress" type="ProgressBar" parent="CanvasLayer/Control/VBoxContainer4"]
+layout_mode = 2
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.0
+show_percentage = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = 20.0
+offset_right = 119.0
+offset_bottom = 20.0
+grow_vertical = 2
+scale = Vector2(0.749638, 0.880945)
+
+[node name="Label" parent="CanvasLayer/Control/VBoxContainer" instance=ExtResource("1_jp3d8")]
+layout_mode = 2
+
+[node name="Bread Flower Text" parent="CanvasLayer/Control/VBoxContainer" instance=ExtResource("1_jp3d8")]
+layout_mode = 2
+text = "Bread Flower: "
+horizontal_alignment = 0
+
+[node name="Bread Flour Text" parent="CanvasLayer/Control/VBoxContainer" instance=ExtResource("1_jp3d8")]
+layout_mode = 2
+text = "Bread Flour:"
+horizontal_alignment = 0
+
+[node name="Flower Bread Text" parent="CanvasLayer/Control/VBoxContainer" instance=ExtResource("1_jp3d8")]
+layout_mode = 2
+text = "Flower Bread:"
+horizontal_alignment = 0
+
+[connection signal="button_down" from="CanvasLayer/Control/VBoxContainer2/Bread Flower Button" to="." method="_on_bread_flower_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/VBoxContainer3/Bread Flour Button" to="." method="_on_bread_flour_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/VBoxContainer4/Flower Bread Button" to="." method="_on_flower_bread_button_button_down"]

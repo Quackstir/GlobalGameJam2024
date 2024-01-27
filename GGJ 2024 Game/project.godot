@@ -11,5 +11,6 @@ config_version=5
 [application]
 
 config/name="Global Gam Jam 2024 Game"
+run/main_scene="res://game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
