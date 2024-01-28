@@ -70,8 +70,8 @@ script = SubResource("GDScript_dypuu")
 metadata/_edit_use_anchors_ = true
 
 [node name="FlowerBread" type="Sprite2D" parent="CanvasLayer/Main Menu Panel"]
-position = Vector2(713.5, 406.5)
-scale = Vector2(2.01882, 0.804924)
+position = Vector2(677, 400)
+scale = Vector2(0.806453, 0.804924)
 texture = ExtResource("2_1y01q")
 
 [node name="Title text" type="RichTextLabel" parent="CanvasLayer/Main Menu Panel"]
