@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bp5l5jraq6t1e"]
+[gd_scene load_steps=4 format=3 uid="uid://bp5l5jraq6t1e"]
 
 [ext_resource type="Script" path="res://pause_menu.gd" id="1_ylx3o"]
+[ext_resource type="AudioStream" uid="uid://uv8k7f5uo4kn" path="res://Audio/SFX/Menu/BreadGame Menu hover v.1.wav" id="2_rmmi6"]
+[ext_resource type="AudioStream" uid="uid://darp0oxy302a5" path="res://Audio/SFX/Menu/BreadGame Menu click A v.1.wav" id="3_pmhsq"]
 
 [node name="Pause Menu" type="Node2D"]
 script = ExtResource("1_ylx3o")
@@ -64,5 +66,13 @@ theme_override_font_sizes/font_size = 50
 text = "QUIT"
 metadata/_edit_use_anchors_ = true
 
+[node name="ButtonHover" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_rmmi6")
+
+[node name="ButtonClick" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_pmhsq")
+
+[connection signal="mouse_entered" from="CanvasLayer/Pause Panel/Resume" to="." method="_on_resume_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/Pause Panel/Resume" to="." method="_on_resume_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Pause Panel/Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/Pause Panel/Quit" to="." method="_on_quit_pressed"]
