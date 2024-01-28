@@ -41,6 +41,8 @@ var FlowerBread: int = 0:
 @onready var button_click = $ButtonClick
 @onready var button_hover = $ButtonHover
 
+const WIN_SCENE = preload("res://win_scene.tscn")
+
 #Text
 #region Text
 @onready var bread_flower_text = $"CanvasLayer/Control/VBoxContainer/Bread Flower Text"
@@ -95,7 +97,7 @@ func _process(delta):
 	if BreadFlour >= FlourToFlowerBread: flower_bread_container.visible = true
 	
 	if FlowerBread > 1000:
-		animation_player.play("FadeGameOver")
+		get_tree().change_scene_to_file("res://win_scene.tscn")
 	
 	if Input.is_key_pressed(KEY_1): BreadFlower += 10
 	if Input.is_key_pressed(KEY_2): BreadFlour += 10
@@ -109,7 +111,7 @@ func _on_bread_flower_button_button_down():
 
 func _on_bread_flour_button_button_down():
 	if (BreadFlower < FlowerToBreadFlour): return
-	
+	BreadFlower -= FlowerToBreadFlour
 	bread_flour_button.disabled = true
 	bread_flour_timer.start()
 	
@@ -118,6 +120,7 @@ func _on_bread_flour_button_button_down():
 
 func _on_flower_bread_button_button_down():
 	if (BreadFlour < FlourToFlowerBread): return
+	BreadFlour -= FlourToFlowerBread
 	flower_bread_button.disabled = true
 	flower_bread_timer.start()
 	button_click.play()

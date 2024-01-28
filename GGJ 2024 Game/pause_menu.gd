@@ -6,11 +6,13 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 #func _ready():
 	#get_node("CanvasLayer").hide()
+	#pause_panel.visible = false
 	
 @onready var pause_panel = $"CanvasLayer/Pause Panel"
 	
 func _input(_event):
 	if Input.is_action_just_pressed("ui_menu"):
+		print("PAUSE MENU")
 		if pause_panel.visible:
 			button_click.play()
 			await get_tree().create_timer(.1).timeout

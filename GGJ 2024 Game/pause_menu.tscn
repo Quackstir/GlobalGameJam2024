@@ -10,6 +10,8 @@ script = ExtResource("1_ylx3o")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pause Panel" type="Panel" parent="CanvasLayer"]
+visible = false
+z_index = 10
 custom_minimum_size = Vector2(450, 650)
 anchors_preset = -1
 anchor_left = 0.304688
@@ -21,6 +23,7 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Paused Title" type="RichTextLabel" parent="CanvasLayer/Pause Panel"]
+z_index = 10
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0822222
@@ -32,6 +35,7 @@ text = "\"Paused\""
 metadata/_edit_use_anchors_ = true
 
 [node name="Serious Text" type="RichTextLabel" parent="CanvasLayer/Pause Panel"]
+z_index = 10
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0955556
@@ -43,6 +47,7 @@ text = "Seriously, it's not paused."
 metadata/_edit_use_anchors_ = true
 
 [node name="Resume" type="Button" parent="CanvasLayer/Pause Panel"]
+z_index = 10
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.244444
@@ -55,6 +60,7 @@ text = "RESUME"
 metadata/_edit_use_anchors_ = true
 
 [node name="Quit" type="Button" parent="CanvasLayer/Pause Panel"]
+z_index = 10
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.244444

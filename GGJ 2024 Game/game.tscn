@@ -1,14 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://df38chwp1fbss"]
+[gd_scene load_steps=14 format=3 uid="uid://df38chwp1fbss"]
 
 [ext_resource type="PackedScene" uid="uid://dg3uwahkagg3o" path="res://Objects/ResourceLabel.tscn" id="1_jp3d8"]
 [ext_resource type="Script" path="res://GameManager.gd" id="1_m5lb2"]
 [ext_resource type="Texture2D" uid="uid://udo31xfugt4p" path="res://Art/Background.png" id="2_3nj2y"]
+[ext_resource type="PackedScene" uid="uid://bp5l5jraq6t1e" path="res://pause_menu.tscn" id="2_qpiea"]
 [ext_resource type="PackedScene" uid="uid://bvphef6wp11th" path="res://Objects/resource_generator.tscn" id="2_un4l8"]
 [ext_resource type="AudioStream" uid="uid://deoeafx2nqa4f" path="res://Audio/SFX/Generator/BreadGame Generator Left v.2.wav" id="4_7of1r"]
 [ext_resource type="AudioStream" uid="uid://dkoiymhgudwh0" path="res://Audio/SFX/Generator/BreadGame Generator Middle v.2.wav" id="5_u54jv"]
 [ext_resource type="AudioStream" uid="uid://b6tbphl60bgjv" path="res://Audio/SFX/Generator/BreadGame Generator Right v.2.wav" id="6_hi454"]
 [ext_resource type="AudioStream" uid="uid://darp0oxy302a5" path="res://Audio/SFX/Menu/BreadGame Menu click A v.1.wav" id="8_lkh0k"]
 [ext_resource type="AudioStream" uid="uid://uv8k7f5uo4kn" path="res://Audio/SFX/Menu/BreadGame Menu hover v.1.wav" id="9_2kuof"]
+[ext_resource type="AudioStream" uid="uid://b7tywp42uex7u" path="res://Audio/Music/BreadGame MAIN music MASTER v.1.mp3" id="10_mqskw"]
 
 [sub_resource type="Animation" id="Animation_blfpj"]
 resource_name = "FadeGameOver"
@@ -85,6 +87,7 @@ libraries = {
 movie_quit_on_finish = true
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/AnimationPlayer"]
+visible = false
 modulate = Color(1, 1, 1, 0)
 z_index = 5
 z_as_relative = false
@@ -255,11 +258,18 @@ layout_mode = 2
 text = "Flower Bread:"
 willMove = false
 
+[node name="Pause Menu" parent="." instance=ExtResource("2_qpiea")]
+z_index = 10
+
 [node name="ButtonClick" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_lkh0k")
 
 [node name="ButtonHover" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_2kuof")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_mqskw")
+autoplay = true
 
 [connection signal="timeout" from="CanvasLayer/Control/Bread Flower Container/Bread Flower Timer" to="." method="_on_bread_flower_timer_timeout"]
 [connection signal="button_down" from="CanvasLayer/Control/Bread Flower Container/Bread Flower Button" to="." method="_on_bread_flower_button_button_down"]
