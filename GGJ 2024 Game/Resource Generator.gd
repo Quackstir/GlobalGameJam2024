@@ -6,6 +6,11 @@ var isBought:bool = false
 @onready var node_2d = $Node2D
 @export var TimeToGenerate: float
 
+@export_category("Appear at Amount")
+@export var Appear_BreadFlower: int
+@export var Appear_BreadFlour: int
+@export var Appear_FlowerBread: int
+
 @export_category("Costs")
 @export var Cost_BreadFlower: int
 @export var CostIncrease_BreadFlower: int
@@ -37,6 +42,11 @@ func _ready():
 
 func _process(delta):
 	generator_progress_bar.value = time_to_add.time_left
+	
+	if (gameManager.BreadFlower < Appear_BreadFlower): return
+	if (gameManager.BreadFlour < Appear_BreadFlour): return
+	if (gameManager.FlowerBread < Appear_FlowerBread): return
+	visible = true
 
 func _on_generator_button_button_down():
 	if (gameManager.BreadFlower < Cost_BreadFlower): return
@@ -54,9 +64,20 @@ func _on_generator_button_button_down():
 	generator_progress_bar.max_value = time_to_add.wait_time
 
 func _on_time_to_add_timeout():
-	gameManager.BreadFlower += Generates_BreadFlower
-	gameManager.BreadFlour += Generates_BreadFlour
-	gameManager.FlowerBread += Generates_FlowerBread 
+	var breadFlowerDelta = Generates_BreadFlower
+	var breadFlourDelta = Generates_BreadFlour
+	var flowerBreadDelta = Generates_FlowerBread
+	
+	gameManager.BreadFlower += breadFlowerDelta
+	gameManager.BreadFlour += breadFlourDelta
+	gameManager.FlowerBread += flowerBreadDelta 
+	
+	#gameManager.BreadFlower -= gameManager.FlowerToBreadFlour * generatorAmount
+	#gameManager.BreadFlour -= gameManager.FlourToFlowerBread * generatorAmount
+	
+	#breadFlowerDelta -= gameManager.FlowerToBreadFlour * generatorAmount
+	#breadFlourDelta -= gameManager.FlourToFlowerBread * generatorAmount
+	
 	var resourceLabel = resourceGeneratedLabel.instantiate()
 	get_tree().get_root().add_child(resourceLabel)
 	resourceLabel.position = node_2d.global_position

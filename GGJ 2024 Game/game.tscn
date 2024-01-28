@@ -92,7 +92,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Resource Generator" parent="CanvasLayer/Control" node_paths=PackedStringArray("gameManager") instance=ExtResource("2_un4l8")]
+[node name="Bread Flower Gen" parent="CanvasLayer/Control" node_paths=PackedStringArray("gameManager") instance=ExtResource("2_un4l8")]
 layout_mode = 0
 offset_left = 296.0
 offset_top = 209.0
@@ -100,13 +100,14 @@ offset_right = 452.83
 offset_bottom = 271.0
 gameManager = NodePath("../../..")
 TimeToGenerate = 5.0
+Appear_BreadFlour = 3
 Cost_BreadFlower = 5
 CostIncrease_BreadFlower = 10
 InitialGenerates_BreadFlower = 5
 Text_BeforePurchase = "Cost 5 Bread Flower"
 Text_Generates = "Bread Flower Generators"
 
-[node name="Resource Generator2" parent="CanvasLayer/Control" node_paths=PackedStringArray("gameManager") instance=ExtResource("2_un4l8")]
+[node name="Bread Flour Gen" parent="CanvasLayer/Control" node_paths=PackedStringArray("gameManager") instance=ExtResource("2_un4l8")]
 layout_mode = 0
 offset_left = 535.0
 offset_top = 209.0
@@ -114,13 +115,14 @@ offset_right = 691.83
 offset_bottom = 271.0
 gameManager = NodePath("../../..")
 TimeToGenerate = 7.0
-Cost_FlowerBread = 3
-CostIncrease_FlowerBread = 5
+Appear_BreadFlour = 7
+Cost_BreadFlour = 5
+CostIncrease_BreadFlour = 5
 InitialGenerates_BreadFlour = 5
 Text_BeforePurchase = "Cost 5 Flower Bread"
 Text_Generates = "Bread Flour Generators"
 
-[node name="Resource Generator3" parent="CanvasLayer/Control" node_paths=PackedStringArray("gameManager") instance=ExtResource("2_un4l8")]
+[node name="Flower Bread Gen" parent="CanvasLayer/Control" node_paths=PackedStringArray("gameManager") instance=ExtResource("2_un4l8")]
 layout_mode = 0
 offset_left = 800.0
 offset_top = 210.0
@@ -128,6 +130,7 @@ offset_right = 956.83
 offset_bottom = 272.0
 gameManager = NodePath("../../..")
 TimeToGenerate = 10.0
+Appear_FlowerBread = 13
 Cost_BreadFlour = 5
 CostIncrease_BreadFlour = 5
 Cost_FlowerBread = 3
@@ -136,7 +139,7 @@ InitialGenerates_FlowerBread = 5
 Text_BeforePurchase = "Cost 5 Bread Flour"
 Text_Generates = "Flower Bread Generators"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Control"]
+[node name="Bread Flower Container" type="VBoxContainer" parent="CanvasLayer/Control"]
 layout_mode = 0
 offset_left = 289.0
 offset_top = 53.0
@@ -144,22 +147,22 @@ offset_right = 438.91
 offset_bottom = 113.535
 theme_override_constants/separation = 0
 
-[node name="Bread Flower Timer" type="Timer" parent="CanvasLayer/Control/VBoxContainer2"]
+[node name="Bread Flower Timer" type="Timer" parent="CanvasLayer/Control/Bread Flower Container"]
 process_callback = 0
-wait_time = 5.0
+wait_time = 2.0
 one_shot = true
 
-[node name="Bread Flower Button" type="Button" parent="CanvasLayer/Control/VBoxContainer2"]
+[node name="Bread Flower Button" type="Button" parent="CanvasLayer/Control/Bread Flower Container"]
 layout_mode = 2
 text = "Bread Flower"
 
-[node name="Bread Flower Progress" type="ProgressBar" parent="CanvasLayer/Control/VBoxContainer2"]
+[node name="Bread Flower Progress" type="ProgressBar" parent="CanvasLayer/Control/Bread Flower Container"]
 layout_mode = 2
 size_flags_vertical = 1
 size_flags_stretch_ratio = 0.0
 show_percentage = false
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="CanvasLayer/Control"]
+[node name="Bread Flour Container" type="VBoxContainer" parent="CanvasLayer/Control"]
 layout_mode = 0
 offset_left = 531.0
 offset_top = 55.0
@@ -167,22 +170,22 @@ offset_right = 687.83
 offset_bottom = 117.0
 theme_override_constants/separation = 0
 
-[node name="Bread Flour Timer" type="Timer" parent="CanvasLayer/Control/VBoxContainer3"]
+[node name="Bread Flour Timer" type="Timer" parent="CanvasLayer/Control/Bread Flour Container"]
 process_callback = 0
 wait_time = 7.0
 one_shot = true
 
-[node name="Bread Flour Button" type="Button" parent="CanvasLayer/Control/VBoxContainer3"]
+[node name="Bread Flour Button" type="Button" parent="CanvasLayer/Control/Bread Flour Container"]
 layout_mode = 2
 text = "Bread Flour"
 
-[node name="Bread Flour Progress" type="ProgressBar" parent="CanvasLayer/Control/VBoxContainer3"]
+[node name="Bread Flour Progress" type="ProgressBar" parent="CanvasLayer/Control/Bread Flour Container"]
 layout_mode = 2
 size_flags_vertical = 1
 size_flags_stretch_ratio = 0.0
 show_percentage = false
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="CanvasLayer/Control"]
+[node name="Flower Bread Container" type="VBoxContainer" parent="CanvasLayer/Control"]
 layout_mode = 0
 offset_left = 797.0
 offset_top = 58.0
@@ -190,16 +193,16 @@ offset_right = 953.83
 offset_bottom = 120.0
 theme_override_constants/separation = 0
 
-[node name="Flower Bread Timer" type="Timer" parent="CanvasLayer/Control/VBoxContainer4"]
+[node name="Flower Bread Timer" type="Timer" parent="CanvasLayer/Control/Flower Bread Container"]
 process_callback = 0
 wait_time = 10.0
 one_shot = true
 
-[node name="Flower Bread Button" type="Button" parent="CanvasLayer/Control/VBoxContainer4"]
+[node name="Flower Bread Button" type="Button" parent="CanvasLayer/Control/Flower Bread Container"]
 layout_mode = 2
 text = "Flower Bread"
 
-[node name="Flower Bread Progress" type="ProgressBar" parent="CanvasLayer/Control/VBoxContainer4"]
+[node name="Flower Bread Progress" type="ProgressBar" parent="CanvasLayer/Control/Flower Bread Container"]
 layout_mode = 2
 size_flags_vertical = 1
 size_flags_stretch_ratio = 0.0
@@ -236,9 +239,9 @@ layout_mode = 2
 text = "Flower Bread:"
 willMove = false
 
-[connection signal="timeout" from="CanvasLayer/Control/VBoxContainer2/Bread Flower Timer" to="." method="_on_bread_flower_timer_timeout"]
-[connection signal="button_down" from="CanvasLayer/Control/VBoxContainer2/Bread Flower Button" to="." method="_on_bread_flower_button_button_down"]
-[connection signal="timeout" from="CanvasLayer/Control/VBoxContainer3/Bread Flour Timer" to="." method="_on_bread_flour_timer_timeout"]
-[connection signal="button_down" from="CanvasLayer/Control/VBoxContainer3/Bread Flour Button" to="." method="_on_bread_flour_button_button_down"]
-[connection signal="timeout" from="CanvasLayer/Control/VBoxContainer4/Flower Bread Timer" to="." method="_on_flower_bread_timer_timeout"]
-[connection signal="button_down" from="CanvasLayer/Control/VBoxContainer4/Flower Bread Button" to="." method="_on_flower_bread_button_button_down"]
+[connection signal="timeout" from="CanvasLayer/Control/Bread Flower Container/Bread Flower Timer" to="." method="_on_bread_flower_timer_timeout"]
+[connection signal="button_down" from="CanvasLayer/Control/Bread Flower Container/Bread Flower Button" to="." method="_on_bread_flower_button_button_down"]
+[connection signal="timeout" from="CanvasLayer/Control/Bread Flour Container/Bread Flour Timer" to="." method="_on_bread_flour_timer_timeout"]
+[connection signal="button_down" from="CanvasLayer/Control/Bread Flour Container/Bread Flour Button" to="." method="_on_bread_flour_button_button_down"]
+[connection signal="timeout" from="CanvasLayer/Control/Flower Bread Container/Flower Bread Timer" to="." method="_on_flower_bread_timer_timeout"]
+[connection signal="button_down" from="CanvasLayer/Control/Flower Bread Container/Flower Bread Button" to="." method="_on_flower_bread_button_button_down"]

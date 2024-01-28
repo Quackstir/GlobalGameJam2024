@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dg3uwahkagg3o" path="res://Objects/ResourceLabel.tscn" id="2_a6ryy"]
 
 [node name="Resource Generator" type="VBoxContainer"]
+visible = false
 offset_right = 156.83
 offset_bottom = 62.0
 theme_override_constants/separation = 0

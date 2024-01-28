@@ -35,23 +35,30 @@ var FlowerBread: int = 0:
 
 #Progress Bars
 #region Progress Bars
-@onready var bread_flower_progress = $"CanvasLayer/Control/VBoxContainer2/Bread Flower Progress"
-@onready var bread_flour_progress = $"CanvasLayer/Control/VBoxContainer3/Bread Flour Progress"
-@onready var flower_bread_progress = $"CanvasLayer/Control/VBoxContainer4/Flower Bread Progress"
+@onready var bread_flower_progress = $"CanvasLayer/Control/Bread Flower Container/Bread Flower Progress"
+@onready var bread_flour_progress = $"CanvasLayer/Control/Bread Flour Container/Bread Flour Progress"
+@onready var flower_bread_progress = $"CanvasLayer/Control/Flower Bread Container/Flower Bread Progress"
 #endregion
 
 #Timers
 #region Timers
-@onready var bread_flower_timer = $"CanvasLayer/Control/VBoxContainer2/Bread Flower Timer"
-@onready var bread_flour_timer = $"CanvasLayer/Control/VBoxContainer3/Bread Flour Timer"
-@onready var flower_bread_timer = $"CanvasLayer/Control/VBoxContainer4/Flower Bread Timer"
+@onready var bread_flower_timer = $"CanvasLayer/Control/Bread Flower Container/Bread Flower Timer"
+@onready var bread_flour_timer = $"CanvasLayer/Control/Bread Flour Container/Bread Flour Timer"
+@onready var flower_bread_timer = $"CanvasLayer/Control/Flower Bread Container/Flower Bread Timer"
 #endregion
 
 #Buttons
 #region Buttons
-@onready var bread_flower_button = $"CanvasLayer/Control/VBoxContainer2/Bread Flower Button"
-@onready var bread_flour_button = $"CanvasLayer/Control/VBoxContainer3/Bread Flour Button"
-@onready var flower_bread_button = $"CanvasLayer/Control/VBoxContainer4/Flower Bread Button"
+@onready var bread_flower_button = $"CanvasLayer/Control/Bread Flower Container/Bread Flower Button"
+@onready var bread_flour_button = $"CanvasLayer/Control/Bread Flour Container/Bread Flour Button"
+@onready var flower_bread_button = $"CanvasLayer/Control/Flower Bread Container/Flower Bread Button"
+#endregion
+
+#Containers
+#region Containers
+@onready var bread_flower_container = $"CanvasLayer/Control/Bread Flower Container"
+@onready var bread_flour_container = $"CanvasLayer/Control/Bread Flour Container"
+@onready var flower_bread_container = $"CanvasLayer/Control/Flower Bread Container"
 #endregion
 
 # Called when the node enters the scene tree for the first time.
@@ -59,12 +66,18 @@ func _ready():
 	bread_flower_progress.max_value = bread_flower_timer.wait_time
 	bread_flour_progress.max_value = bread_flour_timer.wait_time
 	flower_bread_progress.max_value = flower_bread_timer.wait_time
+	
+	bread_flour_container.visible = false
+	flower_bread_container.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	bread_flower_progress.value = bread_flower_timer.time_left
 	bread_flour_progress.value = bread_flour_timer.time_left
 	flower_bread_progress.value = flower_bread_timer.time_left
+	
+	if BreadFlower >= FlowerToBreadFlour: bread_flour_container.visible = true
+	if FlowerBread >= FlourToFlowerBread: flower_bread_container.visible = true
 	
 	if FlowerBread > 1000:
 		animation_player.play("FadeGameOver")
