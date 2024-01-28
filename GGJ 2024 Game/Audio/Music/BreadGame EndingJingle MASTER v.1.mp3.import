@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d2hftjarbs3h5"
+path="res://.godot/imported/BreadGame EndingJingle MASTER v.1.mp3-bd6dee9910fd7ad860a613acce52d9d6.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/BreadGame EndingJingle MASTER v.1.mp3"
+dest_files=["res://.godot/imported/BreadGame EndingJingle MASTER v.1.mp3-bd6dee9910fd7ad860a613acce52d9d6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
