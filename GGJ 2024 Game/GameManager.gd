@@ -38,6 +38,8 @@ var FlowerBread: int = 0:
 
 @onready var animation_player = $CanvasLayer/AnimationPlayer
 @onready var cpu_particles_2d = $CanvasLayer/CPUParticles2D
+@onready var button_click = $ButtonClick
+@onready var button_hover = $ButtonHover
 
 #Text
 #region Text
@@ -103,6 +105,7 @@ func _on_bread_flower_button_button_down():
 	bread_flower_button.disabled = true
 	bread_flower_timer.start()
 	BreadFlower += 1
+	button_click.play()
 
 func _on_bread_flour_button_button_down():
 	if (BreadFlower < FlowerToBreadFlour): return
@@ -110,12 +113,14 @@ func _on_bread_flour_button_button_down():
 	bread_flour_button.disabled = true
 	bread_flour_timer.start()
 	
+	button_click.play()
 	BreadFlour += 1
 
 func _on_flower_bread_button_button_down():
 	if (BreadFlour < FlourToFlowerBread): return
 	flower_bread_button.disabled = true
 	flower_bread_timer.start()
+	button_click.play()
 	FlowerBread += 1
 
 
@@ -129,3 +134,15 @@ func _on_bread_flour_timer_timeout():
 
 func _on_flower_bread_timer_timeout():
 	flower_bread_button.disabled = false
+
+
+func _on_flower_bread_button_mouse_entered():
+	button_hover.play()
+
+
+func _on_bread_flour_button_mouse_entered():
+	button_hover.play()
+
+
+func _on_bread_flower_button_mouse_entered():
+	button_hover.play()
