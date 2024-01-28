@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://df38chwp1fbss"]
+[gd_scene load_steps=8 format=3 uid="uid://df38chwp1fbss"]
 
 [ext_resource type="PackedScene" uid="uid://dg3uwahkagg3o" path="res://Objects/ResourceLabel.tscn" id="1_jp3d8"]
 [ext_resource type="Script" path="res://GameManager.gd" id="1_m5lb2"]
 [ext_resource type="Texture2D" uid="uid://udo31xfugt4p" path="res://Art/Background.png" id="2_3nj2y"]
 [ext_resource type="PackedScene" uid="uid://bvphef6wp11th" path="res://Objects/resource_generator.tscn" id="2_un4l8"]
+[ext_resource type="AudioStream" uid="uid://deoeafx2nqa4f" path="res://Audio/SFX/BreadGame Generator Left v.2.wav" id="4_7of1r"]
 
 [sub_resource type="Animation" id="Animation_blfpj"]
 resource_name = "FadeGameOver"
@@ -62,6 +63,16 @@ script = ExtResource("1_m5lb2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CanvasLayer"]
+position = Vector2(1789, -31)
+emitting = false
+amount = 100
+lifetime = 2.0
+emission_shape = 3
+emission_rect_extents = Vector2(1920, 1)
+scale_amount_min = 5.0
+scale_amount_max = 10.0
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
 root_node = NodePath("../..")
 libraries = {
@@ -100,6 +111,7 @@ offset_right = 452.83
 offset_bottom = 271.0
 gameManager = NodePath("../../..")
 TimeToGenerate = 5.0
+SFX = ExtResource("4_7of1r")
 Appear_BreadFlour = 3
 Cost_BreadFlower = 5
 CostIncrease_BreadFlower = 10
@@ -115,6 +127,7 @@ offset_right = 691.83
 offset_bottom = 271.0
 gameManager = NodePath("../../..")
 TimeToGenerate = 7.0
+SFX = ExtResource("4_7of1r")
 Appear_BreadFlour = 7
 Cost_BreadFlour = 5
 CostIncrease_BreadFlour = 5
@@ -130,9 +143,8 @@ offset_right = 956.83
 offset_bottom = 272.0
 gameManager = NodePath("../../..")
 TimeToGenerate = 10.0
+SFX = ExtResource("4_7of1r")
 Appear_FlowerBread = 13
-Cost_BreadFlour = 5
-CostIncrease_BreadFlour = 5
 Cost_FlowerBread = 3
 CostIncrease_FlowerBread = 2
 InitialGenerates_FlowerBread = 5

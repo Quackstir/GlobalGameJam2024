@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvphef6wp11th"]
+[gd_scene load_steps=4 format=3 uid="uid://bvphef6wp11th"]
 
 [ext_resource type="Script" path="res://Resource Generator.gd" id="1_r1blx"]
 [ext_resource type="PackedScene" uid="uid://dg3uwahkagg3o" path="res://Objects/ResourceLabel.tscn" id="2_a6ryy"]
+
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_yu7n4"]
 
 [node name="Resource Generator" type="VBoxContainer"]
 visible = false
@@ -27,6 +29,9 @@ size_flags_stretch_ratio = 0.0
 show_percentage = false
 
 [node name="Node2D" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamWAV_yu7n4")
 
 [connection signal="timeout" from="Time to Add" to="." method="_on_time_to_add_timeout"]
 [connection signal="button_down" from="Generator Button" to="." method="_on_generator_button_button_down"]

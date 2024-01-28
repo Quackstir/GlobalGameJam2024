@@ -5,6 +5,8 @@ var isBought:bool = false
 @export var resourceGeneratedLabel:PackedScene
 @onready var node_2d = $Node2D
 @export var TimeToGenerate: float
+@export var SFX: AudioStreamWAV
+@onready var audio_stream_player_2d = $AudioStreamPlayer2D
 
 @export_category("Appear at Amount")
 @export var Appear_BreadFlower: int
@@ -39,6 +41,7 @@ var generatorAmount = 0
 func _ready():
 	generator_button.text = Text_BeforePurchase
 	time_to_add.wait_time = TimeToGenerate
+	audio_stream_player_2d.stream = SFX
 
 func _process(delta):
 	generator_progress_bar.value = time_to_add.time_left
@@ -68,24 +71,27 @@ func _on_time_to_add_timeout():
 	var breadFlourDelta = Generates_BreadFlour
 	var flowerBreadDelta = Generates_FlowerBread
 	
+	#breadFlowerDelta -= gameManager.FlowerToBreadFlour * generatorAmount * Generates_BreadFlour
+	#breadFlourDelta  -= gameManager.FlourToFlowerBread * generatorAmount * Generates_FlowerBread
+	
 	gameManager.BreadFlower += breadFlowerDelta
 	gameManager.BreadFlour += breadFlourDelta
-	gameManager.FlowerBread += flowerBreadDelta 
-	
-	#gameManager.BreadFlower -= gameManager.FlowerToBreadFlour * generatorAmount
-	#gameManager.BreadFlour -= gameManager.FlourToFlowerBread * generatorAmount
-	
-	#breadFlowerDelta -= gameManager.FlowerToBreadFlour * generatorAmount
-	#breadFlourDelta -= gameManager.FlourToFlowerBread * generatorAmount
+	gameManager.FlowerBread += flowerBreadDelta
 	
 	var resourceLabel = resourceGeneratedLabel.instantiate()
 	get_tree().get_root().add_child(resourceLabel)
 	resourceLabel.position = node_2d.global_position
 	
-	var format_string = "+ %s Bread Flower \n+ %s Bread Flour \n+ %s Flower Bread"
-	var actual_string = format_string % [str(Generates_BreadFlower), str(Generates_BreadFlour), str(Generates_FlowerBread)]
+	var format_string
+	var actual_string
 	
+	#if gameManager.BreadFlower - breadFlowerDelta <= 0 or gameManager.BreadFlour - breadFlourDelta <= 0:
+		#actual_string = "Requires more Resources"
+		 
+	format_string = "+ %s Bread Flower \n+ %s Bread Flour \n+ %s Flower Bread"
+	actual_string = format_string % [str(Generates_BreadFlower), str(Generates_BreadFlour), str(Generates_FlowerBread)]
 	resourceLabel.text = actual_string
+	audio_stream_player_2d.play()
 
 func _update_costs():
 	gameManager.BreadFlower -= Cost_BreadFlower

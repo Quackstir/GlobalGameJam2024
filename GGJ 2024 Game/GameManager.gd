@@ -11,6 +11,12 @@ var BreadFlower: int = 0:
 var BreadFlour: int = 0:
 	set(new_value):
 		bread_flour_text.text = "Bread Flour: " + str(new_value)
+		
+		
+		#if new_value > BreadFlour: 
+			#var valueChange = new_value - BreadFlour
+			#BreadFlower -= FlowerToBreadFlour * valueChange
+		
 		BreadFlour = new_value
 	get:
 		return BreadFlour
@@ -19,12 +25,19 @@ var BreadFlour: int = 0:
 var FlowerBread: int = 0:
 	set(new_value):
 		flower_bread_text.text = "Flower Bread: " + str(new_value)
+		
+		#if new_value > FlowerBread: 
+			#var valueChange = new_value - FlowerBread
+			#BreadFlour -= FlourToFlowerBread * FlowerBread
+		cpu_particles_2d.emitting = new_value > 0
+			
 		FlowerBread = new_value
 	get:
 		return FlowerBread
 @export var FlourToFlowerBread: int = 7
 
 @onready var animation_player = $CanvasLayer/AnimationPlayer
+@onready var cpu_particles_2d = $CanvasLayer/CPUParticles2D
 
 #Text
 #region Text
@@ -77,14 +90,14 @@ func _process(delta):
 	flower_bread_progress.value = flower_bread_timer.time_left
 	
 	if BreadFlower >= FlowerToBreadFlour: bread_flour_container.visible = true
-	if FlowerBread >= FlourToFlowerBread: flower_bread_container.visible = true
+	if BreadFlour >= FlourToFlowerBread: flower_bread_container.visible = true
 	
 	if FlowerBread > 1000:
 		animation_player.play("FadeGameOver")
 	
-	if Input.is_key_pressed(KEY_1): BreadFlower += 1
-	if Input.is_key_pressed(KEY_2): BreadFlour += 1
-	if Input.is_key_pressed(KEY_3): FlowerBread += 1
+	if Input.is_key_pressed(KEY_1): BreadFlower += 10
+	if Input.is_key_pressed(KEY_2): BreadFlour += 10
+	if Input.is_key_pressed(KEY_3): FlowerBread += 10
 
 func _on_bread_flower_button_button_down():
 	bread_flower_button.disabled = true
@@ -97,14 +110,12 @@ func _on_bread_flour_button_button_down():
 	bread_flour_button.disabled = true
 	bread_flour_timer.start()
 	
-	BreadFlower -= FlowerToBreadFlour
 	BreadFlour += 1
 
 func _on_flower_bread_button_button_down():
 	if (BreadFlour < FlourToFlowerBread): return
 	flower_bread_button.disabled = true
 	flower_bread_timer.start()
-	BreadFlour -= FlourToFlowerBread
 	FlowerBread += 1
 
 
