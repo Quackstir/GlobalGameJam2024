@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=3 uid="uid://d0625qodrx6b2"]
+
+[ext_resource type="Script" path="res://Quit Confirm.gd" id="1_v5mq5"]
+[ext_resource type="AudioStream" uid="uid://uv8k7f5uo4kn" path="res://Audio/SFX/Menu/BreadGame Menu hover v.1.wav" id="2_cs3r2"]
+[ext_resource type="AudioStream" uid="uid://darp0oxy302a5" path="res://Audio/SFX/Menu/BreadGame Menu click A v.1.wav" id="3_kjemk"]
+[ext_resource type="AudioStream" uid="uid://plbw2e6ykpvl" path="res://Audio/Music/BreadGame MenuMusic MASTER v.1.mp3" id="4_3wemb"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_7ksx5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i2ymh"]
+texture = SubResource("ImageTexture_7ksx5")
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="GDScript" id="GDScript_dypuu"]
+script/source = "extends Button
+
+
+"
+
+[node name="QuitConfirm" type="Node2D"]
+script = ExtResource("1_v5mq5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Quit Confirm" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_i2ymh")
+
+[node name="Quit Confirm Title" type="RichTextLabel" parent="CanvasLayer/Quit Confirm"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0434028
+anchor_top = 0.0617282
+anchor_right = 0.950521
+anchor_bottom = 0.231481
+offset_bottom = -1.52588e-05
+theme_override_font_sizes/normal_font_size = 70
+text = "Are you sure you want to quit?"
+metadata/_edit_use_anchors_ = true
+
+[node name="No Exit" type="Button" parent="CanvasLayer/Quit Confirm"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.649306
+anchor_top = 0.523148
+anchor_right = 0.791667
+anchor_bottom = 0.674383
+offset_bottom = -3.05176e-05
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 65
+text = "NO"
+script = SubResource("GDScript_dypuu")
+metadata/_edit_use_anchors_ = true
+
+[node name="Yes Exit" type="Button" parent="CanvasLayer/Quit Confirm"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.208333
+anchor_top = 0.523148
+anchor_right = 0.350694
+anchor_bottom = 0.674383
+offset_bottom = -3.05176e-05
+grow_vertical = 2
+theme_override_font_sizes/font_size = 65
+text = "YES"
+script = SubResource("GDScript_dypuu")
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonHover" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_cs3r2")
+
+[node name="ButtonClick" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_kjemk")
+
+[node name="Menu Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3wemb")
+autoplay = true
+
+[connection signal="mouse_entered" from="CanvasLayer/Quit Confirm/No Exit" to="." method="_on_no_exit_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/Quit Confirm/No Exit" to="." method="_on_no_exit_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Quit Confirm/Yes Exit" to="." method="_on_yes_exit_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/Quit Confirm/Yes Exit" to="." method="_on_yes_exit_pressed"]

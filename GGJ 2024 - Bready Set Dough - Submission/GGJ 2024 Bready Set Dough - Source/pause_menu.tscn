@@ -1,0 +1,84 @@
+[gd_scene load_steps=4 format=3 uid="uid://bp5l5jraq6t1e"]
+
+[ext_resource type="Script" path="res://pause_menu.gd" id="1_ylx3o"]
+[ext_resource type="AudioStream" uid="uid://uv8k7f5uo4kn" path="res://Audio/SFX/Menu/BreadGame Menu hover v.1.wav" id="2_rmmi6"]
+[ext_resource type="AudioStream" uid="uid://darp0oxy302a5" path="res://Audio/SFX/Menu/BreadGame Menu click A v.1.wav" id="3_pmhsq"]
+
+[node name="Pause Menu" type="Node2D"]
+script = ExtResource("1_ylx3o")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause Panel" type="Panel" parent="CanvasLayer"]
+visible = false
+z_index = 10
+custom_minimum_size = Vector2(450, 650)
+anchors_preset = -1
+anchor_left = 0.304688
+anchor_top = -0.00154321
+anchor_right = 0.695313
+anchor_bottom = 1.00154
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Paused Title" type="RichTextLabel" parent="CanvasLayer/Pause Panel"]
+z_index = 10
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0822222
+anchor_top = 0.0615385
+anchor_right = 0.917778
+anchor_bottom = 0.252308
+theme_override_font_sizes/normal_font_size = 85
+text = "\"Paused\""
+metadata/_edit_use_anchors_ = true
+
+[node name="Serious Text" type="RichTextLabel" parent="CanvasLayer/Pause Panel"]
+z_index = 10
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0955556
+anchor_top = 0.246154
+anchor_right = 0.915556
+anchor_bottom = 0.323077
+theme_override_font_sizes/normal_font_size = 30
+text = "Seriously, it's not paused."
+metadata/_edit_use_anchors_ = true
+
+[node name="Resume" type="Button" parent="CanvasLayer/Pause Panel"]
+z_index = 10
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.244444
+anchor_top = 0.407692
+anchor_right = 0.728889
+anchor_bottom = 0.555385
+offset_right = 1.52588e-05
+theme_override_font_sizes/font_size = 50
+text = "RESUME"
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit" type="Button" parent="CanvasLayer/Pause Panel"]
+z_index = 10
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.244444
+anchor_top = 0.616923
+anchor_right = 0.728889
+anchor_bottom = 0.764615
+offset_right = 1.52588e-05
+theme_override_font_sizes/font_size = 50
+text = "QUIT"
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonHover" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_rmmi6")
+
+[node name="ButtonClick" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_pmhsq")
+
+[connection signal="mouse_entered" from="CanvasLayer/Pause Panel/Resume" to="." method="_on_resume_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/Pause Panel/Resume" to="." method="_on_resume_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Pause Panel/Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/Pause Panel/Quit" to="." method="_on_quit_pressed"]

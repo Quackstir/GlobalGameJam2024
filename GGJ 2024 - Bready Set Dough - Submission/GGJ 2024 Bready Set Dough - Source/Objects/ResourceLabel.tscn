@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dg3uwahkagg3o"]
+
+[ext_resource type="Script" path="res://Objects/ResourceGeneratedLabel.gd" id="1_srxnn"]
+
+[node name="Label" type="Label"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Resources"
+script = ExtResource("1_srxnn")

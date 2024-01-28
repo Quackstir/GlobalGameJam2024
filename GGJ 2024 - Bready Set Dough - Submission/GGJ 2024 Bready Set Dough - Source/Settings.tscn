@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://cdq6syqpb5t11"]
+
+[ext_resource type="Script" path="res://Settings.gd" id="1_1tguk"]
+[ext_resource type="AudioStream" uid="uid://uv8k7f5uo4kn" path="res://Audio/SFX/Menu/BreadGame Menu hover v.1.wav" id="2_3frsu"]
+[ext_resource type="AudioStream" uid="uid://darp0oxy302a5" path="res://Audio/SFX/Menu/BreadGame Menu click A v.1.wav" id="3_eu66b"]
+[ext_resource type="AudioStream" uid="uid://plbw2e6ykpvl" path="res://Audio/Music/BreadGame MenuMusic MASTER v.1.mp3" id="4_gln7i"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_ujyte"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c0tki"]
+texture = SubResource("ImageTexture_ujyte")
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="GDScript" id="GDScript_dypuu"]
+script/source = "extends Button
+
+
+"
+
+[node name="Settings" type="Node2D"]
+script = ExtResource("1_1tguk")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Settings Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_c0tki")
+
+[node name="Settings Title" type="RichTextLabel" parent="CanvasLayer/Settings Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.326389
+anchor_top = 0.0679012
+anchor_right = 0.671007
+anchor_bottom = 0.283951
+offset_bottom = -1.52588e-05
+theme_override_font_sizes/normal_font_size = 100
+text = "Settings"
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="Button" parent="CanvasLayer/Settings Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0390625
+anchor_top = 0.768519
+anchor_right = 0.181424
+anchor_bottom = 0.919753
+offset_bottom = -3.05176e-05
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 65
+text = "Back"
+script = SubResource("GDScript_dypuu")
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonHover" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_3frsu")
+
+[node name="ButtonClick" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_eu66b")
+
+[node name="Menu Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_gln7i")
+autoplay = true
+
+[connection signal="mouse_entered" from="CanvasLayer/Settings Panel/Back" to="." method="_on_back_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/Settings Panel/Back" to="." method="_on_back_pressed"]

@@ -1,0 +1,329 @@
+[gd_scene load_steps=19 format=3 uid="uid://df38chwp1fbss"]
+
+[ext_resource type="PackedScene" uid="uid://dg3uwahkagg3o" path="res://Objects/ResourceLabel.tscn" id="1_jp3d8"]
+[ext_resource type="Script" path="res://GameManager.gd" id="1_m5lb2"]
+[ext_resource type="Texture2D" uid="uid://udo31xfugt4p" path="res://Art/Background.png" id="2_3nj2y"]
+[ext_resource type="Texture2D" uid="uid://cqof0mphdgmyk" path="res://Art/bread0003.png" id="2_mpt17"]
+[ext_resource type="PackedScene" uid="uid://bp5l5jraq6t1e" path="res://pause_menu.tscn" id="2_qpiea"]
+[ext_resource type="PackedScene" uid="uid://bvphef6wp11th" path="res://Objects/resource_generator.tscn" id="2_un4l8"]
+[ext_resource type="AudioStream" uid="uid://deoeafx2nqa4f" path="res://Audio/SFX/Generator/BreadGame Generator Left v.2.wav" id="4_7of1r"]
+[ext_resource type="AudioStream" uid="uid://dkoiymhgudwh0" path="res://Audio/SFX/Generator/BreadGame Generator Middle v.2.wav" id="5_u54jv"]
+[ext_resource type="AudioStream" uid="uid://b6tbphl60bgjv" path="res://Audio/SFX/Generator/BreadGame Generator Right v.2.wav" id="6_hi454"]
+[ext_resource type="AudioStream" uid="uid://darp0oxy302a5" path="res://Audio/SFX/Menu/BreadGame Menu click A v.1.wav" id="8_lkh0k"]
+[ext_resource type="AudioStream" uid="uid://uv8k7f5uo4kn" path="res://Audio/SFX/Menu/BreadGame Menu hover v.1.wav" id="9_2kuof"]
+[ext_resource type="AudioStream" uid="uid://b7tywp42uex7u" path="res://Audio/Music/BreadGame MAIN music MASTER v.1.mp3" id="10_mqskw"]
+[ext_resource type="Texture2D" uid="uid://bidss1xvuc3qo" path="res://Art/bread.png" id="13_bgawu"]
+[ext_resource type="Texture2D" uid="uid://cu2lminche8mt" path="res://Art/bread0001.png" id="14_ba1a2"]
+[ext_resource type="Texture2D" uid="uid://dsh6sggnpf3rr" path="res://Art/bread0002.png" id="15_jlna3"]
+
+[sub_resource type="Curve" id="Curve_dh704"]
+_data = [Vector2(0.331461, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.197802), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Animation" id="Animation_blfpj"]
+resource_name = "FadeGameOver"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/AnimationPlayer/TextureRect:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/AnimationPlayer/TextureRect:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/AnimationPlayer/TextureRect:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/AnimationPlayer/TextureRect:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e8rv5"]
+_data = {
+"FadeGameOver": SubResource("Animation_blfpj")
+}
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_m5lb2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CanvasLayer"]
+position = Vector2(1789, -31)
+emitting = false
+amount = 100
+lifetime = 2.0
+texture = ExtResource("2_mpt17")
+emission_shape = 3
+emission_rect_extents = Vector2(1920, 1)
+angular_velocity_min = -100.0
+angular_velocity_max = 100.0
+scale_amount_min = 0.07
+scale_amount_max = 0.1
+scale_amount_curve = SubResource("Curve_dh704")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_e8rv5")
+}
+movie_quit_on_finish = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/AnimationPlayer"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = 5
+z_as_relative = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -384.0
+offset_top = -216.0
+offset_right = 384.0
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3nj2y")
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bread Flower Gen" parent="CanvasLayer/Control" node_paths=PackedStringArray("gameManager") instance=ExtResource("2_un4l8")]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 209.0
+offset_right = 452.83
+offset_bottom = 271.0
+gameManager = NodePath("../../..")
+TimeToGenerate = 5.0
+SFX = ExtResource("4_7of1r")
+Appear_BreadFlour = 3
+Cost_BreadFlower = 5
+CostIncrease_BreadFlower = 10
+InitialGenerates_BreadFlower = 5
+Text_BeforePurchase = "Cost 5 Bread Flower"
+Text_Generates = "Bread Flower Generators"
+
+[node name="Bread Flour Gen" parent="CanvasLayer/Control" node_paths=PackedStringArray("gameManager") instance=ExtResource("2_un4l8")]
+layout_mode = 0
+offset_left = 535.0
+offset_top = 209.0
+offset_right = 691.83
+offset_bottom = 271.0
+gameManager = NodePath("../../..")
+TimeToGenerate = 7.0
+SFX = ExtResource("5_u54jv")
+Appear_BreadFlour = 5
+Cost_BreadFlour = 5
+CostIncrease_BreadFlour = 5
+InitialGenerates_BreadFlour = 5
+Text_BeforePurchase = "Cost 5 Bread Flour"
+Text_Generates = "Bread Flour Generators"
+
+[node name="Flower Bread Gen" parent="CanvasLayer/Control" node_paths=PackedStringArray("gameManager") instance=ExtResource("2_un4l8")]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 210.0
+offset_right = 956.83
+offset_bottom = 272.0
+gameManager = NodePath("../../..")
+TimeToGenerate = 10.0
+SFX = ExtResource("6_hi454")
+Appear_FlowerBread = 2
+Cost_FlowerBread = 3
+CostIncrease_FlowerBread = 2
+InitialGenerates_FlowerBread = 5
+Text_BeforePurchase = "Cost 3 Flower Bread"
+Text_Generates = "Flower Bread Generators"
+
+[node name="Bread Flower Container" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 289.0
+offset_top = 53.0
+offset_right = 438.91
+offset_bottom = 113.535
+theme_override_constants/separation = 0
+
+[node name="Bread Flower Timer" type="Timer" parent="CanvasLayer/Control/Bread Flower Container"]
+process_callback = 0
+wait_time = 2.0
+one_shot = true
+
+[node name="Bread Flower Button" type="Button" parent="CanvasLayer/Control/Bread Flower Container"]
+layout_mode = 2
+text = "Bread Flower"
+
+[node name="Bread Flower Progress" type="ProgressBar" parent="CanvasLayer/Control/Bread Flower Container"]
+layout_mode = 2
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.0
+show_percentage = false
+
+[node name="Bread Flour Container" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 55.0
+offset_right = 687.83
+offset_bottom = 117.0
+theme_override_constants/separation = 0
+
+[node name="Bread Flour Timer" type="Timer" parent="CanvasLayer/Control/Bread Flour Container"]
+process_callback = 0
+wait_time = 7.0
+one_shot = true
+
+[node name="Bread Flour Button" type="Button" parent="CanvasLayer/Control/Bread Flour Container"]
+layout_mode = 2
+text = "Bread Flour"
+
+[node name="Bread Flour Progress" type="ProgressBar" parent="CanvasLayer/Control/Bread Flour Container"]
+layout_mode = 2
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.0
+show_percentage = false
+
+[node name="Flower Bread Container" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 797.0
+offset_top = 58.0
+offset_right = 953.83
+offset_bottom = 120.0
+theme_override_constants/separation = 0
+
+[node name="Flower Bread Timer" type="Timer" parent="CanvasLayer/Control/Flower Bread Container"]
+process_callback = 0
+wait_time = 10.0
+one_shot = true
+
+[node name="Flower Bread Button" type="Button" parent="CanvasLayer/Control/Flower Bread Container"]
+layout_mode = 2
+text = "Flower Bread"
+
+[node name="Flower Bread Progress" type="ProgressBar" parent="CanvasLayer/Control/Flower Bread Container"]
+layout_mode = 2
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.0
+show_percentage = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = 20.0
+offset_right = 119.0
+offset_bottom = 20.0
+grow_vertical = 2
+scale = Vector2(0.749638, 0.880945)
+
+[node name="Label" parent="CanvasLayer/Control/VBoxContainer" instance=ExtResource("1_jp3d8")]
+layout_mode = 2
+willMove = false
+
+[node name="Bread Flower Text" parent="CanvasLayer/Control/VBoxContainer" instance=ExtResource("1_jp3d8")]
+layout_mode = 2
+text = "Bread Flower: "
+willMove = false
+
+[node name="Bread Flour Text" parent="CanvasLayer/Control/VBoxContainer" instance=ExtResource("1_jp3d8")]
+layout_mode = 2
+text = "Bread Flour:"
+willMove = false
+
+[node name="Flower Bread Text" parent="CanvasLayer/Control/VBoxContainer" instance=ExtResource("1_jp3d8")]
+layout_mode = 2
+text = "Flower Bread:"
+willMove = false
+
+[node name="Pause Menu" parent="." instance=ExtResource("2_qpiea")]
+z_index = 10
+
+[node name="ButtonClick" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_lkh0k")
+
+[node name="ButtonHover" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_2kuof")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_mqskw")
+autoplay = true
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.137255)
+z_index = -5
+position = Vector2(963.553, 608.188)
+scale = Vector2(1.00379, 1.00379)
+texture = ExtResource("13_bgawu")
+
+[node name="Bread0001" type="Sprite2D" parent="."]
+position = Vector2(112.5, 534.5)
+scale = Vector2(0.221296, 0.221296)
+texture = ExtResource("14_ba1a2")
+
+[node name="Bread0001" type="Sprite2D" parent="Bread0001"]
+position = Vector2(643.933, 2.25942)
+scale = Vector2(0.930732, 0.930732)
+texture = ExtResource("14_ba1a2")
+
+[node name="Bread0002" type="Sprite2D" parent="Bread0001"]
+position = Vector2(1263.01, 42.9289)
+scale = Vector2(0.930732, 0.930732)
+texture = ExtResource("14_ba1a2")
+
+[node name="Bread0002" type="Sprite2D" parent="."]
+position = Vector2(1030.13, 567.875)
+scale = Vector2(0.149768, 0.149768)
+texture = ExtResource("15_jlna3")
+
+[node name="Bread0003" type="Sprite2D" parent="Bread0002"]
+position = Vector2(-955.642, -19.1968)
+texture = ExtResource("15_jlna3")
+
+[node name="Bread0004" type="Sprite2D" parent="Bread0002"]
+position = Vector2(-1903.77, -25.8738)
+texture = ExtResource("15_jlna3")
+
+[connection signal="timeout" from="CanvasLayer/Control/Bread Flower Container/Bread Flower Timer" to="." method="_on_bread_flower_timer_timeout"]
+[connection signal="button_down" from="CanvasLayer/Control/Bread Flower Container/Bread Flower Button" to="." method="_on_bread_flower_button_button_down"]
+[connection signal="mouse_entered" from="CanvasLayer/Control/Bread Flower Container/Bread Flower Button" to="." method="_on_bread_flower_button_mouse_entered"]
+[connection signal="timeout" from="CanvasLayer/Control/Bread Flour Container/Bread Flour Timer" to="." method="_on_bread_flour_timer_timeout"]
+[connection signal="button_down" from="CanvasLayer/Control/Bread Flour Container/Bread Flour Button" to="." method="_on_bread_flour_button_button_down"]
+[connection signal="mouse_entered" from="CanvasLayer/Control/Bread Flour Container/Bread Flour Button" to="." method="_on_bread_flour_button_mouse_entered"]
+[connection signal="timeout" from="CanvasLayer/Control/Flower Bread Container/Flower Bread Timer" to="." method="_on_flower_bread_timer_timeout"]
+[connection signal="button_down" from="CanvasLayer/Control/Flower Bread Container/Flower Bread Button" to="." method="_on_flower_bread_button_button_down"]
+[connection signal="mouse_entered" from="CanvasLayer/Control/Flower Bread Container/Flower Bread Button" to="." method="_on_flower_bread_button_mouse_entered"]
