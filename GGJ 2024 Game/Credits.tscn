@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cb56542u17jxv"]
+[gd_scene load_steps=7 format=3 uid="uid://cb56542u17jxv"]
 
 [ext_resource type="Script" path="res://Credits.gd" id="1_8uk15"]
+[ext_resource type="AudioStream" uid="uid://uv8k7f5uo4kn" path="res://Audio/SFX/Menu/BreadGame Menu hover v.1.wav" id="2_iiuci"]
+[ext_resource type="AudioStream" uid="uid://darp0oxy302a5" path="res://Audio/SFX/Menu/BreadGame Menu click A v.1.wav" id="3_ubsf8"]
+[ext_resource type="AudioStream" uid="uid://plbw2e6ykpvl" path="res://Audio/Music/BreadGame MenuMusic MASTER v.1.mp3" id="4_8kx6m"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_ujyte"]
 
@@ -37,18 +40,20 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.210069
-anchor_top = 0.384259
+anchor_top = 0.341049
 anchor_right = 0.788194
-anchor_bottom = 0.844136
+anchor_bottom = 0.800926
 offset_bottom = -1.52588e-05
 theme_override_font_sizes/normal_font_size = 25
 text = "TEAM MEMBERS
-Jonathan Hacker - Team Coordinator, Writer
-Mark Esparagoza - Gameplay Designer, Programmer
-Jaden Corrado - Designer, Programmer
-Poppy Payne - Artist
-I Have No Mouth - Composer, Sound Designer
-(If Available) Joseph Ellis - Writer"
+
+Jonathan Hacker	Team Coordinator
+Mark Esparagoza	Gameplay Designer, Programmer
+Jaden Corrado		Designer, Programmer
+Poppy Payne		    Artist
+I Have No Mouth	Composer, Sound Designer
+Joseph Ellis		        Writer
+"
 metadata/_edit_use_anchors_ = true
 
 [node name="Back" type="Button" parent="CanvasLayer/Credits Panel"]
@@ -64,4 +69,15 @@ theme_override_font_sizes/font_size = 65
 text = "Back"
 metadata/_edit_use_anchors_ = true
 
+[node name="ButtonHover" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_iiuci")
+
+[node name="ButtonClick" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ubsf8")
+
+[node name="Menu Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_8kx6m")
+autoplay = true
+
+[connection signal="mouse_entered" from="CanvasLayer/Credits Panel/Back" to="." method="_on_back_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/Credits Panel/Back" to="." method="_on_back_pressed"]

@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0625qodrx6b2"]
+[gd_scene load_steps=8 format=3 uid="uid://d0625qodrx6b2"]
 
 [ext_resource type="Script" path="res://Quit Confirm.gd" id="1_v5mq5"]
+[ext_resource type="AudioStream" uid="uid://uv8k7f5uo4kn" path="res://Audio/SFX/Menu/BreadGame Menu hover v.1.wav" id="2_cs3r2"]
+[ext_resource type="AudioStream" uid="uid://darp0oxy302a5" path="res://Audio/SFX/Menu/BreadGame Menu click A v.1.wav" id="3_kjemk"]
+[ext_resource type="AudioStream" uid="uid://plbw2e6ykpvl" path="res://Audio/Music/BreadGame MenuMusic MASTER v.1.mp3" id="4_3wemb"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_7ksx5"]
 
@@ -68,5 +71,17 @@ text = "YES"
 script = SubResource("GDScript_dypuu")
 metadata/_edit_use_anchors_ = true
 
+[node name="ButtonHover" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_cs3r2")
+
+[node name="ButtonClick" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_kjemk")
+
+[node name="Menu Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3wemb")
+autoplay = true
+
+[connection signal="mouse_entered" from="CanvasLayer/Quit Confirm/No Exit" to="." method="_on_no_exit_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/Quit Confirm/No Exit" to="." method="_on_no_exit_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Quit Confirm/Yes Exit" to="." method="_on_yes_exit_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/Quit Confirm/Yes Exit" to="." method="_on_yes_exit_pressed"]
