@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://ds1u6gy6s14vi"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_m027k"]
-[ext_resource type="Texture2D" uid="uid://bc04646tc2haf" path="res://flower bread.png" id="2_1y01q"]
 [ext_resource type="AudioStream" uid="uid://uv8k7f5uo4kn" path="res://Audio/SFX/Menu/BreadGame Menu hover v.1.wav" id="3_ofnbh"]
 [ext_resource type="AudioStream" uid="uid://darp0oxy302a5" path="res://Audio/SFX/Menu/BreadGame Menu click A v.1.wav" id="4_f1hdp"]
+[ext_resource type="Texture2D" uid="uid://bidss1xvuc3qo" path="res://Art/bread.png" id="5_l6hgp"]
 [ext_resource type="AudioStream" uid="uid://plbw2e6ykpvl" path="res://Audio/Music/BreadGame MenuMusic MASTER v.1.mp3" id="5_nsani"]
 
 [sub_resource type="GDScript" id="GDScript_dypuu"]
@@ -72,11 +72,6 @@ text = "QUIT"
 script = SubResource("GDScript_dypuu")
 metadata/_edit_use_anchors_ = true
 
-[node name="FlowerBread" type="Sprite2D" parent="CanvasLayer/Main Menu Panel"]
-position = Vector2(677, 400)
-scale = Vector2(0.806453, 0.804924)
-texture = ExtResource("2_1y01q")
-
 [node name="Title text" type="RichTextLabel" parent="CanvasLayer/Main Menu Panel"]
 layout_mode = 1
 anchors_preset = -1
@@ -98,6 +93,13 @@ stream = ExtResource("4_f1hdp")
 [node name="Menu Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_nsani")
 autoplay = true
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.25098)
+z_index = -5
+position = Vector2(1349, 864)
+scale = Vector2(1.46734, 1.46734)
+texture = ExtResource("5_l6hgp")
 
 [connection signal="mouse_entered" from="CanvasLayer/Main Menu Panel/Play Button" to="." method="_on_play_button_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/Main Menu Panel/Play Button" to="." method="_on_play_button_pressed"]

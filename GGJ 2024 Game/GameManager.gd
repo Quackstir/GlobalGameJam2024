@@ -4,6 +4,10 @@ extends Node2D
 var BreadFlower: int = 0:
 	set(new_value):
 		bread_flower_text.text = "Bread Flower: " + str(new_value)
+		
+		if (new_value > 0):
+			bread_0001.visible = true
+		
 		BreadFlower = new_value
 	get:
 		return BreadFlower
@@ -12,7 +16,8 @@ var BreadFlour: int = 0:
 	set(new_value):
 		bread_flour_text.text = "Bread Flour: " + str(new_value)
 		
-		
+		if new_value > 0:
+			bread_0002.visible = true
 		#if new_value > BreadFlour: 
 			#var valueChange = new_value - BreadFlour
 			#BreadFlower -= FlowerToBreadFlour * valueChange
@@ -40,6 +45,9 @@ var FlowerBread: int = 0:
 @onready var cpu_particles_2d = $CanvasLayer/CPUParticles2D
 @onready var button_click = $ButtonClick
 @onready var button_hover = $ButtonHover
+
+@onready var bread_0001 = $Bread0001
+@onready var bread_0002 = $Bread0002
 
 const WIN_SCENE = preload("res://win_scene.tscn")
 
@@ -86,6 +94,9 @@ func _ready():
 	
 	bread_flour_container.visible = false
 	flower_bread_container.visible = false
+	
+	bread_0001.visible = false
+	bread_0002.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -96,12 +107,12 @@ func _process(delta):
 	if BreadFlower >= FlowerToBreadFlour: bread_flour_container.visible = true
 	if BreadFlour >= FlourToFlowerBread: flower_bread_container.visible = true
 	
-	if FlowerBread > 1000:
+	if FlowerBread > 50:
 		get_tree().change_scene_to_file("res://win_scene.tscn")
 	
 	if Input.is_key_pressed(KEY_1): BreadFlower += 10
 	if Input.is_key_pressed(KEY_2): BreadFlour += 10
-	if Input.is_key_pressed(KEY_3): FlowerBread += 10
+	if Input.is_key_pressed(KEY_3): FlowerBread += 1
 
 func _on_bread_flower_button_button_down():
 	bread_flower_button.disabled = true
