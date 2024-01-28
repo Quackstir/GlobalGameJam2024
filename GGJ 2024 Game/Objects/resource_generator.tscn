@@ -12,6 +12,21 @@ offset_bottom = 62.0
 theme_override_constants/separation = 0
 script = ExtResource("1_r1blx")
 resourceGeneratedLabel = ExtResource("2_a6ryy")
+TimeToGenerate = null
+Appear_BreadFlower = null
+Appear_BreadFlour = null
+Appear_FlowerBread = null
+Cost_BreadFlower = null
+CostIncrease_BreadFlower = null
+Cost_BreadFlour = null
+CostIncrease_BreadFlour = null
+Cost_FlowerBread = null
+CostIncrease_FlowerBread = null
+InitialGenerates_BreadFlower = null
+InitialGenerates_BreadFlour = null
+InitialGenerates_FlowerBread = null
+Text_BeforePurchase = null
+Text_Generates = null
 
 [node name="Time to Add" type="Timer" parent="."]
 process_callback = 0
@@ -33,5 +48,12 @@ show_percentage = false
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamWAV_yu7n4")
 
+[node name="ButtonClick" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamWAV_yu7n4")
+
+[node name="ButtonHover" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamWAV_yu7n4")
+
 [connection signal="timeout" from="Time to Add" to="." method="_on_time_to_add_timeout"]
 [connection signal="button_down" from="Generator Button" to="." method="_on_generator_button_button_down"]
+[connection signal="mouse_entered" from="Generator Button" to="." method="_on_generator_button_mouse_entered"]

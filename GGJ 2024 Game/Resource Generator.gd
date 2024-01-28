@@ -7,6 +7,7 @@ var isBought:bool = false
 @export var TimeToGenerate: float
 @export var SFX: AudioStreamWAV
 @onready var audio_stream_player_2d = $AudioStreamPlayer2D
+@onready var button_click = $ButtonClick
 
 @export_category("Appear at Amount")
 @export var Appear_BreadFlower: int
@@ -112,3 +113,6 @@ func _update_strings():
 	var format_string = "Cost %s Bread Flower \nCost %s Bread Flour \nCost %s Flower Bread"
 	var actual_string = format_string % [str(Cost_BreadFlower), str(Cost_BreadFlour), str(Cost_FlowerBread)];
 	generator_button.tooltip_text = actual_string
+
+
+func _on_generator_button_mouse_entered():
