@@ -8,6 +8,7 @@ var isBought:bool = false
 @export var SFX: AudioStreamWAV
 @onready var audio_stream_player_2d = $AudioStreamPlayer2D
 @onready var button_click = $ButtonClick
+@onready var button_hover = $ButtonHover
 
 @export_category("Appear at Amount")
 @export var Appear_BreadFlower: int
@@ -56,6 +57,8 @@ func _on_generator_button_button_down():
 	if (gameManager.BreadFlower < Cost_BreadFlower): return
 	if (gameManager.BreadFlour < Cost_BreadFlour): return
 	if (gameManager.FlowerBread < Cost_FlowerBread): return
+	
+	button_click.play()
 	
 	_update_costs()
 	
@@ -116,3 +119,4 @@ func _update_strings():
 
 
 func _on_generator_button_mouse_entered():
+	button_hover.play()
