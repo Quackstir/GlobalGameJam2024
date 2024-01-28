@@ -147,11 +147,11 @@ offset_bottom = 271.0
 gameManager = NodePath("../../..")
 TimeToGenerate = 7.0
 SFX = ExtResource("5_u54jv")
-Appear_BreadFlour = 7
+Appear_BreadFlour = 5
 Cost_BreadFlour = 5
 CostIncrease_BreadFlour = 5
 InitialGenerates_BreadFlour = 5
-Text_BeforePurchase = "Cost 5 Flower Bread"
+Text_BeforePurchase = "Cost 5 Bread Flour"
 Text_Generates = "Bread Flour Generators"
 
 [node name="Flower Bread Gen" parent="CanvasLayer/Control" node_paths=PackedStringArray("gameManager") instance=ExtResource("2_un4l8")]
@@ -163,11 +163,11 @@ offset_bottom = 272.0
 gameManager = NodePath("../../..")
 TimeToGenerate = 10.0
 SFX = ExtResource("6_hi454")
-Appear_FlowerBread = 13
+Appear_FlowerBread = 2
 Cost_FlowerBread = 3
 CostIncrease_FlowerBread = 2
 InitialGenerates_FlowerBread = 5
-Text_BeforePurchase = "Cost 5 Bread Flour"
+Text_BeforePurchase = "Cost 3 Flower Bread"
 Text_Generates = "Flower Bread Generators"
 
 [node name="Bread Flower Container" type="VBoxContainer" parent="CanvasLayer/Control"]
@@ -312,12 +312,10 @@ texture = ExtResource("15_jlna3")
 
 [node name="Bread0003" type="Sprite2D" parent="Bread0002"]
 position = Vector2(-955.642, -19.1968)
-scale = Vector2(1, 1)
 texture = ExtResource("15_jlna3")
 
 [node name="Bread0004" type="Sprite2D" parent="Bread0002"]
 position = Vector2(-1903.77, -25.8738)
-scale = Vector2(1, 1)
 texture = ExtResource("15_jlna3")
 
 [connection signal="timeout" from="CanvasLayer/Control/Bread Flower Container/Bread Flower Timer" to="." method="_on_bread_flower_timer_timeout"]

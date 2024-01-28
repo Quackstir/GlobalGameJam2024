@@ -107,7 +107,7 @@ func _process(delta):
 	if BreadFlower >= FlowerToBreadFlour: bread_flour_container.visible = true
 	if BreadFlour >= FlourToFlowerBread: flower_bread_container.visible = true
 	
-	if FlowerBread > 50:
+	if FlowerBread > 25:
 		get_tree().change_scene_to_file("res://win_scene.tscn")
 	
 	if Input.is_key_pressed(KEY_1): BreadFlower += 10
