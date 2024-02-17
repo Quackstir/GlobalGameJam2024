@@ -1,5 +1,4 @@
-class_name GameManager
-extends Node2D
+class_name GameManager extends Node2D
 
 var BreadFlower: int = 0:
 	set(new_value):
@@ -49,7 +48,7 @@ var FlowerBread: int = 0:
 @onready var bread_0001 = $Bread0001
 @onready var bread_0002 = $Bread0002
 
-const WIN_SCENE = preload("res://win_scene.tscn")
+#const WIN_SCENE = preload("res://win_scene.tscn")
 
 #Text
 #region Text
