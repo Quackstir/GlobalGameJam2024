@@ -92,13 +92,12 @@ stream = ExtResource("4_f1hdp")
 
 [node name="Menu Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_nsani")
-autoplay = true
 
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.25098)
 z_index = -5
-position = Vector2(1349, 864)
-scale = Vector2(1.46734, 1.46734)
+position = Vector2(573, 341)
+scale = Vector2(0.637105, 0.637105)
 texture = ExtResource("5_l6hgp")
 
 [connection signal="mouse_entered" from="CanvasLayer/Main Menu Panel/Play Button" to="." method="_on_play_button_mouse_entered"]
