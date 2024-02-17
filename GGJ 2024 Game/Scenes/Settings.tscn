@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cdq6syqpb5t11"]
 
-[ext_resource type="Script" path="res://Settings.gd" id="1_1tguk"]
+[ext_resource type="Script" path="res://Scenes/Settings.gd" id="1_1tguk"]
 [ext_resource type="AudioStream" uid="uid://uv8k7f5uo4kn" path="res://Audio/SFX/Menu/BreadGame Menu hover v.1.wav" id="2_3frsu"]
 [ext_resource type="AudioStream" uid="uid://darp0oxy302a5" path="res://Audio/SFX/Menu/BreadGame Menu click A v.1.wav" id="3_eu66b"]
 [ext_resource type="AudioStream" uid="uid://plbw2e6ykpvl" path="res://Audio/Music/BreadGame MenuMusic MASTER v.1.mp3" id="4_gln7i"]

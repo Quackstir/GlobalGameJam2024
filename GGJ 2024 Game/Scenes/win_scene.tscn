@@ -1,17 +1,17 @@
 [gd_scene load_steps=7 format=3 uid="uid://ld7xrswr1y0f"]
 
-[ext_resource type="AudioStream" uid="uid://uv8k7f5uo4kn" path="res://Audio/SFX/Menu/BreadGame Menu hover v.1.wav" id="1_8ag4j"]
-[ext_resource type="Script" path="res://win_scene.gd" id="1_q6827"]
-[ext_resource type="AudioStream" uid="uid://darp0oxy302a5" path="res://Audio/SFX/Menu/BreadGame Menu click A v.1.wav" id="2_w87om"]
-[ext_resource type="AudioStream" uid="uid://d2hftjarbs3h5" path="res://Audio/Music/BreadGame EndingJingle MASTER v.1.mp3" id="3_fy0pq"]
-[ext_resource type="Texture2D" uid="uid://cqof0mphdgmyk" path="res://Art/bread0003.png" id="5_ltgil"]
+[ext_resource type="Script" path="res://Scenes/win_scene.gd" id="1_5nvoe"]
+[ext_resource type="AudioStream" uid="uid://uv8k7f5uo4kn" path="res://Audio/SFX/Menu/BreadGame Menu hover v.1.wav" id="2_n6wrp"]
+[ext_resource type="AudioStream" uid="uid://darp0oxy302a5" path="res://Audio/SFX/Menu/BreadGame Menu click A v.1.wav" id="3_v2inm"]
+[ext_resource type="AudioStream" uid="uid://d2hftjarbs3h5" path="res://Audio/Music/BreadGame EndingJingle MASTER v.1.mp3" id="4_8tk06"]
+[ext_resource type="Texture2D" uid="uid://cqof0mphdgmyk" path="res://Art/bread0003.png" id="5_23664"]
 
 [sub_resource type="Curve" id="Curve_nt67t"]
 _data = [Vector2(0.331461, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.197802), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [node name="Win Scene" type="Node2D"]
-script = ExtResource("1_q6827")
+script = ExtResource("1_5nvoe")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -50,20 +50,20 @@ text = "Let's roll!"
 metadata/_edit_use_anchors_ = true
 
 [node name="ButtonHover" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("1_8ag4j")
+stream = ExtResource("2_n6wrp")
 
 [node name="ButtonClick" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_w87om")
+stream = ExtResource("3_v2inm")
 
 [node name="Win Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_fy0pq")
+stream = ExtResource("4_8tk06")
 autoplay = true
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2(1789, -31)
 amount = 100
 lifetime = 2.0
-texture = ExtResource("5_ltgil")
+texture = ExtResource("5_23664")
 emission_shape = 3
 emission_rect_extents = Vector2(1920, 1)
 angular_velocity_min = -100.0

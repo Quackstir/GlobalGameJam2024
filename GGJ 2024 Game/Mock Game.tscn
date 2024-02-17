@@ -1,7 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1jgly5hqe0v1"]
+[gd_scene load_steps=5 format=3 uid="uid://dgfjq5xn8oxjd"]
 
-[ext_resource type="Script" path="res://Mock Game.gd" id="1_b34ks"]
 [ext_resource type="Texture2D" uid="uid://53ec7enxi6ym" path="res://icon.svg" id="1_l4awq"]
+
+[sub_resource type="GDScript" id="GDScript_rqgkp"]
+script/source = "extends Node2D
+
+func _on_back_pressed():
+	get_tree().change_scene_to_file(\"res://main_menu.tscn\")
+"
 
 [sub_resource type="ImageTexture" id="ImageTexture_ujyte"]
 
@@ -10,7 +16,7 @@ texture = SubResource("ImageTexture_ujyte")
 modulate_color = Color(0, 0, 0, 1)
 
 [node name="Mock Game" type="Node2D"]
-script = ExtResource("1_b34ks")
+script = SubResource("GDScript_rqgkp")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
