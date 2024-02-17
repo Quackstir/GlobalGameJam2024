@@ -65,7 +65,6 @@ stream = ExtResource("3_eu66b")
 
 [node name="Menu Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_gln7i")
-autoplay = true
 
 [connection signal="mouse_entered" from="CanvasLayer/Settings Panel/Back" to="." method="_on_back_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/Settings Panel/Back" to="." method="_on_back_pressed"]

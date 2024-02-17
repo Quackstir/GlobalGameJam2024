@@ -79,7 +79,6 @@ stream = ExtResource("3_kjemk")
 
 [node name="Menu Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_3wemb")
-autoplay = true
 
 [connection signal="mouse_entered" from="CanvasLayer/Quit Confirm/No Exit" to="." method="_on_no_exit_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/Quit Confirm/No Exit" to="." method="_on_no_exit_pressed"]

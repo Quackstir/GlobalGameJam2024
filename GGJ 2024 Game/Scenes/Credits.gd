@@ -3,10 +3,12 @@ extends Node2D
 @onready var button_hover = $ButtonHover
 @onready var button_click = $ButtonClick
 
+@export var Credits: PackedScene
+
 func _on_back_pressed():
 	button_click.play()
 	await get_tree().create_timer(.1).timeout
-	get_tree().change_scene_to_file("res://main_menu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 
 
 func _on_back_mouse_entered():
