@@ -34,12 +34,10 @@ func _on_resume_pressed():
 func _on_quit_pressed():
 	button_click.play()
 	await get_tree().create_timer(.1).timeout
-	get_tree().change_scene_to_file("res://main_menu.tscn")
-
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 
 func _on_resume_mouse_entered():
 	button_hover.play()
-
 
 func _on_quit_mouse_entered():
 	button_hover.play()
