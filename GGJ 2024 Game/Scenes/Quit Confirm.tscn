@@ -17,12 +17,7 @@ script/source = "extends Button
 
 "
 
-[node name="QuitConfirm" type="Node2D"]
-script = ExtResource("1_v5mq5")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Quit Confirm" type="Panel" parent="CanvasLayer"]
+[node name="Quit Confirm" type="Panel"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -30,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_i2ymh")
 
-[node name="Quit Confirm Title" type="RichTextLabel" parent="CanvasLayer/Quit Confirm"]
+[node name="Quit Confirm Title" type="RichTextLabel" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0434028
@@ -42,7 +37,7 @@ theme_override_font_sizes/normal_font_size = 70
 text = "Are you sure you want to quit?"
 metadata/_edit_use_anchors_ = true
 
-[node name="No Exit" type="Button" parent="CanvasLayer/Quit Confirm"]
+[node name="No Exit" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.649306
@@ -57,7 +52,7 @@ text = "NO"
 script = SubResource("GDScript_dypuu")
 metadata/_edit_use_anchors_ = true
 
-[node name="Yes Exit" type="Button" parent="CanvasLayer/Quit Confirm"]
+[node name="Yes Exit" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.208333
@@ -71,16 +66,21 @@ text = "YES"
 script = SubResource("GDScript_dypuu")
 metadata/_edit_use_anchors_ = true
 
-[node name="ButtonHover" type="AudioStreamPlayer2D" parent="."]
+[node name="QuitConfirm" type="Node2D" parent="."]
+script = ExtResource("1_v5mq5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="QuitConfirm"]
+
+[node name="ButtonHover" type="AudioStreamPlayer2D" parent="QuitConfirm"]
 stream = ExtResource("2_cs3r2")
 
-[node name="ButtonClick" type="AudioStreamPlayer2D" parent="."]
+[node name="ButtonClick" type="AudioStreamPlayer2D" parent="QuitConfirm"]
 stream = ExtResource("3_kjemk")
 
-[node name="Menu Music" type="AudioStreamPlayer" parent="."]
+[node name="Menu Music" type="AudioStreamPlayer" parent="QuitConfirm"]
 stream = ExtResource("4_3wemb")
 
-[connection signal="mouse_entered" from="CanvasLayer/Quit Confirm/No Exit" to="." method="_on_no_exit_mouse_entered"]
-[connection signal="pressed" from="CanvasLayer/Quit Confirm/No Exit" to="." method="_on_no_exit_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer/Quit Confirm/Yes Exit" to="." method="_on_yes_exit_mouse_entered"]
-[connection signal="pressed" from="CanvasLayer/Quit Confirm/Yes Exit" to="." method="_on_yes_exit_pressed"]
+[connection signal="mouse_entered" from="No Exit" to="QuitConfirm" method="_on_no_exit_mouse_entered"]
+[connection signal="pressed" from="No Exit" to="QuitConfirm" method="_on_no_exit_pressed"]
+[connection signal="mouse_entered" from="Yes Exit" to="QuitConfirm" method="_on_yes_exit_mouse_entered"]
+[connection signal="pressed" from="Yes Exit" to="QuitConfirm" method="_on_yes_exit_pressed"]
