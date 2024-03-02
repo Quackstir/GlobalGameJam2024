@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://df38chwp1fbss"]
+[gd_scene load_steps=20 format=3 uid="uid://df38chwp1fbss"]
 
 [ext_resource type="Script" path="res://Components/GameManager.gd" id="1_i2ara"]
 [ext_resource type="Texture2D" uid="uid://cqof0mphdgmyk" path="res://Art/bread0003.png" id="2_33eh8"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://deoeafx2nqa4f" path="res://Audio/SFX/Generator/BreadGame Generator Left v.2.wav" id="5_sn0w5"]
 [ext_resource type="AudioStream" uid="uid://dkoiymhgudwh0" path="res://Audio/SFX/Generator/BreadGame Generator Middle v.2.wav" id="6_oi16w"]
 [ext_resource type="AudioStream" uid="uid://b6tbphl60bgjv" path="res://Audio/SFX/Generator/BreadGame Generator Right v.2.wav" id="7_eqf6p"]
+[ext_resource type="PackedScene" uid="uid://wl1tn3c65svr" path="res://Objects/Resource/bread_flower_container.tscn" id="8_ixfet"]
 [ext_resource type="PackedScene" uid="uid://dg3uwahkagg3o" path="res://Objects/ResourceLabel.tscn" id="8_mbgg5"]
 [ext_resource type="PackedScene" uid="uid://bp5l5jraq6t1e" path="res://Scenes/pause_menu.tscn" id="9_bxl4i"]
 [ext_resource type="AudioStream" uid="uid://darp0oxy302a5" path="res://Audio/SFX/Menu/BreadGame Menu click A v.1.wav" id="10_rngtj"]
@@ -170,28 +171,8 @@ InitialGenerates_FlowerBread = 5
 Text_BeforePurchase = "Cost 3 Flower Bread"
 Text_Generates = "Flower Bread Generators"
 
-[node name="Bread Flower Container" type="VBoxContainer" parent="CanvasLayer/Control"]
+[node name="Bread Flower Container" parent="CanvasLayer/Control" instance=ExtResource("8_ixfet")]
 layout_mode = 0
-offset_left = 289.0
-offset_top = 53.0
-offset_right = 438.91
-offset_bottom = 113.535
-theme_override_constants/separation = 0
-
-[node name="Bread Flower Timer" type="Timer" parent="CanvasLayer/Control/Bread Flower Container"]
-process_callback = 0
-wait_time = 2.0
-one_shot = true
-
-[node name="Bread Flower Button" type="Button" parent="CanvasLayer/Control/Bread Flower Container"]
-layout_mode = 2
-text = "Bread Flower"
-
-[node name="Bread Flower Progress" type="ProgressBar" parent="CanvasLayer/Control/Bread Flower Container"]
-layout_mode = 2
-size_flags_vertical = 1
-size_flags_stretch_ratio = 0.0
-show_percentage = false
 
 [node name="Bread Flour Container" type="VBoxContainer" parent="CanvasLayer/Control"]
 layout_mode = 0
@@ -318,9 +299,6 @@ texture = ExtResource("15_kxucg")
 position = Vector2(-1903.77, -25.8738)
 texture = ExtResource("15_kxucg")
 
-[connection signal="timeout" from="CanvasLayer/Control/Bread Flower Container/Bread Flower Timer" to="." method="_on_bread_flower_timer_timeout"]
-[connection signal="button_down" from="CanvasLayer/Control/Bread Flower Container/Bread Flower Button" to="." method="_on_bread_flower_button_button_down"]
-[connection signal="mouse_entered" from="CanvasLayer/Control/Bread Flower Container/Bread Flower Button" to="." method="_on_bread_flower_button_mouse_entered"]
 [connection signal="timeout" from="CanvasLayer/Control/Bread Flour Container/Bread Flour Timer" to="." method="_on_bread_flour_timer_timeout"]
 [connection signal="button_down" from="CanvasLayer/Control/Bread Flour Container/Bread Flour Button" to="." method="_on_bread_flour_button_button_down"]
 [connection signal="mouse_entered" from="CanvasLayer/Control/Bread Flour Container/Bread Flour Button" to="." method="_on_bread_flour_button_mouse_entered"]

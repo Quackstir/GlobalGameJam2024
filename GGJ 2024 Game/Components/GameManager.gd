@@ -1,5 +1,7 @@
 class_name GameManager extends Node2D
 
+var BreadFFlower:GameplayResource
+
 var BreadFlower: int = 0:
 	set(new_value):
 		bread_flower_text.text = "Bread Flower: " + str(new_value)
@@ -59,21 +61,21 @@ var FlowerBread: int = 0:
 
 #Progress Bars
 #region Progress Bars
-@onready var bread_flower_progress = $"CanvasLayer/Control/Bread Flower Container/Bread Flower Progress"
+#@onready var bread_flower_progress = $"CanvasLayer/Control/Bread Flower Container/Bread Flower Progress"
 @onready var bread_flour_progress = $"CanvasLayer/Control/Bread Flour Container/Bread Flour Progress"
 @onready var flower_bread_progress = $"CanvasLayer/Control/Flower Bread Container/Flower Bread Progress"
 #endregion
 
 #Timers
 #region Timers
-@onready var bread_flower_timer = $"CanvasLayer/Control/Bread Flower Container/Bread Flower Timer"
+#@onready var bread_flower_timer = $"CanvasLayer/Control/Bread Flower Container/Bread Flower Timer"
 @onready var bread_flour_timer = $"CanvasLayer/Control/Bread Flour Container/Bread Flour Timer"
 @onready var flower_bread_timer = $"CanvasLayer/Control/Flower Bread Container/Flower Bread Timer"
 #endregion
 
 #Buttons
 #region Buttons
-@onready var bread_flower_button = $"CanvasLayer/Control/Bread Flower Container/Bread Flower Button"
+#@onready var bread_flower_button = $"CanvasLayer/Control/Bread Flower Container/Bread Flower Button"
 @onready var bread_flour_button = $"CanvasLayer/Control/Bread Flour Container/Bread Flour Button"
 @onready var flower_bread_button = $"CanvasLayer/Control/Flower Bread Container/Flower Bread Button"
 #endregion
@@ -87,7 +89,7 @@ var FlowerBread: int = 0:
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	bread_flower_progress.max_value = bread_flower_timer.wait_time
+	#bread_flower_progress.max_value = bread_flower_timer.wait_time
 	bread_flour_progress.max_value = bread_flour_timer.wait_time
 	flower_bread_progress.max_value = flower_bread_timer.wait_time
 	
@@ -99,7 +101,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	bread_flower_progress.value = bread_flower_timer.time_left
+	#bread_flower_progress.value = bread_flower_timer.time_left
 	bread_flour_progress.value = bread_flour_timer.time_left
 	flower_bread_progress.value = flower_bread_timer.time_left
 	
@@ -114,8 +116,8 @@ func _process(delta):
 	if Input.is_key_pressed(KEY_3): FlowerBread += 1
 
 func _on_bread_flower_button_button_down():
-	bread_flower_button.disabled = true
-	bread_flower_timer.start()
+#	bread_flower_button.disabled = true
+	#bread_flower_timer.start()
 	BreadFlower += 1
 	button_click.play()
 
@@ -137,8 +139,8 @@ func _on_flower_bread_button_button_down():
 	FlowerBread += 1
 
 
-func _on_bread_flower_timer_timeout():
-	bread_flower_button.disabled = false
+#func _on_bread_flower_timer_timeout():
+	#bread_flower_button.disabled = false
 
 
 func _on_bread_flour_timer_timeout():
