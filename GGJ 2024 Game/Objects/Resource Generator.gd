@@ -39,84 +39,84 @@ var generatorAmount = 0
 @export var Text_BeforePurchase: String
 @export var Text_Generates: String
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	generator_button.text = Text_BeforePurchase
-	time_to_add.wait_time = TimeToGenerate
-	audio_stream_player_2d.stream = SFX
-
-func _process(delta):
-	generator_progress_bar.value = time_to_add.time_left
-	
-	if (gameManager.BreadFlower < Appear_BreadFlower): return
-	if (gameManager.BreadFlour < Appear_BreadFlour): return
-	if (gameManager.FlowerBread < Appear_FlowerBread): return
-	visible = true
-
-func _on_generator_button_button_down():
-	if (gameManager.BreadFlower < Cost_BreadFlower): return
-	if (gameManager.BreadFlour < Cost_BreadFlour): return
-	if (gameManager.FlowerBread < Cost_FlowerBread): return
-	
-	button_click.play()
-	
-	_update_costs()
-	
-	generatorAmount += 1
-	
-	time_to_add.start()
-	
-	_update_generation()
-	_update_strings()
-	generator_progress_bar.max_value = time_to_add.wait_time
-
-func _on_time_to_add_timeout():
-	var breadFlowerDelta = Generates_BreadFlower
-	var breadFlourDelta = Generates_BreadFlour
-	var flowerBreadDelta = Generates_FlowerBread
-	
-	#breadFlowerDelta -= gameManager.FlowerToBreadFlour * generatorAmount * Generates_BreadFlour
-	#breadFlourDelta  -= gameManager.FlourToFlowerBread * generatorAmount * Generates_FlowerBread
-	
-	gameManager.BreadFlower += breadFlowerDelta
-	gameManager.BreadFlour += breadFlourDelta
-	gameManager.FlowerBread += flowerBreadDelta
-	
-	var resourceLabel = resourceGeneratedLabel.instantiate()
-	get_tree().get_root().add_child(resourceLabel)
-	resourceLabel.position = node_2d.global_position
-	
-	var format_string
-	var actual_string
-	
-	#if gameManager.BreadFlower - breadFlowerDelta <= 0 or gameManager.BreadFlour - breadFlourDelta <= 0:
-		#actual_string = "Requires more Resources"
-		 
-	format_string = "+ %s Bread Flower \n+ %s Bread Flour \n+ %s Flower Bread"
-	actual_string = format_string % [str(Generates_BreadFlower), str(Generates_BreadFlour), str(Generates_FlowerBread)]
-	resourceLabel.text = actual_string
-	audio_stream_player_2d.play()
-
-func _update_costs():
-	gameManager.BreadFlower -= Cost_BreadFlower
-	gameManager.BreadFlour -= Cost_BreadFlour
-	gameManager.FlowerBread -= Cost_FlowerBread
-	
-	Cost_BreadFlower += CostIncrease_BreadFlower
-	Cost_BreadFlour += CostIncrease_BreadFlour
-	Cost_FlowerBread += CostIncrease_FlowerBread
-
-func _update_generation():
-	Generates_BreadFlower = InitialGenerates_BreadFlower * generatorAmount
-	Generates_BreadFlour = InitialGenerates_BreadFlour * generatorAmount
-	Generates_FlowerBread = InitialGenerates_FlowerBread * generatorAmount
-	
-func _update_strings():
-	generator_button.text = str(generatorAmount) + " " + Text_Generates
-	var format_string = "Cost %s Bread Flower \nCost %s Bread Flour \nCost %s Flower Bread"
-	var actual_string = format_string % [str(Cost_BreadFlower), str(Cost_BreadFlour), str(Cost_FlowerBread)];
-	generator_button.tooltip_text = actual_string
-
-
-func _on_generator_button_mouse_entered():
-	button_hover.play()
+## Called when the node enters the scene tree for the first time.
+#func _ready():
+	#generator_button.text = Text_BeforePurchase
+	#time_to_add.wait_time = TimeToGenerate
+	#audio_stream_player_2d.stream = SFX
+#
+#func _process(delta):
+	#generator_progress_bar.value = time_to_add.time_left
+	#
+	#if (gameManager.BreadFlower < Appear_BreadFlower): return
+	#if (gameManager.BreadFlour < Appear_BreadFlour): return
+	#if (gameManager.FlowerBread < Appear_FlowerBread): return
+	#visible = true
+#
+#func _on_generator_button_button_down():
+	#if (gameManager.BreadFlower < Cost_BreadFlower): return
+	#if (gameManager.BreadFlour < Cost_BreadFlour): return
+	#if (gameManager.FlowerBread < Cost_FlowerBread): return
+	#
+	#button_click.play()
+	#
+	#_update_costs()
+	#
+	#generatorAmount += 1
+	#
+	#time_to_add.start()
+	#
+	#_update_generation()
+	#_update_strings()
+	#generator_progress_bar.max_value = time_to_add.wait_time
+#
+#func _on_time_to_add_timeout():
+	#var breadFlowerDelta = Generates_BreadFlower
+	#var breadFlourDelta = Generates_BreadFlour
+	#var flowerBreadDelta = Generates_FlowerBread
+	#
+	##breadFlowerDelta -= gameManager.FlowerToBreadFlour * generatorAmount * Generates_BreadFlour
+	##breadFlourDelta  -= gameManager.FlourToFlowerBread * generatorAmount * Generates_FlowerBread
+	#
+	#gameManager.BreadFlower += breadFlowerDelta
+	#gameManager.BreadFlour += breadFlourDelta
+	#gameManager.FlowerBread += flowerBreadDelta
+	#
+	#var resourceLabel = resourceGeneratedLabel.instantiate()
+	#get_tree().get_root().add_child(resourceLabel)
+	#resourceLabel.position = node_2d.global_position
+	#
+	#var format_string
+	#var actual_string
+	#
+	##if gameManager.BreadFlower - breadFlowerDelta <= 0 or gameManager.BreadFlour - breadFlourDelta <= 0:
+		##actual_string = "Requires more Resources"
+		 #
+	#format_string = "+ %s Bread Flower \n+ %s Bread Flour \n+ %s Flower Bread"
+	#actual_string = format_string % [str(Generates_BreadFlower), str(Generates_BreadFlour), str(Generates_FlowerBread)]
+	#resourceLabel.text = actual_string
+	#audio_stream_player_2d.play()
+#
+#func _update_costs():
+	#gameManager.BreadFlower -= Cost_BreadFlower
+	#gameManager.BreadFlour -= Cost_BreadFlour
+	#gameManager.FlowerBread -= Cost_FlowerBread
+	#
+	#Cost_BreadFlower += CostIncrease_BreadFlower
+	#Cost_BreadFlour += CostIncrease_BreadFlour
+	#Cost_FlowerBread += CostIncrease_FlowerBread
+#
+#func _update_generation():
+	#Generates_BreadFlower = InitialGenerates_BreadFlower * generatorAmount
+	#Generates_BreadFlour = InitialGenerates_BreadFlour * generatorAmount
+	#Generates_FlowerBread = InitialGenerates_FlowerBread * generatorAmount
+	#
+#func _update_strings():
+	#generator_button.text = str(generatorAmount) + " " + Text_Generates
+	#var format_string = "Cost %s Bread Flower \nCost %s Bread Flour \nCost %s Flower Bread"
+	#var actual_string = format_string % [str(Cost_BreadFlower), str(Cost_BreadFlour), str(Cost_FlowerBread)];
+	#generator_button.tooltip_text = actual_string
+#
+#
+#func _on_generator_button_mouse_entered():
+	#button_hover.play()

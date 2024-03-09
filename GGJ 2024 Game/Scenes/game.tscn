@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://deoeafx2nqa4f" path="res://Audio/SFX/Generator/BreadGame Generator Left v.2.wav" id="5_sn0w5"]
 [ext_resource type="AudioStream" uid="uid://dkoiymhgudwh0" path="res://Audio/SFX/Generator/BreadGame Generator Middle v.2.wav" id="6_oi16w"]
 [ext_resource type="AudioStream" uid="uid://b6tbphl60bgjv" path="res://Audio/SFX/Generator/BreadGame Generator Right v.2.wav" id="7_eqf6p"]
-[ext_resource type="PackedScene" uid="uid://wl1tn3c65svr" path="res://Objects/Resource/bread_flower_container.tscn" id="8_ixfet"]
+[ext_resource type="PackedScene" uid="uid://wl1tn3c65svr" path="res://Objects/Resource/GameResourceObject.tscn" id="8_ixfet"]
 [ext_resource type="PackedScene" uid="uid://dg3uwahkagg3o" path="res://Objects/ResourceLabel.tscn" id="8_mbgg5"]
 [ext_resource type="PackedScene" uid="uid://bp5l5jraq6t1e" path="res://Scenes/pause_menu.tscn" id="9_bxl4i"]
 [ext_resource type="AudioStream" uid="uid://darp0oxy302a5" path="res://Audio/SFX/Menu/BreadGame Menu click A v.1.wav" id="10_rngtj"]
@@ -75,6 +75,7 @@ _data = {
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_i2ara")
+ResourceLabelScene = ExtResource("8_mbgg5")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -173,82 +174,43 @@ Text_Generates = "Flower Bread Generators"
 
 [node name="Bread Flower Container" parent="CanvasLayer/Control" instance=ExtResource("8_ixfet")]
 layout_mode = 0
+offset_left = 291.0
+offset_top = 165.0
+offset_right = 440.91
+offset_bottom = 225.535
+ResourceName = "Bread Flower"
 
-[node name="Bread Flour Container" type="VBoxContainer" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_left = 531.0
-offset_top = 55.0
-offset_right = 687.83
-offset_bottom = 117.0
-theme_override_constants/separation = 0
-
-[node name="Bread Flour Timer" type="Timer" parent="CanvasLayer/Control/Bread Flour Container"]
-process_callback = 0
-wait_time = 7.0
-one_shot = true
-
-[node name="Bread Flour Button" type="Button" parent="CanvasLayer/Control/Bread Flour Container"]
+[node name="Bread Flour Container" parent="CanvasLayer/Control" instance=ExtResource("8_ixfet")]
 layout_mode = 2
-text = "Bread Flour"
+offset_left = 557.0
+offset_top = 165.0
+offset_right = 706.0
+offset_bottom = 200.0
+ResourceName = "Bread Flour"
 
-[node name="Bread Flour Progress" type="ProgressBar" parent="CanvasLayer/Control/Bread Flour Container"]
+[node name="Flower Bread Container" parent="CanvasLayer/Control" instance=ExtResource("8_ixfet")]
 layout_mode = 2
-size_flags_vertical = 1
-size_flags_stretch_ratio = 0.0
-show_percentage = false
+offset_left = 805.0
+offset_top = 161.0
+offset_right = 954.0
+offset_bottom = 196.0
+ResourceName = "Flower Bread"
 
-[node name="Flower Bread Container" type="VBoxContainer" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_left = 797.0
-offset_top = 58.0
-offset_right = 953.83
-offset_bottom = 120.0
-theme_override_constants/separation = 0
-
-[node name="Flower Bread Timer" type="Timer" parent="CanvasLayer/Control/Flower Bread Container"]
-process_callback = 0
-wait_time = 10.0
-one_shot = true
-
-[node name="Flower Bread Button" type="Button" parent="CanvasLayer/Control/Flower Bread Container"]
-layout_mode = 2
-text = "Flower Bread"
-
-[node name="Flower Bread Progress" type="ProgressBar" parent="CanvasLayer/Control/Flower Bread Container"]
-layout_mode = 2
-size_flags_vertical = 1
-size_flags_stretch_ratio = 0.0
-show_percentage = false
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+[node name="Resource Label Container" type="VBoxContainer" parent="CanvasLayer/Control"]
+unique_name_in_owner = true
 clip_contents = true
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_left = 39.0
 offset_top = 20.0
-offset_right = 119.0
-offset_bottom = 20.0
+offset_right = 150.0
+offset_bottom = -299.0
 grow_vertical = 2
 scale = Vector2(0.749638, 0.880945)
 
-[node name="Label" parent="CanvasLayer/Control/VBoxContainer" instance=ExtResource("8_mbgg5")]
+[node name="Label" parent="CanvasLayer/Control/Resource Label Container" instance=ExtResource("8_mbgg5")]
 layout_mode = 2
-willMove = false
-
-[node name="Bread Flower Text" parent="CanvasLayer/Control/VBoxContainer" instance=ExtResource("8_mbgg5")]
-layout_mode = 2
-text = "Bread Flower: "
-willMove = false
-
-[node name="Bread Flour Text" parent="CanvasLayer/Control/VBoxContainer" instance=ExtResource("8_mbgg5")]
-layout_mode = 2
-text = "Bread Flour:"
-willMove = false
-
-[node name="Flower Bread Text" parent="CanvasLayer/Control/VBoxContainer" instance=ExtResource("8_mbgg5")]
-layout_mode = 2
-text = "Flower Bread:"
 willMove = false
 
 [node name="Pause Menu" parent="." instance=ExtResource("9_bxl4i")]
@@ -298,10 +260,3 @@ texture = ExtResource("15_kxucg")
 [node name="Bread0004" type="Sprite2D" parent="Bread0002"]
 position = Vector2(-1903.77, -25.8738)
 texture = ExtResource("15_kxucg")
-
-[connection signal="timeout" from="CanvasLayer/Control/Bread Flour Container/Bread Flour Timer" to="." method="_on_bread_flour_timer_timeout"]
-[connection signal="button_down" from="CanvasLayer/Control/Bread Flour Container/Bread Flour Button" to="." method="_on_bread_flour_button_button_down"]
-[connection signal="mouse_entered" from="CanvasLayer/Control/Bread Flour Container/Bread Flour Button" to="." method="_on_bread_flour_button_mouse_entered"]
-[connection signal="timeout" from="CanvasLayer/Control/Flower Bread Container/Flower Bread Timer" to="." method="_on_flower_bread_timer_timeout"]
-[connection signal="button_down" from="CanvasLayer/Control/Flower Bread Container/Flower Bread Button" to="." method="_on_flower_bread_button_button_down"]
-[connection signal="mouse_entered" from="CanvasLayer/Control/Flower Bread Container/Flower Bread Button" to="." method="_on_flower_bread_button_mouse_entered"]
