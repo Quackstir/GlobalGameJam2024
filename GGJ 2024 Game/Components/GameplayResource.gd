@@ -4,8 +4,6 @@ var name:String
 
 signal ResourceChanged(ResourceAmount:int)
 
-
-
 var ResourceValue: int = 0:
 	set(new_value):
 		emit_signal("ResourceChanged",new_value)
