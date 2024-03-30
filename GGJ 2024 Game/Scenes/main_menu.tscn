@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://ds1u6gy6s14vi"]
+[gd_scene load_steps=10 format=3 uid="uid://ds1u6gy6s14vi"]
 
 [ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_m027k"]
 [ext_resource type="AudioStream" uid="uid://uv8k7f5uo4kn" path="res://Audio/SFX/Menu/BreadGame Menu hover v.1.wav" id="3_ofnbh"]
 [ext_resource type="AudioStream" uid="uid://darp0oxy302a5" path="res://Audio/SFX/Menu/BreadGame Menu click A v.1.wav" id="4_f1hdp"]
 [ext_resource type="Texture2D" uid="uid://bidss1xvuc3qo" path="res://Art/bread.png" id="5_l6hgp"]
-[ext_resource type="AudioStream" uid="uid://plbw2e6ykpvl" path="res://Audio/Music/BreadGame MenuMusic MASTER v.1.mp3" id="5_nsani"]
+[ext_resource type="PackedScene" uid="uid://cdq6syqpb5t11" path="res://Scenes/Settings.tscn" id="6_yvsyy"]
+[ext_resource type="PackedScene" uid="uid://cb56542u17jxv" path="res://Scenes/Credits.tscn" id="7_l5nm0"]
+[ext_resource type="AudioStream" uid="uid://dkj1r1yqhvurh" path="res://Audio/Music/BreadGame MAIN music MASTER v.4.mp3" id="7_ttk44"]
+[ext_resource type="PackedScene" uid="uid://d0625qodrx6b2" path="res://Scenes/Quit Confirm.tscn" id="8_vwqol"]
 
 [sub_resource type="GDScript" id="GDScript_dypuu"]
 script/source = "extends Button
@@ -84,6 +87,18 @@ theme_override_font_sizes/normal_font_size = 110
 text = "Bready, Set, Dough!"
 metadata/_edit_use_anchors_ = true
 
+[node name="Settings" parent="CanvasLayer/Main Menu Panel" instance=ExtResource("6_yvsyy")]
+visible = false
+layout_mode = 1
+
+[node name="Credits" parent="CanvasLayer/Main Menu Panel" instance=ExtResource("7_l5nm0")]
+visible = false
+layout_mode = 1
+
+[node name="QuitConfirm" parent="CanvasLayer/Main Menu Panel" instance=ExtResource("8_vwqol")]
+visible = false
+layout_mode = 1
+
 [node name="ButtonHover" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_ofnbh")
 
@@ -91,14 +106,14 @@ stream = ExtResource("3_ofnbh")
 stream = ExtResource("4_f1hdp")
 
 [node name="Menu Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_nsani")
+stream = ExtResource("7_ttk44")
 autoplay = true
 
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.25098)
 z_index = -5
-position = Vector2(1349, 864)
-scale = Vector2(1.46734, 1.46734)
+position = Vector2(960.19, 540.024)
+scale = Vector2(0.999803, 0.884482)
 texture = ExtResource("5_l6hgp")
 
 [connection signal="mouse_entered" from="CanvasLayer/Main Menu Panel/Play Button" to="." method="_on_play_button_mouse_entered"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dkj1r1yqhvurh"
+path="res://.godot/imported/BreadGame MAIN music MASTER v.4.mp3-7f802e88cd692bb04c9e764994efb1c4.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/BreadGame MAIN music MASTER v.4.mp3"
+dest_files=["res://.godot/imported/BreadGame MAIN music MASTER v.4.mp3-7f802e88cd692bb04c9e764994efb1c4.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.012
+bpm=116.0
+beat_count=150
+bar_beats=4

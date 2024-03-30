@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://wvwrhwmgx2tc"]
+
+[ext_resource type="Script" path="res://Scenes/Prefabs/template_button.gd" id="1_gpqe0"]
+
+[node name="Template Button" type="Button"]
+theme_override_font_sizes/font_size = 40
+text = "DEFAULT"
+script = ExtResource("1_gpqe0")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

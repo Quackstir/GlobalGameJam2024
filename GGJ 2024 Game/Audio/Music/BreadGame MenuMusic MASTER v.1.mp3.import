@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/BreadGame MenuMusic MASTER v.1.mp3-f0715ee0b7
 [params]
 
 loop=true
-loop_offset=0.0
-bpm=0.0
-beat_count=0
+loop_offset=0.03
+bpm=116.0
+beat_count=32
 bar_beats=4
