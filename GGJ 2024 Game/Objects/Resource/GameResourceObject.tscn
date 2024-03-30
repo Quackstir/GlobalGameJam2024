@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://wl1tn3c65svr"]
+
+[ext_resource type="Script" path="res://Objects/Resource/GameResource.gd" id="1_ck70y"]
+
+[node name="Game Resource Container" type="VBoxContainer"]
+offset_right = 149.91
+offset_bottom = 60.535
+theme_override_constants/separation = 0
+script = ExtResource("1_ck70y")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.5
+one_shot = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+text = "Bread Flower"
+
+[node name="Progress" type="ProgressBar" parent="."]
+layout_mode = 2
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.0
+show_percentage = false
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

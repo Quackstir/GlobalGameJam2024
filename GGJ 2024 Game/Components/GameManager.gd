@@ -1,55 +1,20 @@
-class_name GameManager
-extends Node2D
+class_name GameManager extends Node2D
 
-var BreadFlower: int = 0:
-	set(new_value):
-		bread_flower_text.text = "Bread Flower: " + str(new_value)
-		
-		if (new_value > 0):
-			bread_0001.visible = true
-		
-		BreadFlower = new_value
-	get:
-		return BreadFlower
+static var I_gameManager:GameManager
 
-var BreadFlour: int = 0:
-	set(new_value):
-		bread_flour_text.text = "Bread Flour: " + str(new_value)
-		
-		if new_value > 0:
-			bread_0002.visible = true
-		#if new_value > BreadFlour: 
-			#var valueChange = new_value - BreadFlour
-			#BreadFlower -= FlowerToBreadFlour * valueChange
-		
-		BreadFlour = new_value
-	get:
-		return BreadFlour
-@export var FlowerToBreadFlour: int = 3
+#make a dictionary
+var gameResource:Array[GameplayResource] = []
 
-var FlowerBread: int = 0:
-	set(new_value):
-		flower_bread_text.text = "Flower Bread: " + str(new_value)
-		
-		#if new_value > FlowerBread: 
-			#var valueChange = new_value - FlowerBread
-			#BreadFlour -= FlourToFlowerBread * FlowerBread
-		cpu_particles_2d.emitting = new_value > 0
-			
-		FlowerBread = new_value
-	get:
-		return FlowerBread
-@export var FlourToFlowerBread: int = 7
+@export var ResourceLabelScene:PackedScene
+@onready var resource_label_container = %"Resource Label Container"
 
 @onready var animation_player = $CanvasLayer/AnimationPlayer
 @onready var cpu_particles_2d = $CanvasLayer/CPUParticles2D
 @onready var button_click = $ButtonClick
 @onready var button_hover = $ButtonHover
 
-@onready var bread_0001 = $Bread0001
-@onready var bread_0002 = $Bread0002
 
-const WIN_SCENE = preload("res://Scenes/win_scene.tscn")
+#const WIN_SCENE = preload("res://win_scene.tscn")
 
 #Text
 #region Text
@@ -88,75 +53,16 @@ const WIN_SCENE = preload("res://Scenes/win_scene.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	bread_flower_progress.max_value = bread_flower_timer.wait_time
-	bread_flour_progress.max_value = bread_flour_timer.wait_time
-	flower_bread_progress.max_value = flower_bread_timer.wait_time
-	
-	bread_flour_container.visible = false
-	flower_bread_container.visible = false
-	
-	bread_0001.visible = false
-	bread_0002.visible = false
+	if I_gameManager == null:
+		I_gameManager = self
+	else:
+		queue_free()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	bread_flower_progress.value = bread_flower_timer.time_left
-	bread_flour_progress.value = bread_flour_timer.time_left
-	flower_bread_progress.value = flower_bread_timer.time_left
-	
-	if BreadFlower >= FlowerToBreadFlour: bread_flour_container.visible = true
-	if BreadFlour >= FlourToFlowerBread: flower_bread_container.visible = true
-	
-	if FlowerBread > 25:
-		get_tree().change_scene_to_file("res://win_scene.tscn")
-	
-	if Input.is_key_pressed(KEY_1): BreadFlower += 10
-	if Input.is_key_pressed(KEY_2): BreadFlour += 10
-	if Input.is_key_pressed(KEY_3): FlowerBread += 1
+func add_resource(newResource:GameplayResource):
+	gameResource.append(newResource)
+	var resourcelabel:ResourceLabel = ResourceLabelScene.instantiate()
+	resource_label_container.add_child(resourcelabel)
+	resourcelabel.willMove = false
+	resourcelabel.text = newResource.name + ": 0"
+	resourcelabel.setGameplayResource(newResource)
 
-func _on_bread_flower_button_button_down():
-	bread_flower_button.disabled = true
-	bread_flower_timer.start()
-	BreadFlower += 1
-	button_click.play()
-
-func _on_bread_flour_button_button_down():
-	if (BreadFlower < FlowerToBreadFlour): return
-	BreadFlower -= FlowerToBreadFlour
-	bread_flour_button.disabled = true
-	bread_flour_timer.start()
-	
-	button_click.play()
-	BreadFlour += 1
-
-func _on_flower_bread_button_button_down():
-	if (BreadFlour < FlourToFlowerBread): return
-	BreadFlour -= FlourToFlowerBread
-	flower_bread_button.disabled = true
-	flower_bread_timer.start()
-	button_click.play()
-	FlowerBread += 1
-
-
-func _on_bread_flower_timer_timeout():
-	bread_flower_button.disabled = false
-
-
-func _on_bread_flour_timer_timeout():
-	bread_flour_button.disabled = false
-
-
-func _on_flower_bread_timer_timeout():
-	flower_bread_button.disabled = false
-
-
-func _on_flower_bread_button_mouse_entered():
-	button_hover.play()
-
-
-func _on_bread_flour_button_mouse_entered():
-	button_hover.play()
-
-
-func _on_bread_flower_button_mouse_entered():
-	button_hover.play()

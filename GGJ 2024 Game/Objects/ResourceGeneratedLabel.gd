@@ -1,11 +1,18 @@
+class_name ResourceLabel
 extends Label
 
 var speed =2
 @export var willMove = true
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+var gameplayResource:GameplayResource
+
+func setGameplayResource(newResource:GameplayResource):
+	gameplayResource = newResource
+	gameplayResource.ResourceChanged.connect(_updateLabel)
+	
+func _updateLabel(newValue:int):
+	text = gameplayResource.name + ": " + str(newValue)
+	
 
 func _physics_process(delta):
 	if !willMove: return
