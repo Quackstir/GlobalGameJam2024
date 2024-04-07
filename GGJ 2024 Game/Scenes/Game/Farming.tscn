@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://b60r0ab8hba1m"]
+
+[ext_resource type="PackedScene" uid="uid://b2e1aj6255oj3" path="res://farmingPlot.tscn" id="3_bi6j0"]
+[ext_resource type="Script" path="res://Components/GameManager.gd" id="8_0pywn"]
+[ext_resource type="PackedScene" uid="uid://dg3uwahkagg3o" path="res://Objects/ResourceLabel.tscn" id="8_vhs7g"]
+
+[node name="Farming" type="Node2D"]
+
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource("8_0pywn")
+ResourceLabelScene = ExtResource("8_vhs7g")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Plot" parent="Control" instance=ExtResource("3_bi6j0")]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 297.0
+offset_right = 513.0
+offset_bottom = 432.0
+
+[node name="Plot2" parent="Control" instance=ExtResource("3_bi6j0")]
+layout_mode = 0
+offset_left = 751.0
+offset_top = 300.0
+offset_right = 862.0
+offset_bottom = 435.0
+
+[node name="Plot3" parent="Control" instance=ExtResource("3_bi6j0")]
+layout_mode = 0
+offset_left = 1151.0
+offset_top = 324.0
+offset_right = 1262.0
+offset_bottom = 459.0
+
+[node name="Plot4" parent="Control" instance=ExtResource("3_bi6j0")]
+layout_mode = 0
+offset_left = 1109.0
+offset_top = 559.0
+offset_right = 1220.0
+offset_bottom = 694.0
+
+[node name="Plot5" parent="Control" instance=ExtResource("3_bi6j0")]
+layout_mode = 0
+offset_left = 748.0
+offset_top = 562.0
+offset_right = 859.0
+offset_bottom = 697.0
+
+[node name="Plot6" parent="Control" instance=ExtResource("3_bi6j0")]
+layout_mode = 0
+offset_left = 338.0
+offset_top = 573.0
+offset_right = 449.0
+offset_bottom = 708.0

@@ -5,6 +5,11 @@ static var I_gameManager:GameManager
 #make a dictionary
 var gameResource:Array[GameplayResource] = []
 
+var flowerBread:int = 0 : 
+	set (newValue):
+		flowerBread = newValue
+		print ("Flower Bread: " + str(newValue))
+
 @export var ResourceLabelScene:PackedScene
 @onready var resource_label_container = %"Resource Label Container"
 
