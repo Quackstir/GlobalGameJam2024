@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://df38chwp1fbss"]
 
-[ext_resource type="Script" path="res://Components/GameManager.gd" id="1_i2ara"]
+[ext_resource type="Script" path="res://Components/Managers/GameManager.gd" id="1_i2ara"]
 [ext_resource type="Texture2D" uid="uid://cqof0mphdgmyk" path="res://Art/bread0003.png" id="2_33eh8"]
 [ext_resource type="Texture2D" uid="uid://udo31xfugt4p" path="res://Art/Background.png" id="3_183gw"]
 [ext_resource type="PackedScene" uid="uid://bvphef6wp11th" path="res://Objects/resource_generator.tscn" id="4_2geu4"]

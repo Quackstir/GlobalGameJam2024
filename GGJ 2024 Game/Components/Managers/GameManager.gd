@@ -13,7 +13,7 @@ var flowerBread:int = 0 :
 var breadFlour:int = 0 : 
 	set (newValue):
 		breadFlour = newValue
-		print ("Flower Bread: " + str(newValue))
+		print ("Bread Flour: " + str(newValue))
 
 @export var ResourceLabelScene:PackedScene
 @onready var resource_label_container = %"Resource Label Container"
@@ -75,4 +75,7 @@ func add_resource(newResource:GameplayResource):
 	resourcelabel.willMove = false
 	resourcelabel.text = newResource.name + ": 0"
 	resourcelabel.setGameplayResource(newResource)
+	
+#func upgrade_farming_wateringCan():
+	
 
