@@ -9,6 +9,7 @@ var canDrop:bool = false
 @onready var press_button = $PressButton
 @onready var refresh = $Refresh
 
+@onready var jump_scare_sfx = $JumpScareSFX
 
 func _on_button_button_down():
 	if (canDrop):
@@ -18,6 +19,7 @@ func _on_button_button_down():
 	else:
 		#GameManager.I_gameManager.breadFlour -= 1
 		sprite_2d.texture = Moldy_Dropped
+		jump_scare_sfx.play()
 
 func _on_timer_timeout():
 		canDrop = false
@@ -26,11 +28,11 @@ func _on_timer_timeout():
 
 func determine_drop():
 	if randf_range(0,1) < 0.3:
-		sprite_2d.texture = Droppable
-		canDrop = true
-	else:
 		sprite_2d.texture = Modly
 		canDrop = false
+	else:
+		sprite_2d.texture = Droppable
+		canDrop = true
 
 func _on_refresh_timeout():
 	press_button.start()

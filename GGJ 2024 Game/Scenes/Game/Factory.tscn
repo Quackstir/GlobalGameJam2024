@@ -1,30 +1,26 @@
-[gd_scene load_steps=7 format=3 uid="uid://bab2jb35aj7ft"]
+[gd_scene load_steps=10 format=3 uid="uid://bab2jb35aj7ft"]
 
-[ext_resource type="Texture2D" uid="uid://53ec7enxi6ym" path="res://icon.svg" id="1_frhhn"]
 [ext_resource type="Script" path="res://Scenes/Game/FactoryManager.gd" id="1_goami"]
-[ext_resource type="Texture2D" uid="uid://cu2lminche8mt" path="res://Art/bread0001.png" id="2_3nxf3"]
-[ext_resource type="Texture2D" uid="uid://dsh6sggnpf3rr" path="res://Art/bread0002.png" id="3_dap4r"]
-[ext_resource type="Script" path="res://Components/GameManager.gd" id="3_gbrma"]
-[ext_resource type="Texture2D" uid="uid://bc04646tc2haf" path="res://flower bread.png" id="5_x8xut"]
+[ext_resource type="Texture2D" uid="uid://bxsaguoc37dvi" path="res://Art/clownflower.png" id="2_e5kf5"]
+[ext_resource type="Script" path="res://Components/Managers/GameManager.gd" id="3_gbrma"]
+[ext_resource type="Texture2D" uid="uid://2cilvrockbot" path="res://Art/zombier0003.png" id="3_wharx"]
+[ext_resource type="Texture2D" uid="uid://dufyv7kc8rv2r" path="res://Art/flour.png" id="4_vseeu"]
+[ext_resource type="Texture2D" uid="uid://c31ontmiyxbv4" path="res://Art/zombie.png" id="5_oyecp"]
+[ext_resource type="PackedScene" uid="uid://j7berl234qre" path="res://UniversalButton.tscn" id="6_ndgxv"]
+[ext_resource type="AudioStream" uid="uid://xjml1ry3amcy" path="res://Audio/SFX/Menu/jumpscare_sound.mp3" id="7_wjfes"]
+[ext_resource type="AudioStream" uid="uid://dhmwiocu2b8eb" path="res://Audio/Music/NEW_bread_v.4.mp3" id="8_kgkav"]
 
 [node name="Factory" type="Node2D"]
 script = ExtResource("1_goami")
-Droppable = ExtResource("2_3nxf3")
-Modly = ExtResource("1_frhhn")
-Droppedable_Dropped = ExtResource("3_dap4r")
-Moldy_Dropped = ExtResource("5_x8xut")
+Droppable = ExtResource("2_e5kf5")
+Modly = ExtResource("3_wharx")
+Droppedable_Dropped = ExtResource("4_vseeu")
+Moldy_Dropped = ExtResource("5_oyecp")
 
-[node name="Button" type="Button" parent="."]
-offset_left = 884.0
-offset_top = 219.0
-offset_right = 1058.0
-offset_bottom = 356.0
-text = "Press
-"
+[node name="Button" parent="." instance=ExtResource("6_ndgxv")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(974, 537)
-scale = Vector2(0.237037, 0.237037)
 
 [node name="PressButton" type="Timer" parent="."]
 wait_time = 2.0
@@ -37,6 +33,13 @@ script = ExtResource("3_gbrma")
 wait_time = 0.5
 one_shot = true
 autostart = true
+
+[node name="JumpScareSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_wjfes")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_kgkav")
+autoplay = true
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="timeout" from="PressButton" to="." method="_on_timer_timeout"]
