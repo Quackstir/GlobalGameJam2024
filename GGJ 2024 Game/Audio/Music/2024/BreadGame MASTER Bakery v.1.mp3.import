@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cduqtlut7fhfa"
+path="res://.godot/imported/BreadGame MASTER Bakery v.1.mp3-616d450ba6cd106eef4e42cb76456dfd.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/2024/BreadGame MASTER Bakery v.1.mp3"
+dest_files=["res://.godot/imported/BreadGame MASTER Bakery v.1.mp3-616d450ba6cd106eef4e42cb76456dfd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
