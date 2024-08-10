@@ -60,9 +60,6 @@ theme_override_constants/h_separation = 40
 theme_override_constants/v_separation = 40
 columns = 5
 
-[node name="Plot" parent="Control/MarginContainer/GridContainer" instance=ExtResource("3_bi6j0")]
-layout_mode = 2
-
 [node name="Plot2" parent="Control/MarginContainer/GridContainer" instance=ExtResource("3_bi6j0")]
 layout_mode = 2
 
@@ -118,6 +115,9 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Plot20" parent="Control/MarginContainer/GridContainer" instance=ExtResource("3_bi6j0")]
+layout_mode = 2
+
+[node name="Plot" parent="Control/MarginContainer/GridContainer" instance=ExtResource("3_bi6j0")]
 layout_mode = 2
 
 [connection signal="button_down" from="Control/Button" to="." method="_on_button_button_down"]

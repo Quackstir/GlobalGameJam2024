@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://gsod7h5ckeqo"]
+
+[ext_resource type="Texture2D" uid="uid://b6k0rfutupdbe" path="res://icon.svg" id="1_rttno"]
+[ext_resource type="Script" path="res://Components/Plant.gd" id="2_d8iel"]
+
+[node name="Plant" type="Node2D"]
+script = ExtResource("2_d8iel")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0, 1, 0, 1)
+position = Vector2(0, -32)
+scale = Vector2(0.296875, 1)
+texture = ExtResource("1_rttno")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
