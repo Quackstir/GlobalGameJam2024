@@ -1,0 +1,123 @@
+[gd_scene load_steps=6 format=3 uid="uid://b60r0ab8hba1m"]
+
+[ext_resource type="Script" path="res://Scenes/Game DEPRYCATED/FarmingManager.gd" id="1_vslmp"]
+[ext_resource type="PackedScene" uid="uid://b2e1aj6255oj3" path="res://farmingPlot.tscn" id="3_bi6j0"]
+[ext_resource type="AudioStream" uid="uid://b61p6o6po1onb" path="res://Audio/Music/2024/BreadGame MASTER Farming v.1.mp3" id="4_tynx7"]
+[ext_resource type="Script" path="res://Components/Managers/GameManager.gd" id="8_0pywn"]
+[ext_resource type="PackedScene" uid="uid://dg3uwahkagg3o" path="res://Objects/ResourceLabel.tscn" id="8_vhs7g"]
+
+[node name="Farming" type="Node2D" node_paths=PackedStringArray("allPlots")]
+script = ExtResource("1_vslmp")
+allPlots = [NodePath("Control/MarginContainer/GridContainer/Plot"), NodePath("Control/MarginContainer/GridContainer/Plot2"), NodePath("Control/MarginContainer/GridContainer/Plot3"), NodePath("Control/MarginContainer/GridContainer/Plot4"), NodePath("Control/MarginContainer/GridContainer/Plot5"), NodePath("Control/MarginContainer/GridContainer/Plot6")]
+
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource("8_0pywn")
+ResourceLabelScene = ExtResource("8_vhs7g")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_tynx7")
+volume_db = -5.0
+autoplay = true
+
+[node name="Control" type="Control" parent="."]
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1445.0
+offset_top = 340.0
+offset_right = 1747.0
+offset_bottom = 503.0
+text = "gamers"
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 55.0
+offset_top = 36.0
+offset_right = 1035.0
+offset_bottom = 876.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="GridContainer" type="GridContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 40
+columns = 5
+
+[node name="Plot" parent="Control/MarginContainer/GridContainer" instance=ExtResource("3_bi6j0")]
+layout_mode = 2
+
+[node name="Plot2" parent="Control/MarginContainer/GridContainer" instance=ExtResource("3_bi6j0")]
+layout_mode = 2
+
+[node name="Plot3" parent="Control/MarginContainer/GridContainer" instance=ExtResource("3_bi6j0")]
+layout_mode = 2
+
+[node name="Plot4" parent="Control/MarginContainer/GridContainer" instance=ExtResource("3_bi6j0")]
+layout_mode = 2
+
+[node name="Plot5" parent="Control/MarginContainer/GridContainer" instance=ExtResource("3_bi6j0")]
+layout_mode = 2
+
+[node name="Plot6" parent="Control/MarginContainer/GridContainer" instance=ExtResource("3_bi6j0")]
+layout_mode = 2
+
+[node name="Plot7" parent="Control/MarginContainer/GridContainer" instance=ExtResource("3_bi6j0")]
+layout_mode = 2
+
+[node name="Plot8" parent="Control/MarginContainer/GridContainer" instance=ExtResource("3_bi6j0")]
+layout_mode = 2
+
+[node name="Plot9" parent="Control/MarginContainer/GridContainer" instance=ExtResource("3_bi6j0")]
+layout_mode = 2
+
+[node name="Plot10" parent="Control/MarginContainer/GridContainer" instance=ExtResource("3_bi6j0")]
+layout_mode = 2
+
+[node name="Plot11" parent="Control/MarginContainer/GridContainer" instance=ExtResource("3_bi6j0")]
+layout_mode = 2
+
+[node name="Plot12" parent="Control/MarginContainer/GridContainer" instance=ExtResource("3_bi6j0")]
+layout_mode = 2
+
+[node name="Plot13" parent="Control/MarginContainer/GridContainer" instance=ExtResource("3_bi6j0")]
+layout_mode = 2
+
+[node name="Plot14" parent="Control/MarginContainer/GridContainer" instance=ExtResource("3_bi6j0")]
+layout_mode = 2
+
+[node name="Plot15" parent="Control/MarginContainer/GridContainer" instance=ExtResource("3_bi6j0")]
+layout_mode = 2
+
+[node name="Plot16" parent="Control/MarginContainer/GridContainer" instance=ExtResource("3_bi6j0")]
+layout_mode = 2
+
+[node name="Plot17" parent="Control/MarginContainer/GridContainer" instance=ExtResource("3_bi6j0")]
+layout_mode = 2
+
+[node name="Plot18" parent="Control/MarginContainer/GridContainer" instance=ExtResource("3_bi6j0")]
+layout_mode = 2
+
+[node name="Plot19" parent="Control/MarginContainer/GridContainer" instance=ExtResource("3_bi6j0")]
+layout_mode = 2
+
+[node name="Plot20" parent="Control/MarginContainer/GridContainer" instance=ExtResource("3_bi6j0")]
+layout_mode = 2
+
+[connection signal="button_down" from="Control/Button" to="." method="_on_button_button_down"]

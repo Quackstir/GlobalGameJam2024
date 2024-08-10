@@ -22,6 +22,7 @@ var isWatered:bool = false
 
 @onready var harvest_sfx = $HarvestSFX
 
+@onready var water_plant_sfx = $WaterPlantSFX
 
 func _ready():
 	rich_text_label.text = "[center]Harvest[/center]"
@@ -30,8 +31,8 @@ func _ready():
 
 func growing():
 	while currentGrowth < harvestTime:
-		await get_tree().create_timer(0.1).timeout
-		currentGrowth += currentGrowthRate
+		await get_tree().create_timer(0.013).timeout
+		currentGrowth += currentGrowthRate * get_physics_process_delta_time()
 		
 	if currentGrowth >= harvestTime:
 		harvestReady()
@@ -68,3 +69,4 @@ func _on_button_3_button_down():
 func _on_water_button_button_down():
 	currentGrowthRate = growthRate * 3
 	water_button.visible = false
+	water_plant_sfx.play()

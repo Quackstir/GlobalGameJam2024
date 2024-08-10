@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cj6gh6gmeuviu"
+path="res://.godot/imported/BreadGame WateringCan v.2.wav-db9f309e02ced7dd0c27469929880093.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/BreadGame WateringCan v.2.wav"
+dest_files=["res://.godot/imported/BreadGame WateringCan v.2.wav-db9f309e02ced7dd0c27469929880093.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
