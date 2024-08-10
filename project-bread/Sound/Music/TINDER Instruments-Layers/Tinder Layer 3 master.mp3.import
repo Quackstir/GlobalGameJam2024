@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://yxwhralq1wnp"
+path="res://.godot/imported/Tinder Layer 3 master.mp3-6c211ee1f76163a02ed2782108cda510.mp3str"
+
+[deps]
+
+source_file="res://Sound/Music/TINDER Instruments-Layers/Tinder Layer 3 master.mp3"
+dest_files=["res://.godot/imported/Tinder Layer 3 master.mp3-6c211ee1f76163a02ed2782108cda510.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

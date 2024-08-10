@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dveg7t405uhgo"
+path="res://.godot/imported/Bakery Layer 3 master.mp3-a70195c68e3f9b7cfb476e523c799341.mp3str"
+
+[deps]
+
+source_file="res://Sound/Music/BAKERY Instruments-Layers/Bakery Layer 3 master.mp3"
+dest_files=["res://.godot/imported/Bakery Layer 3 master.mp3-a70195c68e3f9b7cfb476e523c799341.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

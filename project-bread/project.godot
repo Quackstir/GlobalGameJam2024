@@ -13,3 +13,14 @@ config_version=5
 config/name="Project Bread"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[file_customization]
+
+folder_colors={
+"res://Art/": "red",
+"res://Components/": "orange",
+"res://Levels/": "green",
+"res://Object/": "teal",
+"res://Sound/": "yellow",
+"res://UI/": "pink"
+}

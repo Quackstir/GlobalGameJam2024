@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cc04lx32q7e2f"
+path="res://.godot/imported/BreadGame MASTER Drums v.1.mp3-5ecb2fa30676a86c54c82f6dc473f2f4.mp3str"
+
+[deps]
+
+source_file="res://Sound/Music/BreadGame MASTER Drums v.1.mp3"
+dest_files=["res://.godot/imported/BreadGame MASTER Drums v.1.mp3-5ecb2fa30676a86c54c82f6dc473f2f4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

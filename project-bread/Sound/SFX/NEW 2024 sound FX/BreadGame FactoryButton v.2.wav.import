@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://1atg0buw1cc8"
+path="res://.godot/imported/BreadGame FactoryButton v.2.wav-16695b403d3999735d1e07cc852824a7.sample"
+
+[deps]
+
+source_file="res://Sound/SFX/NEW 2024 sound FX/BreadGame FactoryButton v.2.wav"
+dest_files=["res://.godot/imported/BreadGame FactoryButton v.2.wav-16695b403d3999735d1e07cc852824a7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

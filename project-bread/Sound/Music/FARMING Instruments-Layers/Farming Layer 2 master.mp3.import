@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cgkwh1ti25o37"
+path="res://.godot/imported/Farming Layer 2 master.mp3-827ad69241b851cce9ac20618b649e1e.mp3str"
+
+[deps]
+
+source_file="res://Sound/Music/FARMING Instruments-Layers/Farming Layer 2 master.mp3"
+dest_files=["res://.godot/imported/Farming Layer 2 master.mp3-827ad69241b851cce9ac20618b649e1e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
