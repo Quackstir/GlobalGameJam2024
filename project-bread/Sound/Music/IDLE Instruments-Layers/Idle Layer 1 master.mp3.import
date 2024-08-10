@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cox306tlh8cuq"
+path="res://.godot/imported/Idle Layer 1 master.mp3-e5ea76239d737c92a5de055b8ace89a4.mp3str"
+
+[deps]
+
+source_file="res://Sound/Music/IDLE Instruments-Layers/Idle Layer 1 master.mp3"
+dest_files=["res://.godot/imported/Idle Layer 1 master.mp3-e5ea76239d737c92a5de055b8ace89a4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

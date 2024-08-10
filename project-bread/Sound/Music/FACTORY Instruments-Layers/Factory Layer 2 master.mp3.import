@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dhpqymym4dnrd"
+path="res://.godot/imported/Factory Layer 2 master.mp3-9b3ca9dc4f8c7d2d8606a093e74855be.mp3str"
+
+[deps]
+
+source_file="res://Sound/Music/FACTORY Instruments-Layers/Factory Layer 2 master.mp3"
+dest_files=["res://.godot/imported/Factory Layer 2 master.mp3-9b3ca9dc4f8c7d2d8606a093e74855be.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

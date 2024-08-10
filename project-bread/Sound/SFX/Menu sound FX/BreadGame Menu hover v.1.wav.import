@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cyogai2lwt654"
+path="res://.godot/imported/BreadGame Menu hover v.1.wav-56d01c2c5b5510f2c4437dd70fc495ec.sample"
+
+[deps]
+
+source_file="res://Sound/SFX/Menu sound FX/BreadGame Menu hover v.1.wav"
+dest_files=["res://.godot/imported/BreadGame Menu hover v.1.wav-56d01c2c5b5510f2c4437dd70fc495ec.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
