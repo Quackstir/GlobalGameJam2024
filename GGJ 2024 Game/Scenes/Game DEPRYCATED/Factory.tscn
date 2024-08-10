@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bab2jb35aj7ft"]
 
-[ext_resource type="Script" path="res://Scenes/Game/FactoryManager.gd" id="1_goami"]
+[ext_resource type="Script" path="res://Scenes/Game DEPRYCATED/FactoryManager.gd" id="1_goami"]
 [ext_resource type="Texture2D" uid="uid://bxsaguoc37dvi" path="res://Art/clownflower.png" id="2_e5kf5"]
 [ext_resource type="Script" path="res://Components/Managers/GameManager.gd" id="3_gbrma"]
 [ext_resource type="Texture2D" uid="uid://2cilvrockbot" path="res://Art/zombier0003.png" id="3_wharx"]

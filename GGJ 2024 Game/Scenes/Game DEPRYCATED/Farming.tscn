@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b60r0ab8hba1m"]
 
-[ext_resource type="Script" path="res://Scenes/Game/FarmingManager.gd" id="1_vslmp"]
+[ext_resource type="Script" path="res://Scenes/Game DEPRYCATED/FarmingManager.gd" id="1_vslmp"]
 [ext_resource type="PackedScene" uid="uid://b2e1aj6255oj3" path="res://farmingPlot.tscn" id="3_bi6j0"]
 [ext_resource type="AudioStream" uid="uid://b61p6o6po1onb" path="res://Audio/Music/2024/BreadGame MASTER Farming v.1.mp3" id="4_tynx7"]
 [ext_resource type="Script" path="res://Components/Managers/GameManager.gd" id="8_0pywn"]

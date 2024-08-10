@@ -78,4 +78,3 @@ func add_resource(newResource:GameplayResource):
 	
 #func upgrade_farming_wateringCan():
 	
-

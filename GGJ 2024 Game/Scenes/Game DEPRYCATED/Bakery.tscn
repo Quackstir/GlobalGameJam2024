@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dcq0bl6abhjyd"]
 
-[ext_resource type="Script" path="res://Scenes/Game/BakeryManager.gd" id="1_ximou"]
+[ext_resource type="Script" path="res://Scenes/Game DEPRYCATED/BakeryManager.gd" id="1_ximou"]
 [ext_resource type="Texture2D" uid="uid://cu2lminche8mt" path="res://Art/bread0001.png" id="2_jj1w5"]
 [ext_resource type="Texture2D" uid="uid://dsh6sggnpf3rr" path="res://Art/bread0002.png" id="3_rnlqx"]
 [ext_resource type="Texture2D" uid="uid://cqof0mphdgmyk" path="res://Art/bread0003.png" id="4_m8v78"]
@@ -88,7 +88,7 @@ offset_bottom = 348.0
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="Button2" to="." method="_on_button_2_button_down"]
 [connection signal="button_down" from="Button2" to="." method="_on_button_button_down"]
-[connection signal="button_down" from="Button3" to="." method="_on_button_3_button_down"]
 [connection signal="button_down" from="Button3" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="Button3" to="." method="_on_button_3_button_down"]
 [connection signal="button_down" from="Button4" to="." method="_on_button_4_button_down"]
 [connection signal="button_down" from="Button4" to="." method="_on_button_button_down"]
