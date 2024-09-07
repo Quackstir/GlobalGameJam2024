@@ -1,3 +1,18 @@
-[gd_scene format=3 uid="uid://d1cbcm2gokjo0"]
+[gd_scene load_steps=3 format=3 uid="uid://d1cbcm2gokjo0"]
+
+[ext_resource type="PackedScene" uid="uid://ctb8ou1xbsenx" path="res://Object/plot.tscn" id="1_o2f68"]
+[ext_resource type="Script" path="res://Components/GameManager.gd" id="2_5gpth"]
 
 [node name="TestLevel" type="Node2D"]
+
+[node name="Plot" parent="." instance=ExtResource("1_o2f68")]
+position = Vector2(247, 202)
+
+[node name="Plot2" parent="." instance=ExtResource("1_o2f68")]
+position = Vector2(500, 202)
+
+[node name="Plot3" parent="." instance=ExtResource("1_o2f68")]
+position = Vector2(768, 202)
+
+[node name="GameManagerScript" type="Node" parent="."]
+script = ExtResource("2_5gpth")
