@@ -11,10 +11,9 @@ config_version=5
 [application]
 
 config/name="Project Bread"
+run/main_scene="res://UI/HUD/HUD.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
-
-[autoload]
 
 GameManager="*res://Components/GameManager.gd"
 
