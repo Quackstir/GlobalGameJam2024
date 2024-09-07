@@ -1,9 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1cbcm2gokjo0"]
+[gd_scene load_steps=4 format=3 uid="uid://d1cbcm2gokjo0"]
 
 [ext_resource type="PackedScene" uid="uid://ctb8ou1xbsenx" path="res://Object/plot.tscn" id="1_o2f68"]
+[ext_resource type="PackedScene" uid="uid://dgokvidj210pd" path="res://UI/HUD/HUD.tscn" id="1_yxj47"]
 [ext_resource type="Script" path="res://Components/GameManager.gd" id="2_5gpth"]
 
 [node name="TestLevel" type="Node2D"]
+
+[node name="Hud" parent="." instance=ExtResource("1_yxj47")]
+offset_left = 957.0
+offset_top = 640.0
+offset_right = 957.0
+offset_bottom = 640.0
 
 [node name="Plot" parent="." instance=ExtResource("1_o2f68")]
 position = Vector2(247, 202)
