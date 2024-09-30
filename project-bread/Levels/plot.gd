@@ -6,19 +6,12 @@ var currentPlant:Plant
 
 
 func _on_button_pressed() -> void:
-	print("Gamers")
-	
-	if currentPlant == null:
-		var PlantObject = PlantObject.instantiate()
-		add_child(PlantObject)
-		currentPlant = PlantObject as Plant
-	else:
-		currentPlant.isWatered = true
-
+	if GameManagerScript.currentInteraction != null:
+		GameManagerScript.currentInteraction.interactionFunction(self)
 
 func _on_button_focus_entered() -> void:
+	GameManagerScript.currentPlot = self
 	plot.self_modulate = Color.YELLOW
-
 
 func _on_button_focus_exited() -> void:
 	plot.self_modulate = Color.WHITE
