@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/Tinder Layer 1 master.mp3-10b6f2b602da3183ae5
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
-beat_count=0
+loop=true
+loop_offset=0.015
+bpm=121.0
+beat_count=64
 bar_beats=4

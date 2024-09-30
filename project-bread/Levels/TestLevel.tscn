@@ -64,3 +64,4 @@ offset_bottom = 762.0
 interaction = ExtResource("5_2yc5k")
 
 [node name="MusicManager" parent="." instance=ExtResource("10_sbrc4")]
+tracks = 3

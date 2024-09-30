@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Bakery Layer 1 master.mp3-a45db3c0678716bbf82
 [params]
 
 loop=true
-loop_offset=0.0
-bpm=0.0
-beat_count=0
+loop_offset=0.015
+bpm=121.0
+beat_count=64
 bar_beats=4

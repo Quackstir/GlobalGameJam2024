@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Idle Layer 4 master.mp3-4c7e2c405d6e0e9c7e457
 [params]
 
 loop=true
-loop_offset=0.0
-bpm=0.0
-beat_count=0
+loop_offset=0.015
+bpm=121.0
+beat_count=64
 bar_beats=4
