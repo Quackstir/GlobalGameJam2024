@@ -10,7 +10,7 @@
 },
 "default_portrait": "testPortrait",
 "description": "",
-"display_name": "characterTest",
+"display_name": "Baron Bread",
 "mirror": false,
 "nicknames": ["bread"],
 "offset": Vector2(0, 0),
@@ -22,9 +22,9 @@
 "ignore_char_scale": true,
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 0.5,
+"scale": 0.4,
 "scene": ""
 }
 },
-"scale": 1.0
+"scale": 0.5
 }
