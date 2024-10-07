@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="r_Plant" load_steps=10 format=3 uid="uid://cnboo0nugotgi"]
+
+[ext_resource type="Script" path="res://Resources/R_PlantStage.gd" id="1_6s4ar"]
+[ext_resource type="Script" path="res://Resources/R_Plant.gd" id="2_8snrc"]
+[ext_resource type="Texture2D" uid="uid://csuekmr4wpupa" path="res://Art/Misc/bear.png" id="2_hxowt"]
+[ext_resource type="PackedScene" uid="uid://gsod7h5ckeqo" path="res://Object/Plant.tscn" id="2_vw4ct"]
+[ext_resource type="Texture2D" uid="uid://blpgb0vllmi8m" path="res://Art/Plants/cupcakeflower.png" id="3_7mqbj"]
+[ext_resource type="Texture2D" uid="uid://b6k0rfutupdbe" path="res://icon.svg" id="4_tgsy8"]
+
+[sub_resource type="Resource" id="Resource_1tdq3"]
+script = ExtResource("1_6s4ar")
+Sprite = ExtResource("2_hxowt")
+TimeToGrow = 3.0
+RewardMoney = 10
+
+[sub_resource type="Resource" id="Resource_ett5f"]
+script = ExtResource("1_6s4ar")
+Sprite = ExtResource("3_7mqbj")
+TimeToGrow = 5.0
+RewardMoney = 10
+
+[sub_resource type="Resource" id="Resource_ufsmg"]
+script = ExtResource("1_6s4ar")
+Sprite = ExtResource("4_tgsy8")
+TimeToGrow = 1.0
+RewardMoney = 5
+
+[resource]
+script = ExtResource("2_8snrc")
+plantObject = ExtResource("2_vw4ct")
+initialPlantStage = SubResource("Resource_ufsmg")
+PlantStages = Array[ExtResource("1_6s4ar")]([SubResource("Resource_1tdq3"), SubResource("Resource_ett5f")])

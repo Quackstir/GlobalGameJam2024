@@ -18,6 +18,7 @@ GameManager="*res://Components/GameManager.gd"
 
 [autoload]
 
+
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
@@ -53,6 +54,7 @@ text/autoadvance_enabled=true
 text/autopauses={}
 text/autoadvance_fixed_delay=0.5
 text/autoadvance_per_word_delay=0.25
+GameManager="*res://Components/GameManager.gd"
 
 [display]
 

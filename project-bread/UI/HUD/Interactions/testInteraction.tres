@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="r_Interaction" load_steps=3 format=3 uid="uid://dyijosiwrula8"]
+
+[ext_resource type="Script" path="res://UI/HUD/r_interaction.gd" id="1_g3c43"]
+[ext_resource type="Texture2D" uid="uid://b6k0rfutupdbe" path="res://icon.svg" id="1_sq38x"]
+
+[resource]
+script = ExtResource("1_g3c43")
+Name = "Plant  thing"
+interactionTexture = ExtResource("1_sq38x")
