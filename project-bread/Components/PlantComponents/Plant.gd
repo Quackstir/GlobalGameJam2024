@@ -11,15 +11,7 @@ var readyToGrow = false
 @onready var rich_text_label: RichTextLabel = $RichTextLabel
 
 
-var isWatered:bool = false:
-	set(newValue):
-		if !isWatered and newValue:
-			#sprite_2d.self_modulate = Color.TEAL
-			rich_text_label.text = "Growing"
-			if readyToGrow:
-				_begin_stage()
-			timer.start()
-		isWatered = newValue
+var isWatered:bool = false
 
 func _ready() -> void:
 	setStage()
