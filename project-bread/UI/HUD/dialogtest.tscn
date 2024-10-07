@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbfgq76ui8rs"]
+
+[ext_resource type="Script" path="res://UI/HUD/button.gd" id="1_v0m1p"]
+[ext_resource type="Script" path="res://UI/HUD/button_2.gd" id="2_isahn"]
+[ext_resource type="Script" path="res://UI/HUD/button_3.gd" id="3_snu06"]
+[ext_resource type="Script" path="res://UI/HUD/button_4.gd" id="4_qyptn"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 512.0
+offset_right = 896.0
+offset_bottom = 576.0
+script = ExtResource("1_v0m1p")
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 192.0
+offset_bottom = 104.0
+text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1024.0
+offset_top = 512.0
+offset_right = 1280.0
+offset_bottom = 576.0
+script = ExtResource("2_isahn")
+
+[node name="Label" type="Label" parent="Button2"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 192.0
+offset_bottom = 104.0
+text = "Hit a shot"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 704.0
+offset_right = 896.0
+offset_bottom = 768.0
+script = ExtResource("3_snu06")
+
+[node name="Label" type="Label" parent="Button3"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 64.0
+offset_right = 202.0
+offset_bottom = 104.0
+text = "Enemies on Screen"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1024.0
+offset_top = 704.0
+offset_right = 1280.0
+offset_bottom = 768.0
+script = ExtResource("4_qyptn")
+
+[node name="Label" type="Label" parent="Button4"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 64.0
+offset_right = 200.0
+offset_bottom = 96.0
+text = "Harvet resources"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
+[connection signal="pressed" from="Button3" to="Button3" method="_on_pressed"]
+[connection signal="pressed" from="Button4" to="Button4" method="_on_pressed"]
