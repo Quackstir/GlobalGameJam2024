@@ -18,7 +18,6 @@ GameManager="*res://Components/GameManager.gd"
 
 [autoload]
 
-
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
@@ -27,8 +26,12 @@ directories/dch_directory={
 "characterTest": "res://Timelines/characterTest.dch"
 }
 directories/dtl_directory={
+"timelineAlmostLose": "res://Timelines/timelineAlmostLose.dtl",
 "timelineEnemies": "res://Timelines/timelineEnemies.dtl",
 "timelineHarvest": "res://Timelines/timelineHarvest.dtl",
+"timelinePlant": "res://Timelines/timelinePlant.dtl",
+"timelinePromoted": "res://Timelines/timelinePromoted.dtl",
+"timelineRegionunlock": "res://Timelines/timelineRegionunlock.dtl",
 "timelineShot": "res://Timelines/timelineShot.dtl",
 "timelineTest": "res://Timelines/timelineTest.dtl"
 }
@@ -55,6 +58,10 @@ text/autopauses={}
 text/autoadvance_fixed_delay=0.5
 text/autoadvance_per_word_delay=0.25
 GameManager="*res://Components/GameManager.gd"
+glossary/default_case_sensitive=true
+layout/style_list=[]
+layout/default_style="Default"
+variables={}
 
 [display]
 

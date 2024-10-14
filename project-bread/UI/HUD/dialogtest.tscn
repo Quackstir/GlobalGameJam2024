@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbfgq76ui8rs"]
+[gd_scene load_steps=9 format=3 uid="uid://cbfgq76ui8rs"]
 
 [ext_resource type="Script" path="res://UI/HUD/button.gd" id="1_v0m1p"]
 [ext_resource type="Script" path="res://UI/HUD/button_2.gd" id="2_isahn"]
 [ext_resource type="Script" path="res://UI/HUD/button_3.gd" id="3_snu06"]
 [ext_resource type="Script" path="res://UI/HUD/button_4.gd" id="4_qyptn"]
+[ext_resource type="Script" path="res://UI/HUD/button_5.gd" id="5_5ms4e"]
+[ext_resource type="Script" path="res://UI/HUD/button_6.gd" id="6_xuf7s"]
+[ext_resource type="Script" path="res://UI/HUD/button_7.gd" id="7_kxch0"]
+[ext_resource type="Script" path="res://UI/HUD/button_8.gd" id="8_108mo"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -15,10 +19,10 @@ grow_vertical = 2
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 640.0
-offset_top = 512.0
-offset_right = 896.0
-offset_bottom = 576.0
+offset_left = 448.0
+offset_top = 448.0
+offset_right = 704.0
+offset_bottom = 512.0
 script = ExtResource("1_v0m1p")
 
 [node name="Label" type="Label" parent="Button"]
@@ -33,10 +37,10 @@ vertical_alignment = 1
 
 [node name="Button2" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1024.0
-offset_top = 512.0
-offset_right = 1280.0
-offset_bottom = 576.0
+offset_left = 832.0
+offset_top = 448.0
+offset_right = 1088.0
+offset_bottom = 512.0
 script = ExtResource("2_isahn")
 
 [node name="Label" type="Label" parent="Button2"]
@@ -51,10 +55,10 @@ vertical_alignment = 1
 
 [node name="Button3" type="Button" parent="."]
 layout_mode = 0
-offset_left = 640.0
-offset_top = 704.0
-offset_right = 896.0
-offset_bottom = 768.0
+offset_left = 448.0
+offset_top = 640.0
+offset_right = 704.0
+offset_bottom = 704.0
 script = ExtResource("3_snu06")
 
 [node name="Label" type="Label" parent="Button3"]
@@ -69,10 +73,10 @@ vertical_alignment = 1
 
 [node name="Button4" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1024.0
-offset_top = 704.0
-offset_right = 1280.0
-offset_bottom = 768.0
+offset_left = 832.0
+offset_top = 640.0
+offset_right = 1088.0
+offset_bottom = 704.0
 script = ExtResource("4_qyptn")
 
 [node name="Label" type="Label" parent="Button4"]
@@ -81,7 +85,75 @@ offset_left = 56.0
 offset_top = 64.0
 offset_right = 200.0
 offset_bottom = 96.0
-text = "Harvet resources"
+text = "Harvest Resources"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button5" type="Button" parent="."]
+offset_left = 1216.0
+offset_top = 448.0
+offset_right = 1472.0
+offset_bottom = 512.0
+script = ExtResource("5_5ms4e")
+
+[node name="Label" type="Label" parent="Button5"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 192.0
+offset_bottom = 104.0
+text = "Planted a plant"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button6" type="Button" parent="."]
+offset_left = 1216.0
+offset_top = 640.0
+offset_right = 1472.0
+offset_bottom = 704.0
+script = ExtResource("6_xuf7s")
+
+[node name="Label" type="Label" parent="Button6"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 192.0
+offset_bottom = 104.0
+text = "Unlock next region"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button7" type="Button" parent="."]
+offset_left = 448.0
+offset_top = 832.0
+offset_right = 704.0
+offset_bottom = 896.0
+script = ExtResource("7_kxch0")
+
+[node name="Label" type="Label" parent="Button7"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 192.0
+offset_bottom = 104.0
+text = "Promoted"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button8" type="Button" parent="."]
+offset_left = 832.0
+offset_top = 832.0
+offset_right = 1088.0
+offset_bottom = 896.0
+script = ExtResource("8_108mo")
+
+[node name="Label" type="Label" parent="Button8"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 192.0
+offset_bottom = 104.0
+text = "Almost Lose"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -89,3 +161,7 @@ vertical_alignment = 1
 [connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
 [connection signal="pressed" from="Button3" to="Button3" method="_on_pressed"]
 [connection signal="pressed" from="Button4" to="Button4" method="_on_pressed"]
+[connection signal="pressed" from="Button5" to="Button5" method="_on_pressed"]
+[connection signal="pressed" from="Button6" to="Button6" method="_on_pressed"]
+[connection signal="pressed" from="Button7" to="Button7" method="_on_pressed"]
+[connection signal="pressed" from="Button8" to="Button8" method="_on_pressed"]
