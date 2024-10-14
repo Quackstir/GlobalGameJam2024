@@ -1,2 +1,2 @@
-join characterTest left
+join characterTest left [animation="Slide In Right"]
 characterTest: Nice job! Maybe you got the stuff.
