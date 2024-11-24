@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpg77kjy8anfl"]
+
+[ext_resource type="Texture2D" uid="uid://wqblmddhtojp" path="res://Art/Environments/Placeholder/2020.06_Blog_AGRAR_Paludikultur.jpg" id="1_04d3r"]
+[ext_resource type="PackedScene" uid="uid://dgokvidj210pd" path="res://UI/HUD/HUD.tscn" id="1_10l21"]
+[ext_resource type="PackedScene" uid="uid://ctb8ou1xbsenx" path="res://Object/plot.tscn" id="2_lsaan"]
+[ext_resource type="PackedScene" uid="uid://bb164ybrl4i24" path="res://Sound/Music/MusicManager.tscn" id="3_s0qjl"]
+
+[node name="Swamp" type="Node2D"]
+
+[node name="2020_06BlogAgrarPaludikultur" type="Sprite2D" parent="."]
+position = Vector2(946, 585)
+scale = Vector2(1.07813, 1.06111)
+texture = ExtResource("1_04d3r")
+
+[node name="Hud" parent="." instance=ExtResource("1_10l21")]
+offset_left = 957.0
+offset_top = 640.0
+offset_right = 957.0
+offset_bottom = 640.0
+
+[node name="Plot" parent="." instance=ExtResource("2_lsaan")]
+position = Vector2(250, 304)
+
+[node name="Plot2" parent="." instance=ExtResource("2_lsaan")]
+position = Vector2(503, 304)
+
+[node name="Plot3" parent="." instance=ExtResource("2_lsaan")]
+position = Vector2(771, 304)
+
+[node name="MusicManager" parent="." instance=ExtResource("3_s0qjl")]

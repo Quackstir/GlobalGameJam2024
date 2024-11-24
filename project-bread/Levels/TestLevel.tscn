@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1cbcm2gokjo0"]
+[gd_scene load_steps=5 format=3 uid="uid://d1cbcm2gokjo0"]
 
 [ext_resource type="PackedScene" uid="uid://ctb8ou1xbsenx" path="res://Object/plot.tscn" id="1_o2f68"]
+[ext_resource type="Texture2D" uid="uid://dab657m3puvff" path="res://Art/Environments/Placeholder/PPCW3OFJ6YI6ZCUOTRXJ7R5A3Y.jpg" id="1_rq18u"]
 [ext_resource type="PackedScene" uid="uid://dgokvidj210pd" path="res://UI/HUD/HUD.tscn" id="1_yxj47"]
 [ext_resource type="PackedScene" uid="uid://bb164ybrl4i24" path="res://Sound/Music/MusicManager.tscn" id="10_sbrc4"]
 
 [node name="TestLevel" type="Node2D"]
+
+[node name="Ppcw3ofj6yi6zcuotrxj7r5a3y" type="Sprite2D" parent="."]
+position = Vector2(991, 758)
+texture = ExtResource("1_rq18u")
 
 [node name="Hud" parent="." instance=ExtResource("1_yxj47")]
 offset_left = 957.0
