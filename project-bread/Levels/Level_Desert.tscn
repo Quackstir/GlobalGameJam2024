@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bs6mylver0wf5"]
+
+[ext_resource type="PackedScene" uid="uid://dgokvidj210pd" path="res://UI/HUD/HUD.tscn" id="2_xpatx"]
+[ext_resource type="PackedScene" uid="uid://ctb8ou1xbsenx" path="res://Object/plot.tscn" id="3_1smhj"]
+[ext_resource type="Texture2D" uid="uid://by364ey23erj1" path="res://Art/Environments/Placeholder/seba-oasis.jpg" id="4_ehw2k"]
+[ext_resource type="PackedScene" uid="uid://bb164ybrl4i24" path="res://Sound/Music/MusicManager.tscn" id="4_k3h0u"]
+
+[node name="Swamp" type="Node2D"]
+
+[node name="Seba-oasis" type="Sprite2D" parent="."]
+position = Vector2(945, 521)
+scale = Vector2(2.05316, 2.05316)
+texture = ExtResource("4_ehw2k")
+
+[node name="Hud" parent="." instance=ExtResource("2_xpatx")]
+offset_left = 957.0
+offset_top = 640.0
+offset_right = 957.0
+offset_bottom = 640.0
+
+[node name="Plot" parent="." instance=ExtResource("3_1smhj")]
+position = Vector2(250, 304)
+
+[node name="Plot2" parent="." instance=ExtResource("3_1smhj")]
+position = Vector2(503, 304)
+
+[node name="Plot3" parent="." instance=ExtResource("3_1smhj")]
+position = Vector2(771, 304)
+
+[node name="MusicManager" parent="." instance=ExtResource("4_k3h0u")]

@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dss0h3jsc6kld"]
+
+[ext_resource type="Texture2D" uid="uid://dmfy0lent32jr" path="res://Art/Environments/Placeholder/underwater-scene-3.jpg" id="1_f7y1v"]
+[ext_resource type="PackedScene" uid="uid://dgokvidj210pd" path="res://UI/HUD/HUD.tscn" id="2_0np4w"]
+[ext_resource type="PackedScene" uid="uid://ctb8ou1xbsenx" path="res://Object/plot.tscn" id="3_51sg6"]
+[ext_resource type="PackedScene" uid="uid://bb164ybrl4i24" path="res://Sound/Music/MusicManager.tscn" id="4_efybm"]
+
+[node name="Swamp" type="Node2D"]
+
+[node name="Underwater-scene-3" type="Sprite2D" parent="."]
+position = Vector2(937, 383)
+scale = Vector2(2.28541, 2.28541)
+texture = ExtResource("1_f7y1v")
+
+[node name="Hud" parent="." instance=ExtResource("2_0np4w")]
+offset_left = 957.0
+offset_top = 640.0
+offset_right = 957.0
+offset_bottom = 640.0
+
+[node name="Plot" parent="." instance=ExtResource("3_51sg6")]
+position = Vector2(250, 304)
+
+[node name="Plot2" parent="." instance=ExtResource("3_51sg6")]
+position = Vector2(503, 304)
+
+[node name="Plot3" parent="." instance=ExtResource("3_51sg6")]
+position = Vector2(771, 304)
+
+[node name="MusicManager" parent="." instance=ExtResource("4_efybm")]
