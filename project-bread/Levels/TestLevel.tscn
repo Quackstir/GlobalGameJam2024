@@ -1,26 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://d1cbcm2gokjo0"]
+[gd_scene load_steps=4 format=3 uid="uid://d1cbcm2gokjo0"]
 
 [ext_resource type="PackedScene" uid="uid://ctb8ou1xbsenx" path="res://Object/plot.tscn" id="1_o2f68"]
 [ext_resource type="PackedScene" uid="uid://dgokvidj210pd" path="res://UI/HUD/HUD.tscn" id="1_yxj47"]
-[ext_resource type="Script" path="res://Components/GameManager.gd" id="2_5gpth"]
-[ext_resource type="PackedScene" uid="uid://xb6gyiyw2qth" path="res://UI/HUD/interaction_container.tscn" id="4_7g2sk"]
-[ext_resource type="Resource" uid="uid://dyijosiwrula8" path="res://UI/HUD/Interactions/testInteraction.tres" id="5_2yc5k"]
-[ext_resource type="Script" path="res://UI/HUD/r_PlantInteraction.gd" id="5_3l3v4"]
-[ext_resource type="Texture2D" uid="uid://b6k0rfutupdbe" path="res://icon.svg" id="5_x3n6i"]
-[ext_resource type="Resource" uid="uid://cnboo0nugotgi" path="res://Resources/R_TestPlant.tres" id="6_avrqt"]
-[ext_resource type="Script" path="res://UI/HUD/r_WaterInteraction.gd" id="8_i8nci"]
 [ext_resource type="PackedScene" uid="uid://bb164ybrl4i24" path="res://Sound/Music/MusicManager.tscn" id="10_sbrc4"]
-
-[sub_resource type="Resource" id="Resource_weapo"]
-script = ExtResource("5_3l3v4")
-plantToInteract = ExtResource("6_avrqt")
-Name = "Plant Thing"
-interactionTexture = ExtResource("5_x3n6i")
-
-[sub_resource type="Resource" id="Resource_dne33"]
-script = ExtResource("8_i8nci")
-Name = "Water"
-interactionTexture = ExtResource("5_x3n6i")
 
 [node name="TestLevel" type="Node2D"]
 
@@ -38,29 +20,5 @@ position = Vector2(503, 304)
 
 [node name="Plot3" parent="." instance=ExtResource("1_o2f68")]
 position = Vector2(771, 304)
-
-[node name="GameManagerScript" type="Node" parent="."]
-script = ExtResource("2_5gpth")
-
-[node name="InteractionContainer" parent="." instance=ExtResource("4_7g2sk")]
-offset_left = 1290.0
-offset_top = 587.0
-offset_right = 1426.0
-offset_bottom = 762.0
-interaction = SubResource("Resource_weapo")
-
-[node name="InteractionContainer2" parent="." instance=ExtResource("4_7g2sk")]
-offset_left = 1462.0
-offset_top = 584.0
-offset_right = 1598.0
-offset_bottom = 759.0
-interaction = SubResource("Resource_dne33")
-
-[node name="InteractionContainer3" parent="." instance=ExtResource("4_7g2sk")]
-offset_left = 1639.0
-offset_top = 587.0
-offset_right = 1775.0
-offset_bottom = 762.0
-interaction = ExtResource("5_2yc5k")
 
 [node name="MusicManager" parent="." instance=ExtResource("10_sbrc4")]

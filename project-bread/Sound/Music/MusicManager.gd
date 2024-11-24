@@ -56,15 +56,8 @@ func transition(variable:String, newValue:float):
 	var tween = create_tween()
 	tween.tween_property(self,variable,newValue, 2).set_trans(Tween.TRANS_LINEAR)
 
-
 func _ready() -> void:
 	tracks = enum_Tracks.Plains
-	#transition("Plains",-50)
-
-#func transitionMusic(streamWant:int):
-	##for a in stream.stream_count-1:
-		##if (a == streamWant-1): pass
-		##stream.set_sync_stream_volume(a,-60)
-		##print("Setting" + str(a))
-	#
-	#stream.set_sync_stream_volume(streamWant-1,0)
+	
+	var audStream:AudioStream = stream.get_sync_stream(1)
+	#audStream.set_sync_stream_volume(1,-60)

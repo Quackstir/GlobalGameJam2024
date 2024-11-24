@@ -1,7 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgokvidj210pd"]
+[gd_scene load_steps=9 format=3 uid="uid://dgokvidj210pd"]
 
 [ext_resource type="Script" path="res://UI/HUD/hud.gd" id="1_ausxi"]
 [ext_resource type="Texture2D" uid="uid://b6k0rfutupdbe" path="res://icon.svg" id="1_lotot"]
+[ext_resource type="PackedScene" uid="uid://xb6gyiyw2qth" path="res://UI/HUD/interaction_container.tscn" id="3_t80bx"]
+[ext_resource type="Resource" uid="uid://cnboo0nugotgi" path="res://Resources/R_TestPlant.tres" id="4_jwggn"]
+[ext_resource type="Script" path="res://UI/HUD/r_PlantInteraction.gd" id="5_phed6"]
+[ext_resource type="Script" path="res://UI/HUD/r_WaterInteraction.gd" id="6_4qrwn"]
+
+[sub_resource type="Resource" id="Resource_eocsc"]
+script = ExtResource("5_phed6")
+plantToInteract = ExtResource("4_jwggn")
+Name = "Plant Thing"
+interactionTexture = ExtResource("1_lotot")
+
+[sub_resource type="Resource" id="Resource_k2hwp"]
+script = ExtResource("6_4qrwn")
+Name = "Water"
+interactionTexture = ExtResource("1_lotot")
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -87,117 +102,13 @@ pivot_offset = Vector2(0, 175)
 theme_override_constants/h_separation = 20
 columns = 7
 
-[node name="Plant 1 Button" type="Button" parent="CanvasLayer/Panel/GridContainer"]
+[node name="InteractionContainer" parent="CanvasLayer/Panel/GridContainer" instance=ExtResource("3_t80bx")]
 layout_mode = 2
-mouse_default_cursor_shape = 2
-toggle_mode = true
-icon = ExtResource("1_lotot")
-icon_alignment = 1
+interaction = SubResource("Resource_eocsc")
 
-[node name="Plant 2 Button" type="Button" parent="CanvasLayer/Panel/GridContainer"]
+[node name="InteractionContainer2" parent="CanvasLayer/Panel/GridContainer" instance=ExtResource("3_t80bx")]
 layout_mode = 2
-mouse_default_cursor_shape = 2
-toggle_mode = true
-icon = ExtResource("1_lotot")
-icon_alignment = 1
-
-[node name="Plant 3 Button" type="Button" parent="CanvasLayer/Panel/GridContainer"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-toggle_mode = true
-icon = ExtResource("1_lotot")
-icon_alignment = 1
-
-[node name="Plant 4 Button" type="Button" parent="CanvasLayer/Panel/GridContainer"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-toggle_mode = true
-icon = ExtResource("1_lotot")
-icon_alignment = 1
-
-[node name="Soil Button" type="Button" parent="CanvasLayer/Panel/GridContainer"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-toggle_mode = true
-icon = ExtResource("1_lotot")
-icon_alignment = 1
-
-[node name="Water Button" type="Button" parent="CanvasLayer/Panel/GridContainer"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-toggle_mode = true
-icon = ExtResource("1_lotot")
-icon_alignment = 1
-
-[node name="Sniper Button" type="Button" parent="CanvasLayer/Panel/GridContainer"]
-layout_mode = 2
-mouse_default_cursor_shape = 2
-toggle_mode = true
-icon = ExtResource("1_lotot")
-icon_alignment = 1
-
-[node name="Plant 1 Label" type="Label" parent="CanvasLayer/Panel/GridContainer"]
-layout_mode = 2
-mouse_filter = 1
-theme_override_font_sizes/font_size = 25
-text = "Plant 1"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="Plant 2 Label" type="Label" parent="CanvasLayer/Panel/GridContainer"]
-layout_mode = 2
-mouse_filter = 1
-theme_override_font_sizes/font_size = 25
-text = "Plant 2"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="Plant 3 Label" type="Label" parent="CanvasLayer/Panel/GridContainer"]
-layout_mode = 2
-mouse_filter = 1
-theme_override_font_sizes/font_size = 25
-text = "Plant 3"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="Plant 4 Label" type="Label" parent="CanvasLayer/Panel/GridContainer"]
-layout_mode = 2
-mouse_filter = 1
-theme_override_font_sizes/font_size = 25
-text = "Plant 4"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="Soil Label" type="Label" parent="CanvasLayer/Panel/GridContainer"]
-layout_mode = 2
-mouse_filter = 1
-theme_override_font_sizes/font_size = 25
-text = "Soil"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="Water Label" type="Label" parent="CanvasLayer/Panel/GridContainer"]
-layout_mode = 2
-mouse_filter = 1
-theme_override_font_sizes/font_size = 25
-text = "Water"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="Sniper Label" type="Label" parent="CanvasLayer/Panel/GridContainer"]
-layout_mode = 2
-mouse_filter = 1
-theme_override_font_sizes/font_size = 25
-text = "Sniper"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
+interaction = SubResource("Resource_k2hwp")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel"]
 layout_mode = 1
@@ -225,4 +136,3 @@ text = "00000"
 
 [connection signal="pressed" from="CanvasLayer/Panel/Pause Button" to="." method="_on_pause_button_pressed"]
 [connection signal="toggled" from="CanvasLayer/Panel/Pause Button" to="." method="_on_plant_1_button_toggled"]
-[connection signal="toggled" from="CanvasLayer/Panel/GridContainer/Plant 1 Button" to="." method="_on_plant_1_button_toggled"]
