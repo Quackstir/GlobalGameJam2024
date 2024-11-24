@@ -8,6 +8,9 @@ var currentPlant:Plant
 func _on_button_pressed() -> void:
 	if GameManagerScript.currentInteraction != null:
 		GameManagerScript.currentInteraction.interactionFunction(self)
+	if currentPlant == null: return
+	if currentPlant.isHarvestable:
+		currentPlant.queue_free()
 
 func _on_button_focus_entered() -> void:
 	GameManagerScript.currentPlot = self
