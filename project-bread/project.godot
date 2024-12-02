@@ -33,7 +33,12 @@ directories/dtl_directory={
 "timelinePromoted": "res://Timelines/timelinePromoted.dtl",
 "timelineRegionunlock": "res://Timelines/timelineRegionunlock.dtl",
 "timelineShot": "res://Timelines/timelineShot.dtl",
+<<<<<<< Updated upstream
 "timelineTest": "res://Timelines/timelineTest.dtl"
+=======
+"timelineTest": "res://Timelines/timelineTest.dtl",
+"tutorialtimeline": "res://Timelines/tutorialtimeline.dtl"
+>>>>>>> Stashed changes
 }
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01

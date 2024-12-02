@@ -1,0 +1,157 @@
+[gd_scene load_steps=11 format=3 uid="uid://c8axc3ce7fvh7"]
+
+[ext_resource type="Script" path="res://UI/HUD/hud.gd" id="1_xema7"]
+[ext_resource type="Texture2D" uid="uid://b6k0rfutupdbe" path="res://icon.svg" id="2_76h7w"]
+[ext_resource type="PackedScene" uid="uid://xb6gyiyw2qth" path="res://UI/HUD/interaction_container.tscn" id="3_tknmb"]
+[ext_resource type="Resource" uid="uid://cnboo0nugotgi" path="res://Resources/R_TestPlant.tres" id="4_rt76p"]
+[ext_resource type="Script" path="res://UI/HUD/r_PlantInteraction.gd" id="5_t8gyp"]
+[ext_resource type="Script" path="res://UI/HUD/r_WaterInteraction.gd" id="6_gh2jc"]
+[ext_resource type="Texture2D" uid="uid://cbik4rn1kqvbi" path="res://Timelines/bread.png" id="7_cdqg7"]
+[ext_resource type="Script" path="res://breadbutton.gd" id="8_4vl4m"]
+
+[sub_resource type="Resource" id="Resource_eocsc"]
+script = ExtResource("5_t8gyp")
+plantToInteract = ExtResource("4_rt76p")
+Name = "Plant Thing"
+interactionTexture = ExtResource("2_76h7w")
+
+[sub_resource type="Resource" id="Resource_k2hwp"]
+script = ExtResource("6_gh2jc")
+Name = "Water"
+interactionTexture = ExtResource("2_76h7w")
+
+[node name="Hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xema7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="OptionButton" type="OptionButton" parent="CanvasLayer/Panel"]
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -300.0
+offset_top = 50.0
+offset_right = -51.0
+offset_bottom = 150.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 32
+selected = 0
+item_count = 4
+popup/item_0/text = "FARM NAME 1"
+popup/item_1/text = "FARM NAME 2"
+popup/item_1/id = 1
+popup/item_2/text = "FARM NAME 3"
+popup/item_2/id = 2
+popup/item_3/text = "FARM NAME 4"
+popup/item_3/id = 3
+
+[node name="Pause Button" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -186.0
+offset_top = -186.0
+offset_right = -50.0
+offset_bottom = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+action_mode = 0
+text = "PAUSE
+"
+icon = ExtResource("2_76h7w")
+icon_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -910.0
+offset_top = 310.0
+offset_right = 162.0
+offset_bottom = 485.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(0, 175)
+theme_override_constants/h_separation = 20
+columns = 7
+
+[node name="InteractionContainer" parent="CanvasLayer/Panel/GridContainer" instance=ExtResource("3_tknmb")]
+layout_mode = 2
+interaction = SubResource("Resource_eocsc")
+
+[node name="InteractionContainer2" parent="CanvasLayer/Panel/GridContainer" instance=ExtResource("3_tknmb")]
+layout_mode = 2
+interaction = SubResource("Resource_k2hwp")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 1
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 300.0
+offset_bottom = 100.0
+theme_override_constants/separation = 5
+
+[node name="Money Label" type="Label" parent="CanvasLayer/Panel/HBoxContainer"]
+layout_mode = 2
+tooltip_text = "Cash
+Rules
+Everything
+Around
+Me"
+mouse_filter = 1
+theme_override_font_sizes/font_size = 42
+text = "MONEY: "
+
+[node name="Amount Label" type="Label" parent="CanvasLayer/Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "00000"
+
+[node name="Bread" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(153, 238)
+rotation = -6.28319
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_cdqg7")
+flip_h = true
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 55.0
+offset_top = 336.0
+offset_right = 305.0
+offset_bottom = 436.0
+theme_override_font_sizes/font_size = 32
+text = "TUTORIAL"
+script = ExtResource("8_4vl4m")
+
+[connection signal="pressed" from="CanvasLayer/Panel/Pause Button" to="." method="_on_pause_button_pressed"]
+[connection signal="toggled" from="CanvasLayer/Panel/Pause Button" to="." method="_on_plant_1_button_toggled"]
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]

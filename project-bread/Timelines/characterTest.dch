@@ -20,9 +20,9 @@
 "image": "\"res://Timelines/bread.png\""
 },
 "ignore_char_scale": true,
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 0.4,
+"mirror": true,
+"offset": Vector2(0, -100),
+"scale": 0.3,
 "scene": ""
 }
 },
