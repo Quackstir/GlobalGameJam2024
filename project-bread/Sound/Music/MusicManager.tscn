@@ -85,4 +85,3 @@ stream = SubResource("AudioStreamSynchronized_dofbi")
 volume_db = -1.642
 autoplay = true
 script = ExtResource("10_n84oq")
-tracks = 2

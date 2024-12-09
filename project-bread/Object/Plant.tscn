@@ -1,11 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://gsod7h5ckeqo"]
+[gd_scene load_steps=14 format=3 uid="uid://gsod7h5ckeqo"]
 
 [ext_resource type="Texture2D" uid="uid://b6k0rfutupdbe" path="res://icon.svg" id="1_rttno"]
-[ext_resource type="Script" path="res://Components/Plant.gd" id="2_d8iel"]
+[ext_resource type="Script" path="res://Components/PlantComponents/Plant.gd" id="2_d8iel"]
 [ext_resource type="Script" path="res://Resources/R_PlantStage.gd" id="2_mkwm1"]
 [ext_resource type="Texture2D" uid="uid://bn57acatmgyov" path="res://Art/Plants/clownflower.png" id="3_5caqk"]
 [ext_resource type="Texture2D" uid="uid://buexahi2xp6b1" path="res://Art/Plants/zombie.png" id="4_nkae0"]
 [ext_resource type="Texture2D" uid="uid://cphl2ypq2rmli" path="res://Art/Plants/zombier0002.png" id="5_02186"]
+[ext_resource type="Script" path="res://Components/Finite State Machine/StateMachine.gd" id="7_jlvgg"]
+[ext_resource type="Script" path="res://Components/PlantComponents/State_PlantGrowing.gd" id="8_de4nx"]
+[ext_resource type="Script" path="res://Components/PlantComponents/State_PlantHarvest.gd" id="9_yrovk"]
+[ext_resource type="Script" path="res://Components/PlantComponents/State_PlantNeed.gd" id="10_626na"]
 
 [sub_resource type="Resource" id="Resource_24io6"]
 script = ExtResource("2_mkwm1")
@@ -45,4 +49,18 @@ offset_right = 89.0
 offset_bottom = -51.0
 text = "Ready"
 
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("7_jlvgg")
+initial_state = NodePath("State_PlantNeed")
+
+[node name="State_PlantGrowing" type="Node" parent="StateMachine"]
+script = ExtResource("8_de4nx")
+
+[node name="State_PlantHarvest" type="Node" parent="StateMachine"]
+script = ExtResource("9_yrovk")
+
+[node name="State_PlantNeed" type="Node" parent="StateMachine"]
+script = ExtResource("10_626na")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="StateMachine/State_PlantGrowing" method="_on_timer_timeout"]

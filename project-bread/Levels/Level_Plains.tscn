@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://brg2m81chypfy"]
+
+[ext_resource type="PackedScene" uid="uid://dgokvidj210pd" path="res://UI/HUD/HUD.tscn" id="1_af1me"]
+[ext_resource type="PackedScene" uid="uid://ctb8ou1xbsenx" path="res://Object/plot.tscn" id="2_h6e0r"]
+[ext_resource type="PackedScene" uid="uid://bb164ybrl4i24" path="res://Sound/Music/MusicManager.tscn" id="3_lkylm"]
+[ext_resource type="Texture2D" uid="uid://dab657m3puvff" path="res://Art/Environments/Placeholder/PPCW3OFJ6YI6ZCUOTRXJ7R5A3Y.jpg" id="4_vvlwm"]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="Ppcw3ofj6yi6zcuotrxj7r5a3y" type="Sprite2D" parent="."]
+position = Vector2(981, 568)
+texture = ExtResource("4_vvlwm")
+
+[node name="Hud" parent="." instance=ExtResource("1_af1me")]
+offset_left = 957.0
+offset_top = 640.0
+offset_right = 957.0
+offset_bottom = 640.0
+
+[node name="Plot" parent="." instance=ExtResource("2_h6e0r")]
+position = Vector2(250, 304)
+
+[node name="Plot2" parent="." instance=ExtResource("2_h6e0r")]
+position = Vector2(503, 304)
+
+[node name="Plot3" parent="." instance=ExtResource("2_h6e0r")]
+position = Vector2(771, 304)
+
+[node name="MusicManager" parent="." instance=ExtResource("3_lkylm")]
