@@ -22,8 +22,18 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
-directories/dch_directory={}
-directories/dtl_directory={}
+directories/dch_directory={
+"characterTest": "res://Timelines/characterTest.dch"
+}
+directories/dtl_directory={
+"timelineAlmostLose": "res://Timelines/timelineAlmostLose.dtl",
+"timelineEnemies": "res://Timelines/timelineEnemies.dtl",
+"timelineHarvest": "res://Timelines/timelineHarvest.dtl",
+"timelinePlant": "res://Timelines/timelinePlant.dtl",
+"timelinePromoted": "res://Timelines/timelinePromoted.dtl",
+"timelineRegionunlock": "res://Timelines/timelineRegionunlock.dtl",
+"timelineShot": "res://Timelines/timelineShot.dtl",
+
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
