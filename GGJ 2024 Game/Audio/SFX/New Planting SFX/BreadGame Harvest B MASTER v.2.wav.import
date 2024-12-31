@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dbj8ytxjl0juo"
+path="res://.godot/imported/BreadGame Harvest B MASTER v.2.wav-0ca085a5ea7c4dd798e7cef78fc08eb1.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/New Planting SFX/BreadGame Harvest B MASTER v.2.wav"
+dest_files=["res://.godot/imported/BreadGame Harvest B MASTER v.2.wav-0ca085a5ea7c4dd798e7cef78fc08eb1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
