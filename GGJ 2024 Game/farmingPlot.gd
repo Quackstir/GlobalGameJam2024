@@ -19,10 +19,20 @@ var currentGrowth:float = 0
 var isWatered:bool = false
 
 @export var harvestSFXArray:Array[AudioStreamWAV]
+@export var waterSFXArray:Array[AudioStreamWAV]
+@export var plantSFXArray:Array[AudioStreamWAV]
 
 @onready var harvest_sfx = $HarvestSFX
+@onready var harvest_sfx_2 = $HarvestSFX_2
+@onready var harvest_sfx_3 = $HarvestSFX_3
 
 @onready var water_plant_sfx = $WaterPlantSFX
+@onready var water_plant_sfx_2 = $WaterPlantSFX_2
+@onready var water_plant_sfx_3 = $WaterPlantSFX_3
+
+@onready var plant_plant_sfx = $PlantPlantSFX
+@onready var plant_plant_sfx_2 = $PlantPlantSFX_2
+@onready var plant_plant_sfx_3 = $PlantPlantSFX_3
 
 func _ready():
 	rich_text_label.text = "[center]Harvest[/center]"
@@ -69,4 +79,15 @@ func _on_button_3_button_down():
 func _on_water_button_button_down():
 	currentGrowthRate = growthRate * 3
 	water_button.visible = false
+	water_plant_sfx.stream  = waterSFXArray[randi_range(0,waterSFXArray.size() - 1)]
 	water_plant_sfx.play()
+
+
+
+#	***EXAMPLE OF PLANTING BUTTON FUNCTIONALITY***
+
+# func _on_PLANT_button_button_down():
+#	if plot is currently unoccupied, allow planting 
+#	PLANT_button.visible = false
+#	plant_plant_sfx.stream  = plantSFXArray[randi_range(0,plantSFXArray.size() - 1)]
+#	plant_plant_sfx.play()

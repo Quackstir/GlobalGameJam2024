@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://j6nkmy43og8g"
+path="res://.godot/imported/BreadGame Planting A MASTER v.2.wav-f19467d786efadb7fac326059f1aacd3.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/New Planting SFX/BreadGame Planting A MASTER v.2.wav"
+dest_files=["res://.godot/imported/BreadGame Planting A MASTER v.2.wav-f19467d786efadb7fac326059f1aacd3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
