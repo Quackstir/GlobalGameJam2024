@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Project Bread"
-run/main_scene="res://UI/HUD/HUD.tscn"
+run/main_scene="res://Levels/Level_Plains.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 GameManager="*res://Components/GameManager.gd"
@@ -19,11 +19,23 @@ GameManager="*res://Components/GameManager.gd"
 [autoload]
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+GameManager="*res://Components/GameManager.gd"
 
 [dialogic]
 
-directories/dch_directory={}
-directories/dtl_directory={}
+directories/dch_directory={
+"characterTest": "res://Timelines/characterTest.dch"
+}
+directories/dtl_directory={
+"timelineAlmostLose": "res://Timelines/timelineAlmostLose.dtl",
+"timelineEnemies": "res://Timelines/timelineEnemies.dtl",
+"timelineHarvest": "res://Timelines/timelineHarvest.dtl",
+"timelinePlant": "res://Timelines/timelinePlant.dtl",
+"timelinePromoted": "res://Timelines/timelinePromoted.dtl",
+"timelineRegionunlock": "res://Timelines/timelineRegionunlock.dtl",
+"timelineShot": "res://Timelines/timelineShot.dtl",
+"timelineTest": "res://Timelines/timelineTest.dtl"
+}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
