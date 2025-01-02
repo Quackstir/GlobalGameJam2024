@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Project Bread"
-run/main_scene="res://UI/HUD/HUD.tscn"
+run/main_scene="res://Levels/Level_Plains.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 GameManager="*res://Components/GameManager.gd"
@@ -19,6 +19,7 @@ GameManager="*res://Components/GameManager.gd"
 [autoload]
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+GameManager="*res://Components/GameManager.gd"
 
 [dialogic]
 

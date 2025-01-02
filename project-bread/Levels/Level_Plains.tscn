@@ -1,21 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://brg2m81chypfy"]
+[gd_scene load_steps=10 format=3 uid="uid://brg2m81chypfy"]
 
-[ext_resource type="PackedScene" uid="uid://dgokvidj210pd" path="res://UI/HUD/HUD.tscn" id="1_af1me"]
 [ext_resource type="PackedScene" uid="uid://ctb8ou1xbsenx" path="res://Object/plot.tscn" id="2_h6e0r"]
-[ext_resource type="PackedScene" uid="uid://bb164ybrl4i24" path="res://Sound/Music/MusicManager.tscn" id="3_lkylm"]
+[ext_resource type="PackedScene" uid="uid://xb6gyiyw2qth" path="res://UI/HUD/interaction_container.tscn" id="3_vposs"]
+[ext_resource type="Texture2D" uid="uid://b6k0rfutupdbe" path="res://icon.svg" id="4_opbul"]
 [ext_resource type="Texture2D" uid="uid://dab657m3puvff" path="res://Art/Environments/Placeholder/PPCW3OFJ6YI6ZCUOTRXJ7R5A3Y.jpg" id="4_vvlwm"]
+[ext_resource type="Resource" uid="uid://cnboo0nugotgi" path="res://Resources/R_TestPlant.tres" id="5_81vut"]
+[ext_resource type="Script" path="res://UI/HUD/r_PlantInteraction.gd" id="6_s1kdg"]
+[ext_resource type="Script" path="res://UI/HUD/r_WaterInteraction.gd" id="7_y5ewp"]
+
+[sub_resource type="Resource" id="Resource_exs2i"]
+script = ExtResource("6_s1kdg")
+plantToInteract = ExtResource("5_81vut")
+Name = "Plant Thing"
+interactionTexture = ExtResource("4_opbul")
+
+[sub_resource type="Resource" id="Resource_5l743"]
+script = ExtResource("7_y5ewp")
+Name = "Water"
+interactionTexture = ExtResource("4_opbul")
 
 [node name="TestLevel" type="Node2D"]
 
 [node name="Ppcw3ofj6yi6zcuotrxj7r5a3y" type="Sprite2D" parent="."]
 position = Vector2(981, 568)
 texture = ExtResource("4_vvlwm")
-
-[node name="Hud" parent="." instance=ExtResource("1_af1me")]
-offset_left = 957.0
-offset_top = 640.0
-offset_right = 957.0
-offset_bottom = 640.0
 
 [node name="Plot" parent="." instance=ExtResource("2_h6e0r")]
 position = Vector2(250, 304)
@@ -26,4 +34,40 @@ position = Vector2(503, 304)
 [node name="Plot3" parent="." instance=ExtResource("2_h6e0r")]
 position = Vector2(771, 304)
 
-[node name="MusicManager" parent="." instance=ExtResource("3_lkylm")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -910.0
+offset_top = 310.0
+offset_right = 162.0
+offset_bottom = 485.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(0, 175)
+theme_override_constants/h_separation = 20
+columns = 7
+
+[node name="InteractionContainer" parent="CanvasLayer/Panel/GridContainer" instance=ExtResource("3_vposs")]
+layout_mode = 2
+interaction = SubResource("Resource_exs2i")
+
+[node name="InteractionContainer2" parent="CanvasLayer/Panel/GridContainer" instance=ExtResource("3_vposs")]
+layout_mode = 2
+interaction = SubResource("Resource_5l743")

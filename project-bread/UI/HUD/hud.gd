@@ -1,3 +1,4 @@
+class_name HUD
 extends Control
 
 @onready var amount_label: Label = $"CanvasLayer/Panel/HBoxContainer/Amount Label"
@@ -22,3 +23,23 @@ func _on_plant_1_button_toggled(toggled_on: bool) -> void:
 
 func _on_pause_button_pressed() -> void:
 	print_debug("PAUSE MENU GOES HERE")
+
+
+func _on_option_button_item_selected(index: int) -> void:
+	match index:
+		0:
+			print("Plains")
+			get_tree().change_scene_to_file("res://Levels/Level_Plains.tscn")
+			GameManagerScript._gameManager.MusicManager_Instance.tracks = 0
+		1:
+			print("Desert")
+			get_tree().change_scene_to_file("res://Levels/Level_Desert.tscn")
+			GameManagerScript._gameManager.MusicManager_Instance.tracks = 1
+		2:
+			print("Swamp")
+			get_tree().change_scene_to_file("res://Levels/Level_Swamp.tscn")
+			GameManagerScript._gameManager.MusicManager_Instance.tracks = 2
+		3:
+			print("Aquatic")
+			get_tree().change_scene_to_file("res://Levels/Level_Aquatic.tscn")
+			GameManagerScript._gameManager.MusicManager_Instance.tracks = 3
