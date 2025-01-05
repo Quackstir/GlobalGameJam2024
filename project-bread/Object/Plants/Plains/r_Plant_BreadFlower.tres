@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="r_Plant" load_steps=3 format=3 uid="uid://cwqoxgirga5mf"]
+
+[ext_resource type="Script" path="res://Resources/R_Plant.gd" id="2_jnjj0"]
+[ext_resource type="PackedScene" uid="uid://ca8ckarq387vx" path="res://Object/Plants/Plains/Plant_BreadFlower.tscn" id="3_70ttp"]
+
+[resource]
+script = ExtResource("2_jnjj0")
+plantObject = ExtResource("3_70ttp")

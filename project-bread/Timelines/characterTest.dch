@@ -17,7 +17,7 @@
 "portraits": {
 "testPortrait": {
 "export_overrides": {
-"image": "\"res://Timelines/bread.png\""
+"image": "\"res://Art/Misc/bear.png\""
 },
 "ignore_char_scale": true,
 "mirror": true,

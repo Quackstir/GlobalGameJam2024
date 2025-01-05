@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="r_Plant" load_steps=3 format=3 uid="uid://drhbkknpe0dtd"]
+
+[ext_resource type="PackedScene" uid="uid://cl0ufxju8qckg" path="res://Object/Plants/Swamp/Plant_CupcakeFlower.tscn" id="1_e57ve"]
+[ext_resource type="Script" path="res://Resources/R_Plant.gd" id="4_0sq1n"]
+
+[resource]
+script = ExtResource("4_0sq1n")
+plantObject = ExtResource("1_e57ve")

@@ -1,73 +1,100 @@
-[gd_scene load_steps=10 format=3 uid="uid://brg2m81chypfy"]
+[gd_scene load_steps=7 format=3 uid="uid://brg2m81chypfy"]
 
+[ext_resource type="Texture2D" uid="uid://bby24bt13nphq" path="res://Art/Environments/mushroommarshconceptart.png" id="1_sf0ai"]
 [ext_resource type="PackedScene" uid="uid://ctb8ou1xbsenx" path="res://Object/plot.tscn" id="2_h6e0r"]
-[ext_resource type="PackedScene" uid="uid://xb6gyiyw2qth" path="res://UI/HUD/interaction_container.tscn" id="3_vposs"]
-[ext_resource type="Texture2D" uid="uid://b6k0rfutupdbe" path="res://icon.svg" id="4_opbul"]
-[ext_resource type="Texture2D" uid="uid://dab657m3puvff" path="res://Art/Environments/Placeholder/PPCW3OFJ6YI6ZCUOTRXJ7R5A3Y.jpg" id="4_vvlwm"]
-[ext_resource type="Resource" uid="uid://cnboo0nugotgi" path="res://Resources/R_TestPlant.tres" id="5_81vut"]
-[ext_resource type="Script" path="res://UI/HUD/r_PlantInteraction.gd" id="6_s1kdg"]
-[ext_resource type="Script" path="res://UI/HUD/r_WaterInteraction.gd" id="7_y5ewp"]
-
-[sub_resource type="Resource" id="Resource_exs2i"]
-script = ExtResource("6_s1kdg")
-plantToInteract = ExtResource("5_81vut")
-Name = "Plant Thing"
-interactionTexture = ExtResource("4_opbul")
-
-[sub_resource type="Resource" id="Resource_5l743"]
-script = ExtResource("7_y5ewp")
-Name = "Water"
-interactionTexture = ExtResource("4_opbul")
+[ext_resource type="PackedScene" uid="uid://dss0h3jsc6kld" path="res://Levels/Level_Aquatic.tscn" id="8_5qt76"]
+[ext_resource type="PackedScene" uid="uid://bs6mylver0wf5" path="res://Levels/Level_Desert.tscn" id="9_ghdvd"]
+[ext_resource type="PackedScene" uid="uid://cpg77kjy8anfl" path="res://Levels/Level_Swamp.tscn" id="10_8iw53"]
+[ext_resource type="Script" path="res://Components/Camera.gd" id="11_xqilv"]
 
 [node name="TestLevel" type="Node2D"]
 
-[node name="Ppcw3ofj6yi6zcuotrxj7r5a3y" type="Sprite2D" parent="."]
-position = Vector2(981, 568)
-texture = ExtResource("4_vvlwm")
+[node name="Mushroommarshconceptart" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(998, 606)
+texture = ExtResource("1_sf0ai")
 
 [node name="Plot" parent="." instance=ExtResource("2_h6e0r")]
-position = Vector2(250, 304)
+position = Vector2(272, 207)
 
 [node name="Plot2" parent="." instance=ExtResource("2_h6e0r")]
-position = Vector2(503, 304)
+position = Vector2(525, 207)
 
 [node name="Plot3" parent="." instance=ExtResource("2_h6e0r")]
-position = Vector2(771, 304)
+position = Vector2(793, 207)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Plot4" parent="." instance=ExtResource("2_h6e0r")]
+position = Vector2(1116, 191)
 
-[node name="Panel" type="Panel" parent="CanvasLayer"]
-self_modulate = Color(1, 1, 1, 0)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-mouse_filter = 2
+[node name="Plot5" parent="." instance=ExtResource("2_h6e0r")]
+position = Vector2(1369, 191)
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -910.0
-offset_top = 310.0
-offset_right = 162.0
-offset_bottom = 485.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(0, 175)
-theme_override_constants/h_separation = 20
-columns = 7
+[node name="Plot6" parent="." instance=ExtResource("2_h6e0r")]
+position = Vector2(1637, 191)
 
-[node name="InteractionContainer" parent="CanvasLayer/Panel/GridContainer" instance=ExtResource("3_vposs")]
-layout_mode = 2
-interaction = SubResource("Resource_exs2i")
+[node name="Plot7" parent="." instance=ExtResource("2_h6e0r")]
+position = Vector2(268, 396)
 
-[node name="InteractionContainer2" parent="CanvasLayer/Panel/GridContainer" instance=ExtResource("3_vposs")]
-layout_mode = 2
-interaction = SubResource("Resource_5l743")
+[node name="Plot8" parent="." instance=ExtResource("2_h6e0r")]
+position = Vector2(521, 396)
+
+[node name="Plot9" parent="." instance=ExtResource("2_h6e0r")]
+position = Vector2(789, 396)
+
+[node name="Plot10" parent="." instance=ExtResource("2_h6e0r")]
+position = Vector2(1112, 380)
+
+[node name="Plot11" parent="." instance=ExtResource("2_h6e0r")]
+position = Vector2(1365, 380)
+
+[node name="Plot12" parent="." instance=ExtResource("2_h6e0r")]
+position = Vector2(1633, 380)
+
+[node name="Plot13" parent="." instance=ExtResource("2_h6e0r")]
+position = Vector2(281, 598)
+
+[node name="Plot14" parent="." instance=ExtResource("2_h6e0r")]
+position = Vector2(534, 598)
+
+[node name="Plot15" parent="." instance=ExtResource("2_h6e0r")]
+position = Vector2(802, 598)
+
+[node name="Plot16" parent="." instance=ExtResource("2_h6e0r")]
+position = Vector2(1125, 582)
+
+[node name="Plot17" parent="." instance=ExtResource("2_h6e0r")]
+position = Vector2(1378, 582)
+
+[node name="Plot18" parent="." instance=ExtResource("2_h6e0r")]
+position = Vector2(1646, 582)
+
+[node name="Plot19" parent="." instance=ExtResource("2_h6e0r")]
+position = Vector2(281, 809)
+
+[node name="Plot20" parent="." instance=ExtResource("2_h6e0r")]
+position = Vector2(534, 809)
+
+[node name="Plot21" parent="." instance=ExtResource("2_h6e0r")]
+position = Vector2(802, 809)
+
+[node name="Plot22" parent="." instance=ExtResource("2_h6e0r")]
+position = Vector2(1125, 793)
+
+[node name="Plot23" parent="." instance=ExtResource("2_h6e0r")]
+position = Vector2(1378, 793)
+
+[node name="Plot24" parent="." instance=ExtResource("2_h6e0r")]
+position = Vector2(1646, 793)
+
+[node name="Swamp" parent="." instance=ExtResource("9_ghdvd")]
+position = Vector2(3950, -324)
+
+[node name="Swamp2" parent="." instance=ExtResource("8_5qt76")]
+position = Vector2(7032, -156)
+
+[node name="Swamp3" parent="." instance=ExtResource("10_8iw53")]
+position = Vector2(9834, -383)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(961, 539)
+script = ExtResource("11_xqilv")

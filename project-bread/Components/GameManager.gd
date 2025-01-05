@@ -21,6 +21,18 @@ signal moneyChanged(moneyValue)
 
 var money: int: set = setMoney
 
+#const LEVEL_AQUATIC = preload("res://Levels/Level_Aquatic.tscn")
+#static var Level_Aquatic_Instance
+#
+#const LEVEL_DESERT = preload("res://Levels/Level_Desert.tscn")
+#static var Level_Desert_Instance
+#
+#const LEVEL_PLAINS = preload("res://Levels/Level_Plains.tscn")
+#static var Level_Plains_Instance
+#
+#const LEVEL_SWAMP = preload("res://Levels/Level_Swamp.tscn")
+#static var Level_Swamp_Instance
+
 func setMoney(newValue):
 	money = newValue
 	print("Money: " + str(money))
@@ -38,3 +50,8 @@ func _ready() -> void:
 	
 	HUD_Instance = HUD_PRELOAD.instantiate()
 	add_child(HUD_Instance)
+	
+	#Level_Aquatic_Instance = LEVEL_AQUATIC.instantiate()
+	#Level_Desert_Instance = LEVEL_DESERT.instantiate()
+	#Level_Plains_Instance = LEVEL_PLAINS.instantiate()
+	#Level_Swamp_Instance = LEVEL_SWAMP.instantiate()

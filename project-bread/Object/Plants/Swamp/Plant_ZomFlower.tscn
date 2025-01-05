@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://d13jwchm4j8vx"]
+
+[ext_resource type="Script" path="res://Components/PlantComponents/Plant.gd" id="1_t4f6n"]
+[ext_resource type="Script" path="res://Resources/R_PlantStage.gd" id="2_cqlhs"]
+[ext_resource type="Texture2D" uid="uid://cn7xhk3urcl3e" path="res://Art/Plants/128 Versions/bread0002.png" id="3_c2tu7"]
+[ext_resource type="Texture2D" uid="uid://dv4aw25eraytb" path="res://Art/Plants/128 Versions/flour.png" id="4_66ntn"]
+[ext_resource type="Script" path="res://Components/Finite State Machine/StateMachine.gd" id="5_jjtf2"]
+[ext_resource type="Script" path="res://Components/PlantComponents/State_PlantGrowing.gd" id="6_uk7hi"]
+[ext_resource type="Script" path="res://Components/PlantComponents/State_PlantHarvest.gd" id="7_o8hj0"]
+[ext_resource type="Script" path="res://Components/PlantComponents/State_PlantNeed.gd" id="8_lkk6y"]
+
+[sub_resource type="Resource" id="Resource_24io6"]
+script = ExtResource("2_cqlhs")
+Sprite = ExtResource("3_c2tu7")
+TimeToGrow = 10.0
+RewardMoney = 13
+
+[node name="Plant" type="Node2D"]
+script = ExtResource("1_t4f6n")
+Stages = Array[ExtResource("2_cqlhs")]([SubResource("Resource_24io6")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
+texture = ExtResource("4_66ntn")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+one_shot = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -26.0
+offset_top = -91.0
+offset_right = 89.0
+offset_bottom = -51.0
+text = "Ready"
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("5_jjtf2")
+initial_state = NodePath("State_PlantNeed")
+
+[node name="State_PlantGrowing" type="Node" parent="StateMachine"]
+script = ExtResource("6_uk7hi")
+
+[node name="State_PlantHarvest" type="Node" parent="StateMachine"]
+script = ExtResource("7_o8hj0")
+
+[node name="State_PlantNeed" type="Node" parent="StateMachine"]
+script = ExtResource("8_lkk6y")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="StateMachine/State_PlantGrowing" method="_on_timer_timeout"]

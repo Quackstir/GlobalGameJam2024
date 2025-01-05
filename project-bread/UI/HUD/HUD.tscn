@@ -1,7 +1,81 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgokvidj210pd"]
+[gd_scene load_steps=33 format=3 uid="uid://dgokvidj210pd"]
 
 [ext_resource type="Script" path="res://UI/HUD/hud.gd" id="1_ausxi"]
 [ext_resource type="Texture2D" uid="uid://b6k0rfutupdbe" path="res://icon.svg" id="1_lotot"]
+[ext_resource type="PackedScene" uid="uid://xb6gyiyw2qth" path="res://UI/HUD/interaction_container.tscn" id="3_i0gco"]
+[ext_resource type="Resource" uid="uid://cwqoxgirga5mf" path="res://Object/Plants/Plains/r_Plant_BreadFlower.tres" id="4_4hf2q"]
+[ext_resource type="Resource" uid="uid://ciof6eq4xept6" path="res://Object/Plants/Plains/r_Plant_FrogFlower.tres" id="4_7ckbr"]
+[ext_resource type="Texture2D" uid="uid://b5do7rnv5gq6u" path="res://Art/Plants/128 Versions/bread0004.png" id="4_77s2c"]
+[ext_resource type="Script" path="res://UI/HUD/r_PlantInteraction.gd" id="5_nw541"]
+[ext_resource type="Texture2D" uid="uid://cat61lq6jrdmr" path="res://Art/Misc/128 Versions/watercan.png" id="6_0gw3d"]
+[ext_resource type="Script" path="res://UI/HUD/r_WaterInteraction.gd" id="6_xprx0"]
+[ext_resource type="Texture2D" uid="uid://b2rbm0g2yacws" path="res://Art/Plants/128 Versions/bread0012.png" id="7_no3r7"]
+[ext_resource type="Texture2D" uid="uid://dy4dtxafxbu7d" path="res://Art/Plants/128 Versions/bread0006.png" id="9_txpkl"]
+[ext_resource type="Resource" uid="uid://drhbkknpe0dtd" path="res://Object/Plants/Swamp/r_Plant_CupcakeFlower.tres" id="10_y180p"]
+[ext_resource type="Resource" uid="uid://bdi8njjccjy8" path="res://Object/Plants/Swamp/r_Plant_ZomFlower.tres" id="11_3jp73"]
+[ext_resource type="Texture2D" uid="uid://dejm27k7o2a5c" path="res://Art/Plants/128 Versions/bread0007.png" id="11_jltu7"]
+[ext_resource type="Texture2D" uid="uid://cn7xhk3urcl3e" path="res://Art/Plants/128 Versions/bread0002.png" id="11_wb48f"]
+[ext_resource type="Resource" uid="uid://6jkgqppv58p8" path="res://Object/Plants/Desert/r_Plant_Loaf.tres" id="12_rr7gx"]
+[ext_resource type="Texture2D" uid="uid://dmipl13m7i71a" path="res://Art/Plants/128 Versions/bread0010.png" id="13_wx7lq"]
+[ext_resource type="Resource" uid="uid://co077cv8oguwh" path="res://Object/Plants/Desert/r_Plant_Cow.tres" id="14_m7464"]
+[ext_resource type="Texture2D" uid="uid://ch12aflcx2f87" path="res://Art/Plants/128 Versions/bread0013.png" id="17_q8us4"]
+[ext_resource type="Resource" uid="uid://ce4v5oduqtuoi" path="res://Object/Plants/Aquatic/r_Plant_Koala.tres" id="18_f63p1"]
+[ext_resource type="Texture2D" uid="uid://blvt4ucaovdyr" path="res://Art/Plants/128 Versions/bread0011.png" id="19_4xi5d"]
+[ext_resource type="Resource" uid="uid://dis5h4o41q8td" path="res://Object/Plants/Aquatic/r_Plant_Mushroom.tres" id="19_ewwa2"]
+[ext_resource type="Script" path="res://breadbutton.gd" id="23_a23go"]
+
+[sub_resource type="Resource" id="Resource_xo804"]
+script = ExtResource("5_nw541")
+plantToInteract = ExtResource("4_4hf2q")
+Name = "Bread Flower"
+interactionTexture = ExtResource("4_77s2c")
+
+[sub_resource type="Resource" id="Resource_wjmg0"]
+script = ExtResource("5_nw541")
+plantToInteract = ExtResource("4_7ckbr")
+Name = "Frog Flower"
+interactionTexture = ExtResource("7_no3r7")
+
+[sub_resource type="Resource" id="Resource_7mxby"]
+script = ExtResource("5_nw541")
+plantToInteract = ExtResource("10_y180p")
+Name = "Cupcake"
+interactionTexture = ExtResource("9_txpkl")
+
+[sub_resource type="Resource" id="Resource_flqbf"]
+script = ExtResource("5_nw541")
+plantToInteract = ExtResource("11_3jp73")
+Name = "ZomFlower"
+interactionTexture = ExtResource("11_wb48f")
+
+[sub_resource type="Resource" id="Resource_uvimb"]
+script = ExtResource("5_nw541")
+plantToInteract = ExtResource("12_rr7gx")
+Name = "Loaf"
+interactionTexture = ExtResource("11_jltu7")
+
+[sub_resource type="Resource" id="Resource_q7xqu"]
+script = ExtResource("5_nw541")
+plantToInteract = ExtResource("14_m7464")
+Name = "Cow"
+interactionTexture = ExtResource("13_wx7lq")
+
+[sub_resource type="Resource" id="Resource_lh21v"]
+script = ExtResource("5_nw541")
+plantToInteract = ExtResource("18_f63p1")
+Name = "Koala"
+interactionTexture = ExtResource("17_q8us4")
+
+[sub_resource type="Resource" id="Resource_7imdq"]
+script = ExtResource("5_nw541")
+plantToInteract = ExtResource("19_ewwa2")
+Name = "Mushroom"
+interactionTexture = ExtResource("19_4xi5d")
+
+[sub_resource type="Resource" id="Resource_cfubk"]
+script = ExtResource("6_xprx0")
+Name = "Water"
+interactionTexture = ExtResource("6_0gw3d")
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -13,6 +87,15 @@ grow_vertical = 2
 script = ExtResource("1_ausxi")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 57.0
+offset_top = 135.0
+offset_right = 307.0
+offset_bottom = 235.0
+theme_override_font_sizes/font_size = 32
+text = "TUTORIAL"
+script = ExtResource("23_a23go")
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
 self_modulate = Color(1, 1, 1, 0)
@@ -39,12 +122,12 @@ grow_horizontal = 0
 theme_override_font_sizes/font_size = 32
 selected = 0
 item_count = 4
-popup/item_0/text = "FARM NAME 1"
-popup/item_1/text = "FARM NAME 2"
+popup/item_0/text = "Plains"
+popup/item_1/text = "Desert"
 popup/item_1/id = 1
-popup/item_2/text = "FARM NAME 3"
+popup/item_2/text = "Swamp"
 popup/item_2/id = 2
-popup/item_3/text = "FARM NAME 4"
+popup/item_3/text = "Aquatic"
 popup/item_3/id = 3
 
 [node name="Pause Button" type="Button" parent="CanvasLayer/Panel"]
@@ -65,7 +148,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 action_mode = 0
-text = "PAUSE
+text = "Credits
 "
 icon = ExtResource("1_lotot")
 icon_alignment = 1
@@ -94,6 +177,144 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 42
 text = "00000"
 
+[node name="Panel2" type="Panel" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0)
+top_level = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Panel2"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -175.0
+offset_right = 276.0
+grow_vertical = 0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel2/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="InteractionContainer" parent="CanvasLayer/Panel2/MarginContainer/HBoxContainer" instance=ExtResource("3_i0gco")]
+layout_mode = 2
+interaction = SubResource("Resource_xo804")
+
+[node name="InteractionContainer3" parent="CanvasLayer/Panel2/MarginContainer/HBoxContainer" instance=ExtResource("3_i0gco")]
+layout_mode = 2
+interaction = SubResource("Resource_wjmg0")
+
+[node name="InteractionContainer4" parent="CanvasLayer/Panel2/MarginContainer/HBoxContainer" instance=ExtResource("3_i0gco")]
+visible = false
+layout_mode = 2
+interaction = SubResource("Resource_7mxby")
+
+[node name="InteractionContainer5" parent="CanvasLayer/Panel2/MarginContainer/HBoxContainer" instance=ExtResource("3_i0gco")]
+visible = false
+layout_mode = 2
+interaction = SubResource("Resource_flqbf")
+
+[node name="InteractionContainer6" parent="CanvasLayer/Panel2/MarginContainer/HBoxContainer" instance=ExtResource("3_i0gco")]
+visible = false
+layout_mode = 2
+interaction = SubResource("Resource_uvimb")
+
+[node name="InteractionContainer7" parent="CanvasLayer/Panel2/MarginContainer/HBoxContainer" instance=ExtResource("3_i0gco")]
+visible = false
+layout_mode = 2
+interaction = SubResource("Resource_q7xqu")
+
+[node name="InteractionContainer8" parent="CanvasLayer/Panel2/MarginContainer/HBoxContainer" instance=ExtResource("3_i0gco")]
+visible = false
+layout_mode = 2
+interaction = SubResource("Resource_lh21v")
+
+[node name="InteractionContainer9" parent="CanvasLayer/Panel2/MarginContainer/HBoxContainer" instance=ExtResource("3_i0gco")]
+visible = false
+layout_mode = 2
+interaction = SubResource("Resource_7imdq")
+
+[node name="InteractionContainer2" parent="CanvasLayer/Panel2/MarginContainer/HBoxContainer" instance=ExtResource("3_i0gco")]
+layout_mode = 2
+interaction = SubResource("Resource_cfubk")
+
+[node name="Credits" type="Panel" parent="CanvasLayer"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+top_level = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Credits/MarginContainer"]
+layout_mode = 2
+color = Color(0.259294, 0.259294, 0.259294, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/Credits/MarginContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Mark Esparagoza | Gameplay Designer, Programmer
+Jaden Corrado | Designer, Programmer
+Poppy Payne | Artist
+I Have No Mouth | Composer, Sound Designer
+Joshua Campbell | Narrative Designer/Writer
+Jonathan Hacker | Consultant
+Joseph Ellis | Writer
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/Credits/MarginContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -377.5
+offset_top = -88.0
+offset_right = 377.5
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 50
+text = "Back"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]
 [connection signal="item_selected" from="CanvasLayer/Panel/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="pressed" from="CanvasLayer/Panel/Pause Button" to="." method="_on_pause_button_pressed"]
 [connection signal="toggled" from="CanvasLayer/Panel/Pause Button" to="." method="_on_plant_1_button_toggled"]
+[connection signal="button_down" from="CanvasLayer/Credits/MarginContainer/ColorRect/Button" to="." method="_on_button_button_down"]

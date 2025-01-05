@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cpg77kjy8anfl"]
 
-[ext_resource type="Texture2D" uid="uid://wqblmddhtojp" path="res://Art/Environments/Placeholder/2020.06_Blog_AGRAR_Paludikultur.jpg" id="1_04d3r"]
+[ext_resource type="Texture2D" uid="uid://blo8ovtstg6e8" path="res://Art/Environments/Rubber Island Beach2.png" id="1_eo8fx"]
 [ext_resource type="PackedScene" uid="uid://ctb8ou1xbsenx" path="res://Object/plot.tscn" id="2_lsaan"]
 [ext_resource type="PackedScene" uid="uid://xb6gyiyw2qth" path="res://UI/HUD/interaction_container.tscn" id="4_25q6q"]
 [ext_resource type="Texture2D" uid="uid://b6k0rfutupdbe" path="res://icon.svg" id="5_m3xrt"]
@@ -22,20 +22,84 @@ interactionTexture = ExtResource("5_m3xrt")
 [node name="Swamp" type="Node2D"]
 
 [node name="2020_06BlogAgrarPaludikultur" type="Sprite2D" parent="."]
-position = Vector2(946, 585)
-scale = Vector2(1.07813, 1.06111)
-texture = ExtResource("1_04d3r")
+position = Vector2(946, 598)
+scale = Vector2(0.388, 0.382)
+texture = ExtResource("1_eo8fx")
 
 [node name="Plot" parent="." instance=ExtResource("2_lsaan")]
-position = Vector2(250, 304)
+position = Vector2(244, 210)
 
 [node name="Plot2" parent="." instance=ExtResource("2_lsaan")]
-position = Vector2(503, 304)
+position = Vector2(497, 210)
 
 [node name="Plot3" parent="." instance=ExtResource("2_lsaan")]
-position = Vector2(771, 304)
+position = Vector2(765, 210)
+
+[node name="Plot4" parent="." instance=ExtResource("2_lsaan")]
+position = Vector2(1174, 210)
+
+[node name="Plot5" parent="." instance=ExtResource("2_lsaan")]
+position = Vector2(1427, 210)
+
+[node name="Plot6" parent="." instance=ExtResource("2_lsaan")]
+position = Vector2(1695, 210)
+
+[node name="Plot7" parent="." instance=ExtResource("2_lsaan")]
+position = Vector2(252, 398)
+
+[node name="Plot8" parent="." instance=ExtResource("2_lsaan")]
+position = Vector2(505, 398)
+
+[node name="Plot9" parent="." instance=ExtResource("2_lsaan")]
+position = Vector2(773, 398)
+
+[node name="Plot10" parent="." instance=ExtResource("2_lsaan")]
+position = Vector2(1182, 398)
+
+[node name="Plot11" parent="." instance=ExtResource("2_lsaan")]
+position = Vector2(1435, 398)
+
+[node name="Plot12" parent="." instance=ExtResource("2_lsaan")]
+position = Vector2(1703, 398)
+
+[node name="Plot13" parent="." instance=ExtResource("2_lsaan")]
+position = Vector2(270, 590)
+
+[node name="Plot14" parent="." instance=ExtResource("2_lsaan")]
+position = Vector2(523, 590)
+
+[node name="Plot15" parent="." instance=ExtResource("2_lsaan")]
+position = Vector2(791, 590)
+
+[node name="Plot16" parent="." instance=ExtResource("2_lsaan")]
+position = Vector2(1200, 590)
+
+[node name="Plot17" parent="." instance=ExtResource("2_lsaan")]
+position = Vector2(1453, 590)
+
+[node name="Plot18" parent="." instance=ExtResource("2_lsaan")]
+position = Vector2(1721, 590)
+
+[node name="Plot19" parent="." instance=ExtResource("2_lsaan")]
+position = Vector2(258, 848)
+
+[node name="Plot20" parent="." instance=ExtResource("2_lsaan")]
+position = Vector2(511, 848)
+
+[node name="Plot21" parent="." instance=ExtResource("2_lsaan")]
+position = Vector2(779, 848)
+
+[node name="Plot22" parent="." instance=ExtResource("2_lsaan")]
+position = Vector2(1188, 848)
+
+[node name="Plot23" parent="." instance=ExtResource("2_lsaan")]
+position = Vector2(1441, 848)
+
+[node name="Plot24" parent="." instance=ExtResource("2_lsaan")]
+position = Vector2(1709, 848)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
 self_modulate = Color(1, 1, 1, 0)
@@ -47,6 +111,21 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 2
+offset_left = 50.0
+offset_top = 850.0
+offset_right = 90.0
+offset_bottom = 890.0
+
+[node name="InteractionContainer" parent="CanvasLayer/Panel/HBoxContainer" instance=ExtResource("4_25q6q")]
+layout_mode = 2
+interaction = SubResource("Resource_f84at")
+
+[node name="InteractionContainer2" parent="CanvasLayer/Panel/HBoxContainer" instance=ExtResource("4_25q6q")]
+layout_mode = 2
+interaction = SubResource("Resource_2fdn1")
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/Panel"]
 layout_mode = 1
@@ -64,11 +143,3 @@ grow_vertical = 2
 pivot_offset = Vector2(0, 175)
 theme_override_constants/h_separation = 20
 columns = 7
-
-[node name="InteractionContainer" parent="CanvasLayer/Panel/GridContainer" instance=ExtResource("4_25q6q")]
-layout_mode = 2
-interaction = SubResource("Resource_f84at")
-
-[node name="InteractionContainer2" parent="CanvasLayer/Panel/GridContainer" instance=ExtResource("4_25q6q")]
-layout_mode = 2
-interaction = SubResource("Resource_2fdn1")

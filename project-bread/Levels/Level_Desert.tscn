@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://bs6mylver0wf5"]
 
+[ext_resource type="Texture2D" uid="uid://cyx8gxw5y73vp" path="res://Art/Environments/mushroommarshconceptart2.jpg" id="2_11wwy"]
 [ext_resource type="PackedScene" uid="uid://ctb8ou1xbsenx" path="res://Object/plot.tscn" id="3_1smhj"]
 [ext_resource type="PackedScene" uid="uid://xb6gyiyw2qth" path="res://UI/HUD/interaction_container.tscn" id="3_4njnn"]
-[ext_resource type="Texture2D" uid="uid://by364ey23erj1" path="res://Art/Environments/Placeholder/seba-oasis.jpg" id="4_ehw2k"]
 [ext_resource type="Texture2D" uid="uid://b6k0rfutupdbe" path="res://icon.svg" id="4_q0mne"]
 [ext_resource type="Resource" uid="uid://cnboo0nugotgi" path="res://Resources/R_TestPlant.tres" id="5_30jqe"]
 [ext_resource type="Script" path="res://UI/HUD/r_PlantInteraction.gd" id="6_ih5o7"]
@@ -21,21 +21,84 @@ interactionTexture = ExtResource("4_q0mne")
 
 [node name="Swamp" type="Node2D"]
 
-[node name="Seba-oasis" type="Sprite2D" parent="."]
-position = Vector2(945, 521)
-scale = Vector2(2.05316, 2.05316)
-texture = ExtResource("4_ehw2k")
+[node name="Mushroommarshconceptart2" type="Sprite2D" parent="."]
+position = Vector2(853, 545)
+texture = ExtResource("2_11wwy")
 
 [node name="Plot" parent="." instance=ExtResource("3_1smhj")]
-position = Vector2(250, 304)
+position = Vector2(243, 212)
 
 [node name="Plot2" parent="." instance=ExtResource("3_1smhj")]
-position = Vector2(503, 304)
+position = Vector2(496, 212)
 
 [node name="Plot3" parent="." instance=ExtResource("3_1smhj")]
-position = Vector2(771, 304)
+position = Vector2(764, 212)
+
+[node name="Plot4" parent="." instance=ExtResource("3_1smhj")]
+position = Vector2(1058, 212)
+
+[node name="Plot5" parent="." instance=ExtResource("3_1smhj")]
+position = Vector2(1311, 212)
+
+[node name="Plot6" parent="." instance=ExtResource("3_1smhj")]
+position = Vector2(1579, 212)
+
+[node name="Plot7" parent="." instance=ExtResource("3_1smhj")]
+position = Vector2(1065, 401)
+
+[node name="Plot8" parent="." instance=ExtResource("3_1smhj")]
+position = Vector2(1318, 401)
+
+[node name="Plot9" parent="." instance=ExtResource("3_1smhj")]
+position = Vector2(1586, 401)
+
+[node name="Plot10" parent="." instance=ExtResource("3_1smhj")]
+position = Vector2(282, 399)
+
+[node name="Plot11" parent="." instance=ExtResource("3_1smhj")]
+position = Vector2(535, 399)
+
+[node name="Plot12" parent="." instance=ExtResource("3_1smhj")]
+position = Vector2(803, 399)
+
+[node name="Plot13" parent="." instance=ExtResource("3_1smhj")]
+position = Vector2(280, 610)
+
+[node name="Plot14" parent="." instance=ExtResource("3_1smhj")]
+position = Vector2(533, 610)
+
+[node name="Plot15" parent="." instance=ExtResource("3_1smhj")]
+position = Vector2(801, 610)
+
+[node name="Plot16" parent="." instance=ExtResource("3_1smhj")]
+position = Vector2(1122, 606)
+
+[node name="Plot17" parent="." instance=ExtResource("3_1smhj")]
+position = Vector2(1375, 606)
+
+[node name="Plot18" parent="." instance=ExtResource("3_1smhj")]
+position = Vector2(1643, 606)
+
+[node name="Plot19" parent="." instance=ExtResource("3_1smhj")]
+position = Vector2(1095, 806)
+
+[node name="Plot20" parent="." instance=ExtResource("3_1smhj")]
+position = Vector2(1348, 806)
+
+[node name="Plot21" parent="." instance=ExtResource("3_1smhj")]
+position = Vector2(1616, 806)
+
+[node name="Plot22" parent="." instance=ExtResource("3_1smhj")]
+position = Vector2(321, 790)
+
+[node name="Plot23" parent="." instance=ExtResource("3_1smhj")]
+position = Vector2(574, 790)
+
+[node name="Plot24" parent="." instance=ExtResource("3_1smhj")]
+position = Vector2(842, 790)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
 self_modulate = Color(1, 1, 1, 0)

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="r_Plant" load_steps=3 format=3 uid="uid://co077cv8oguwh"]
+
+[ext_resource type="PackedScene" uid="uid://cm5x87ckdcbn4" path="res://Object/Plants/Desert/Plant_Cow.tscn" id="1_kh38q"]
+[ext_resource type="Script" path="res://Resources/R_Plant.gd" id="2_4qieq"]
+
+[resource]
+script = ExtResource("2_4qieq")
+plantObject = ExtResource("1_kh38q")

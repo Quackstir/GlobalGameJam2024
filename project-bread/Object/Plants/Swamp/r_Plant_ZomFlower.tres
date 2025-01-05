@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="r_Plant" load_steps=3 format=3 uid="uid://bdi8njjccjy8"]
+
+[ext_resource type="PackedScene" uid="uid://d13jwchm4j8vx" path="res://Object/Plants/Swamp/Plant_ZomFlower.tscn" id="1_cox6o"]
+[ext_resource type="Script" path="res://Resources/R_Plant.gd" id="4_ap4jh"]
+
+[resource]
+script = ExtResource("4_ap4jh")
+plantObject = ExtResource("1_cox6o")

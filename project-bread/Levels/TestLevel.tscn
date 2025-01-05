@@ -26,4 +26,49 @@ position = Vector2(503, 304)
 [node name="Plot3" parent="." instance=ExtResource("1_o2f68")]
 position = Vector2(771, 304)
 
+[node name="Plot4" parent="." instance=ExtResource("1_o2f68")]
+position = Vector2(1096, 292)
+
+[node name="Plot5" parent="." instance=ExtResource("1_o2f68")]
+position = Vector2(1349, 292)
+
+[node name="Plot6" parent="." instance=ExtResource("1_o2f68")]
+position = Vector2(1617, 292)
+
+[node name="Plot7" parent="." instance=ExtResource("1_o2f68")]
+position = Vector2(256, 512)
+
+[node name="Plot8" parent="." instance=ExtResource("1_o2f68")]
+position = Vector2(509, 512)
+
+[node name="Plot9" parent="." instance=ExtResource("1_o2f68")]
+position = Vector2(777, 512)
+
+[node name="Plot10" parent="." instance=ExtResource("1_o2f68")]
+position = Vector2(1102, 500)
+
+[node name="Plot11" parent="." instance=ExtResource("1_o2f68")]
+position = Vector2(1355, 500)
+
+[node name="Plot12" parent="." instance=ExtResource("1_o2f68")]
+position = Vector2(1623, 500)
+
+[node name="Plot13" parent="." instance=ExtResource("1_o2f68")]
+position = Vector2(248, 728)
+
+[node name="Plot14" parent="." instance=ExtResource("1_o2f68")]
+position = Vector2(501, 728)
+
+[node name="Plot15" parent="." instance=ExtResource("1_o2f68")]
+position = Vector2(769, 728)
+
+[node name="Plot16" parent="." instance=ExtResource("1_o2f68")]
+position = Vector2(1094, 716)
+
+[node name="Plot17" parent="." instance=ExtResource("1_o2f68")]
+position = Vector2(1347, 716)
+
+[node name="Plot18" parent="." instance=ExtResource("1_o2f68")]
+position = Vector2(1615, 716)
+
 [node name="MusicManager" parent="." instance=ExtResource("10_sbrc4")]

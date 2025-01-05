@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="r_Plant" load_steps=3 format=3 uid="uid://dis5h4o41q8td"]
+
+[ext_resource type="PackedScene" uid="uid://c4y5acg5y7hli" path="res://Object/Plants/Aquatic/Plant_Mushroom.tscn" id="1_4385q"]
+[ext_resource type="Script" path="res://Resources/R_Plant.gd" id="2_v1dgq"]
+
+[resource]
+script = ExtResource("2_v1dgq")
+plantObject = ExtResource("1_4385q")

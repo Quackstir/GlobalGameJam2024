@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="r_Plant" load_steps=3 format=3 uid="uid://ce4v5oduqtuoi"]
+
+[ext_resource type="PackedScene" uid="uid://oqlfbwphi5ce" path="res://Object/Plants/Aquatic/Plant_Koala.tscn" id="1_0kvip"]
+[ext_resource type="Script" path="res://Resources/R_Plant.gd" id="2_o2gnt"]
+
+[resource]
+script = ExtResource("2_o2gnt")
+plantObject = ExtResource("1_0kvip")
