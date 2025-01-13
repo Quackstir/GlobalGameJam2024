@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bol2yrjjio30v"
+path="res://.godot/imported/BreadGame Planting C MASTER v.2.wav-e04d9d94d9d9e8c8f4965d3411cb851b.sample"
+
+[deps]
+
+source_file="res://Sound/SFX/NEW 2024 sound FX/BreadGame Planting C MASTER v.2.wav"
+dest_files=["res://.godot/imported/BreadGame Planting C MASTER v.2.wav-e04d9d94d9d9e8c8f4965d3411cb851b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

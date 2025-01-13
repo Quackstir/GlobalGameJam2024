@@ -1,8 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctb8ou1xbsenx"]
+[gd_scene load_steps=13 format=3 uid="uid://ctb8ou1xbsenx"]
 
 [ext_resource type="Texture2D" uid="uid://x6gn7tmxvof3" path="res://Art/Misc/128 Versions/ground_shadow.png" id="1_q8q65"]
 [ext_resource type="Script" path="res://Levels/plot.gd" id="2_42pap"]
 [ext_resource type="PackedScene" uid="uid://gsod7h5ckeqo" path="res://Object/Plant.tscn" id="3_0t2sj"]
+[ext_resource type="AudioStream" uid="uid://dgtptvwkoaw3m" path="res://Sound/SFX/NEW 2024 sound FX/BreadGame Harvest A MASTER v.2.wav" id="4_o213g"]
+[ext_resource type="AudioStream" uid="uid://c6acijf0dltyo" path="res://Sound/SFX/NEW 2024 sound FX/BreadGame Harvest B MASTER v.2.wav" id="5_4mp8h"]
+[ext_resource type="AudioStream" uid="uid://ga1afkoe3yxb" path="res://Sound/SFX/NEW 2024 sound FX/BreadGame Harvest C MASTER v.2.wav" id="6_fnmx8"]
+[ext_resource type="AudioStream" uid="uid://pngypwsjxul6" path="res://Sound/SFX/NEW 2024 sound FX/BreadGame Planting A MASTER v.2.wav" id="7_0cmys"]
+[ext_resource type="AudioStream" uid="uid://cfdg8con0rgty" path="res://Sound/SFX/NEW 2024 sound FX/BreadGame Planting B MASTER v.2.wav" id="8_fdqcb"]
+[ext_resource type="AudioStream" uid="uid://bol2yrjjio30v" path="res://Sound/SFX/NEW 2024 sound FX/BreadGame Planting C MASTER v.2.wav" id="9_4bu7i"]
+[ext_resource type="AudioStream" uid="uid://bfuw5o7k3nkn5" path="res://Sound/SFX/NEW 2024 sound FX/BreadGame WateringCanNEW B MASTER v.1.wav" id="10_f57br"]
+[ext_resource type="AudioStream" uid="uid://dkbljx1uwoysv" path="res://Sound/SFX/NEW 2024 sound FX/BreadGame WateringCanNEW C MASTER v.1.wav" id="11_4jofd"]
+[ext_resource type="AudioStream" uid="uid://p38r37jp4d4d" path="res://Sound/SFX/NEW 2024 sound FX/BreadGame WateringCanNEW D MASTER v.1.wav" id="12_x42ku"]
 
 [node name="Plot" type="Sprite2D"]
 process_mode = 1
@@ -19,6 +28,33 @@ offset_left = -64.0
 offset_top = -65.0
 offset_right = -64.0
 offset_bottom = -64.024
+
+[node name="HarvestSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_o213g")
+
+[node name="HarvestSFX_2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_4mp8h")
+
+[node name="HarvestSFX_3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_fnmx8")
+
+[node name="PlantPlantSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_0cmys")
+
+[node name="PlantPlantSFX_2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_fdqcb")
+
+[node name="PlantPlantSFX_3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_4bu7i")
+
+[node name="WaterPlantSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_f57br")
+
+[node name="WaterPlantSFX_2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_4jofd")
+
+[node name="WaterPlantSFX_3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_x42ku")
 
 [connection signal="focus_entered" from="Button" to="." method="_on_button_focus_entered"]
 [connection signal="focus_exited" from="Button" to="." method="_on_button_focus_exited"]
